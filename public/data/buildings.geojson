@@ -1,0 +1,52 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "id": "b1",
+        "properties": {
+          "id": "b1",
+          "name": "Sample Building A",
+          "address": "Ilica 1, Zagreb",
+          "description": "This is a sample polygon near the city center.",
+          "architects": ["Unknown"]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [15.9759, 45.8136],
+              [15.9763, 45.8136],
+              [15.9763, 45.8133],
+              [15.9759, 45.8133],
+              [15.9759, 45.8136]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "b2",
+        "properties": {
+          "id": "b2",
+          "name": "Sample Building B",
+          "address": "Trg bana J. Jelačića, Zagreb",
+          "description": "Second sample polygon to verify selection & highlighting.",
+          "architects": ["Unknown"]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [15.9782, 45.8129],
+              [15.9786, 45.8129],
+              [15.9786, 45.8126],
+              [15.9782, 45.8126],
+              [15.9782, 45.8129]
+            ]
+          ]
+        }
+      }
+    ]
+  }
+  

@@ -1,11 +1,14 @@
 "use client";
 
-import maplibregl, { Map } from "maplibre-gl";
+import maplibregl, { Map, MapMouseEvent } from "maplibre-gl";
 import { useEffect, useRef } from "react";
+import type { Building } from "@/lib/types";
 
-type Props = { onClickMap: () => void };
+type Props = {
+  onSelectBuilding: (b: Building | null) => void;
+};
 
-export function MapView({ onClickMap }: Props) {
+export function MapView({ onSelectBuilding }: Props) {
   const mapRef = useRef<Map | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -36,7 +39,70 @@ export function MapView({ onClickMap }: Props) {
     });
 
     map.addControl(new maplibregl.NavigationControl(), "top-left");
-    map.on("click", onClickMap);
+
+    map.on("load", async () => {
+      // Load GeoJSON from public/
+      const res = await fetch("/data/buildings.geojson");
+      const geojson = await res.json();
+
+      map.addSource("buildings", {
+        type: "geojson",
+        data: geojson,
+      });
+
+      map.addLayer({
+        id: "buildings-fill",
+        type: "fill",
+        source: "buildings",
+        paint: {
+          "fill-opacity": 0.35
+        },
+      });
+
+      map.addLayer({
+        id: "buildings-outline",
+        type: "line",
+        source: "buildings",
+        paint: {
+          "line-width": 2
+        },
+      });
+
+      // Cursor feedback
+      map.on("mouseenter", "buildings-fill", () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
+      map.on("mouseleave", "buildings-fill", () => {
+        map.getCanvas().style.cursor = "";
+      });
+
+      // Click selection: only if user clicked a building polygon
+      map.on("click", "buildings-fill", (e: MapMouseEvent) => {
+        const f = e.features?.[0];
+        const p = (f?.properties ?? {}) as any;
+
+        // Properties from GeoJSON come as strings sometimes; we keep it simple for now
+        const b: Building = {
+          id: String(p.id ?? f?.id ?? ""),
+          name: p.name ? String(p.name) : null,
+          address: p.address ? String(p.address) : null,
+          description: p.description ? String(p.description) : null,
+          architects: p.architects
+            ? // if it's already an array, great; if it's a string, wrap it
+              (Array.isArray(p.architects) ? p.architects : [String(p.architects)])
+            : null,
+          sourceUrl: p.sourceUrl ? String(p.sourceUrl) : null,
+        };
+
+        onSelectBuilding(b);
+      });
+
+      // Click empty space clears selection
+      map.on("click", (e) => {
+        const features = map.queryRenderedFeatures(e.point, { layers: ["buildings-fill"] });
+        if (features.length === 0) onSelectBuilding(null);
+      });
+    });
 
     mapRef.current = map;
 
@@ -44,7 +110,7 @@ export function MapView({ onClickMap }: Props) {
       map.remove();
       mapRef.current = null;
     };
-  }, [onClickMap]);
+  }, [onSelectBuilding]);
 
   return <div ref={containerRef} className="h-full w-full" />;
 }
