@@ -2,6 +2,10 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { parse } from "csv-parse/sync";
 import osmtogeojson from "osmtogeojson";
+import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
+import { point as turfPoint } from "@turf/helpers";
+import turfArea from "@turf/area";
+
 
 type GeocodedRow = {
   id: string;
@@ -22,8 +26,13 @@ type OverrideRow = {
   note?: string;
 };
 
-type GeometryMap = Record<string, GeoJSON.Geometry>;
-
+type GeometryPick = {
+    osm_ref: string; // "way/123" or "relation/456"
+    geometry: GeoJSON.Geometry;
+  };
+  
+  type GeometryMap = Record<string, GeometryPick>;
+  
 type OverpassCacheFile =
   | {
       meta: { lat: number; lon: number; radius_m: number };
@@ -181,41 +190,109 @@ function osmIdentity(f: GeoJSON.Feature) {
   return { type: t, id };
 }
 
-function pickBest(
-  features: GeoJSON.Feature[],
-  targetLat: number,
-  targetLon: number,
-  override?: OverrideRow
-): GeoJSON.Feature | null {
-  if (features.length === 0) return null;
-
-  if (override) {
-    const want = `${override.osm_type}/${override.osm_id}`;
-    const exact = features.find((f) => String((f as any).id) === want);
-    if (exact) return exact;
-    // If override refers to something not in results, we still fall back.
+function extractHouseNumberFromAddress(addr: string): string | null {
+    // handles "10A", "1 - 1A", "29/1" (we take the first plausible token)
+    const m = addr.match(/\b(\d+[A-Za-z]?)\b/);
+    return m ? m[1] : null;
   }
+  
+  function addrMatches(featureProps: any, canonicalAddress: string): number {
+    // Returns a bonus score (0..)
+    const hn = extractHouseNumberFromAddress(canonicalAddress);
+    const osmHN = featureProps?.["addr:housenumber"] ? String(featureProps["addr:housenumber"]) : null;
+    const osmStreet = featureProps?.["addr:street"] ? String(featureProps["addr:street"]) : null;
+  
+    let bonus = 0;
+  
+    if (hn && osmHN && osmHN.toLowerCase() === hn.toLowerCase()) bonus += 120;
+  
+    // street match: weak, but helpful
+    if (osmStreet) {
+      const canon = canonicalAddress.toLowerCase();
+      const osm = osmStreet.toLowerCase();
+      if (canon.includes(osm)) bonus += 60;
+    }
+  
+    return bonus;
+  }
+  
 
-  // Rank by distance first, then by area “sanity”
-  const scored = features
-    .map((f) => {
-      const c = geometryCentroid(f.geometry as GeoJSON.Geometry);
-      const dist = c ? haversineMeters(targetLat, targetLon, c.lat, c.lon) : Number.POSITIVE_INFINITY;
-      const area = geometryAreaScore(f.geometry as GeoJSON.Geometry);
-      return { f, dist, area };
-    })
-    .filter((x) => Number.isFinite(x.dist))
-    .sort((a, b) => a.dist - b.dist);
-
-  if (scored.length === 0) return null;
-
-  // Simple sanity: prefer something not absurdly tiny if multiple are close.
-  const best = scored[0];
-  const close = scored.filter((x) => x.dist <= best.dist + 15); // within 15m of best
-  close.sort((a, b) => b.area - a.area);
-  return close[0].f;
-}
-
+  function pickBest(
+    features: GeoJSON.Feature[],
+    targetLat: number,
+    targetLon: number,
+    canonicalAddress: string,
+    override?: OverrideRow
+  ): GeoJSON.Feature | null {
+    if (features.length === 0) return null;
+  
+    // 1) Override wins if present in candidates
+    if (override) {
+      const want = `${override.osm_type}/${override.osm_id}`;
+      const exact = features.find((f) => String((f as any).id) === want);
+      if (exact) return exact;
+    }
+  
+    const p = turfPoint([targetLon, targetLat]);
+  
+    // Precompute for scoring
+    const scored = features
+      .map((f) => {
+        const geom = f.geometry as GeoJSON.Geometry;
+        const props = (f.properties ?? {}) as any;
+  
+        // Containment check (works for Polygon/MultiPolygon)
+        let contains = false;
+        try {
+          contains = booleanPointInPolygon(p, f as any);
+        } catch {
+          contains = false;
+        }
+  
+        // Area (m²-ish via turf)
+        let area = 0;
+        try {
+          area = turfArea(f as any);
+        } catch {
+          area = 0;
+        }
+  
+        // Distance to centroid (your existing centroid logic is OK)
+        const c = geometryCentroid(geom);
+        const dist = c
+          ? haversineMeters(targetLat, targetLon, c.lat, c.lon)
+          : Number.POSITIVE_INFINITY;
+  
+        const addrBonus = addrMatches(props, canonicalAddress);
+  
+        // Base score: prefer containment heavily, then addrBonus, then distance, then smaller area
+        // Higher score is better
+        const score =
+          (contains ? 10_000 : 0) +
+          addrBonus +
+          Math.max(0, 500 - dist) + // closer is better; cap helps stability
+          Math.max(0, 2000 - area / 10); // prefer smaller polygons; area scaled down
+  
+        return { f, score, contains, dist, area, addrBonus, id: String((f as any).id ?? "") };
+      })
+      .filter((x) => Number.isFinite(x.score));
+  
+    if (scored.length === 0) return null;
+  
+    // 2) If any candidates contain the point, restrict to those
+    const containing = scored.filter((x) => x.contains);
+    const pool = containing.length ? containing : scored;
+  
+    // 3) Sort: score desc, then smaller area, then distance
+    pool.sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      if (a.area !== b.area) return a.area - b.area;
+      return a.dist - b.dist;
+    });
+  
+    return pool[0].f;
+  }
+  
 function nearlyEqual(a: number, b: number, eps = 1e-6) {
     return Math.abs(a - b) <= eps;
   }
@@ -296,7 +373,7 @@ async function main() {
 
     const feats = toFeatures(overpassJson);
     const override = overrides[r.id];
-    const best = pickBest(feats, lat, lon, override);
+    const best = pickBest(feats, lat, lon, r.address, override);
 
     if (!best || !best.geometry) {
       console.log(`  -> ❌ No polygon match for ${r.id}`);
@@ -306,8 +383,11 @@ async function main() {
     const oid = osmIdentity(best);
     console.log(`  -> ✅ picked ${(best as any).id} (type=${oid.type} id=${oid.id})`);
 
-    geometries[r.id] = best.geometry as GeoJSON.Geometry;
-  }
+    geometries[r.id] = {
+        osm_ref: String((best as any).id ?? ""),
+        geometry: best.geometry as GeoJSON.Geometry,
+      };
+        }
 
   await fs.writeFile(OUTPUT, JSON.stringify(geometries, null, 2), "utf8");
   console.log(`\n✅ Wrote ${OUTPUT}\n`);

@@ -1,52 +1,1066 @@
 {
-    "type": "FeatureCollection",
-    "features": [
-      {
-        "type": "Feature",
-        "id": "b1",
-        "properties": {
-          "id": "b1",
-          "name": "Sample Building A",
-          "address": "Ilica 1, Zagreb",
-          "description": "This is a sample polygon near the city center.",
-          "architects": ["Unknown"]
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [15.9759, 45.8136],
-              [15.9763, 45.8136],
-              [15.9763, 45.8133],
-              [15.9759, 45.8133],
-              [15.9759, 45.8136]
-            ]
-          ]
-        }
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "hotel-milinov-danas-hotel-dubrovnik-gajeva-1-1",
+      "properties": {
+        "id": "hotel-milinov-danas-hotel-dubrovnik-gajeva-1-1",
+        "name": "Hotel Milinov, danas Hotel Dubrovnik",
+        "address": "Gajeva 1 / Trg bana Jelačića 16, 10000 Zagreb, Croatia",
+        "description": "Hotel Milinov, danas Hotel Dubrovnik, na uglu Gajeva 1 /Trg bana Jelačića 16 sagrađen je 1928./1929. prema projektu Dionisa Sunka (Sunko & Jungmann). Hotel Milinov je dobio naziv po prvom vlasniku - trgovcu Svetozaru Milinovu, a od 1940. vlasnik je postala Dubrovačka plovidba koja mu je dala današnji naziv. Zgrada hotela u donjem dijelu dizajnirana je u stilu art décoa, dok je gornji dio u duhu ekspresionizma. Na pročelju središnjeg dijela zgrade, prema Trgu, iznad prozora trećeg kata, postavljen je brončani kip Merkura (u rimskoj mitologiji bog trgovine i putovanja), koji je premješten sa srušene kuće trgovca Pavla Hatza, koju je na tome mjestu sagradio Bartol Felbinger. U toj kući nalazila se je poznata Velika kavana.",
+        "architects": [
+          "Dionis Sunko"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/gajeva-1-trg-bana-jelacica-16?ulica=trg-bana-jelacica",
+        "osmRef": "way/584569598"
       },
-      {
-        "type": "Feature",
-        "id": "b2",
-        "properties": {
-          "id": "b2",
-          "name": "Sample Building B",
-          "address": "Trg bana J. Jelačića, Zagreb",
-          "description": "Second sample polygon to verify selection & highlighting.",
-          "architects": ["Unknown"]
-        },
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [
-              [15.9782, 45.8129],
-              [15.9786, 45.8129],
-              [15.9786, 45.8126],
-              [15.9782, 45.8126],
-              [15.9782, 45.8129]
+              15.9764938,
+              45.812494
+            ],
+            [
+              15.9764475,
+              45.812078
+            ],
+            [
+              15.9767342,
+              45.8120587
+            ],
+            [
+              15.9767466,
+              45.8121243
+            ],
+            [
+              15.9767745,
+              45.812245
+            ],
+            [
+              15.9768041,
+              45.8123697
+            ],
+            [
+              15.9768281,
+              45.8124704
+            ],
+            [
+              15.9768947,
+              45.8127604
+            ],
+            [
+              15.9765464,
+              45.8128126
+            ],
+            [
+              15.9764938,
+              45.812494
             ]
           ]
-        }
+        ]
       }
-    ]
-  }
-  
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-baumgartner-wasserthal-bakaceva",
+      "properties": {
+        "id": "kuca-baumgartner-wasserthal-bakaceva",
+        "name": "Kuća Baumgärtner-Wasserthal",
+        "address": "Bakačeva / Trg bana Jelačića 8, 10000 Zagreb, Croatia",
+        "description": "Kuća Baumgärtner-Wasserthal na Trgu bana Jelačića 8 /Bakačeva sagrađena je 1881./1882. za veletrgovca Leopolda Baumgärtnera i njegovog partnera Salomona Wasserthala, prema projektu Janka Jambrišaka. Jambrišak je nacrte izradio na temelju idejnog projekta Ruperta Melkusa (upravitelj Gradskoga građevnog ureda) iz 1875. godine. Melkusov projekt je planirao veliku komercijalnu zgradu u stilu francuske neorenesanse uzduž cijele sjeverne strane trga, no tomu se usprotivio Izidor Kršnjavi pa je na kraju umjesto jedne sagrađeno više kuća. Zgrada je dugi niz godina bila u vlasništvu Varteksa, a 2014. kupio ju je njemački lanac drogerija Müller. (Josip Bilić, Hrvoje Ivanković, 2006:430-I)",
+        "architects": [
+          "Rupert Melkus"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/bakaceva?ulica=trg-bana-jelacica",
+        "osmRef": "way/105486198"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9781584,
+              45.8137854
+            ],
+            [
+              15.9782038,
+              45.8137357
+            ],
+            [
+              15.9782366,
+              45.8136998
+            ],
+            [
+              15.9783483,
+              45.8137538
+            ],
+            [
+              15.9783,
+              45.8136136
+            ],
+            [
+              15.9784636,
+              45.8135818
+            ],
+            [
+              15.9784977,
+              45.8136974
+            ],
+            [
+              15.9785172,
+              45.8137632
+            ],
+            [
+              15.9784871,
+              45.8137988
+            ],
+            [
+              15.9784354,
+              45.813837
+            ],
+            [
+              15.9784066,
+              45.8138441
+            ],
+            [
+              15.9783728,
+              45.8138375
+            ],
+            [
+              15.9781584,
+              45.8137854
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-demeter-trg-bana-jelacica-2-2",
+      "properties": {
+        "id": "kuca-demeter-trg-bana-jelacica-2-2",
+        "name": "Kuća Demeter",
+        "address": "Trg bana Jelačića 2, 10000 Zagreb, Croatia",
+        "description": "Kuću Demeter na Trgu bana Jelačića 2 podigao je oko 1829. godine Bartol Felbinger, prostorno i stilski u oblicima klasicizma bidermajera. Pročelje je preoblikovano 1890-ih. Na tome mjestu nalazio se na početku XIX. st. tridesetnički ured i staja trgovca Nauma Demetra, oca Dimitrija Demetra, hrvatskog književnika, kritičara, prevoditelja i kazališnog djelatnika. (Josip Bilić, Hrvoje Ivanković, 2006:430-I)",
+        "architects": [
+          "Bartol Felbinger"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-bana-jelacica-2?ulica=trg-bana-jelacica",
+        "osmRef": "way/365493822"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9756616,
+              45.8133167
+            ],
+            [
+              15.9757158,
+              45.813124
+            ],
+            [
+              15.9762237,
+              45.8131809
+            ],
+            [
+              15.976192,
+              45.8133072
+            ],
+            [
+              15.9761682,
+              45.8134018
+            ],
+            [
+              15.9756616,
+              45.8133167
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-felbinger-trg-bana-jelacica-15-15",
+      "properties": {
+        "id": "kuca-felbinger-trg-bana-jelacica-15-15",
+        "name": "Kuća Felbinger",
+        "address": "Trg bana Jelačića 15, 10000 Zagreb, Croatia",
+        "description": "Ugrađena trokrilna dvokatnica na Trgu bana Jelačića 15, tlocrtnog \"U\" oblika, vlastita kuća graditelja Bartola Felbingera, sagrađena je 1826./1829. Prizemlje rastvoreno s pravokutnim dućanskim otvorima i slijepom arkadurom rekonstruirano je iza 1960. Dvorišni objekti prigrađeni u 19. i 20. st. odudaraju od karakteristika i kvalitete glavne Felbingerove zgrade. Vlastita kuća Bartola Felbingera značajna je u graditeljevu opusu i graditeljstvu Zagreba prve polovine 19. st. u cjelini. (Galerija nepokretnih kulturnih dobara grada Zagreba)",
+        "architects": [
+          "Bartol Felbinger"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-bana-jelacica-15?ulica=trg-bana-jelacica",
+        "osmRef": "way/97235393"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9768947,
+              45.8127604
+            ],
+            [
+              15.9768281,
+              45.8124704
+            ],
+            [
+              15.9768041,
+              45.8123697
+            ],
+            [
+              15.97689,
+              45.8123601
+            ],
+            [
+              15.9769584,
+              45.8126331
+            ],
+            [
+              15.9770201,
+              45.8126248
+            ],
+            [
+              15.9771074,
+              45.8126129
+            ],
+            [
+              15.9770309,
+              45.8123178
+            ],
+            [
+              15.977153,
+              45.8123054
+            ],
+            [
+              15.9771581,
+              45.8123363
+            ],
+            [
+              15.9771701,
+              45.8124092
+            ],
+            [
+              15.9771789,
+              45.8124846
+            ],
+            [
+              15.9772031,
+              45.8125891
+            ],
+            [
+              15.9772199,
+              45.8127119
+            ],
+            [
+              15.9770481,
+              45.8127387
+            ],
+            [
+              15.9768947,
+              45.8127604
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-feller-stern-jurisiceva-1-1a-1",
+      "properties": {
+        "id": "kuca-feller-stern-jurisiceva-1-1a-1",
+        "name": "Kuća Feller-Stern",
+        "address": "Jurišićeva 1 - 1A / Trg bana Jelačića 11, 10000 Zagreb, Croatia",
+        "description": "Stambeno-poslovna peterokatnica Stern na uglu Trg bana Jelačića 11 /Jurišićeva 1-1A nastala je 1928. godine nadogradnjom četverokatnice (tada kuća Feller) sagrađene 1904./1905. prema projektu Vjekoslava Bastla (Hönigsberg & Deutsch). Prvotna pročelja s bogatom secesijskom ornamentikom preoblikovana su i modernizirana 1927./1928. prema skici berlinskog arhitekta Petera Behrensa. Kuća Feller-Stern prvo je djelo internacionalnog stila u Zagrebu i kao autorsko djelo istaknutog pionira moderne 20. stoljeća zauzima značajno mjesto u topografiji međuratne europske arhitekture. Izvor: Galerija nepokretnih kulturnih dobara Grada Zagreba",
+        "architects": [
+          "Peter Behrens",
+          "Vjekoslav Bastl"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/jurisiceva-1?ulica=trg-bana-jelacica",
+        "osmRef": "way/255524303"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.980998,
+              45.8122479
+            ],
+            [
+              15.9809844,
+              45.8121309
+            ],
+            [
+              15.9810097,
+              45.8121322
+            ],
+            [
+              15.9810133,
+              45.8121004
+            ],
+            [
+              15.981062,
+              45.8120977
+            ],
+            [
+              15.9810539,
+              45.8120239
+            ],
+            [
+              15.9809308,
+              45.8120291
+            ],
+            [
+              15.9809255,
+              45.8119618
+            ],
+            [
+              15.9811454,
+              45.8119562
+            ],
+            [
+              15.9811963,
+              45.8120936
+            ],
+            [
+              15.9812076,
+              45.8122331
+            ],
+            [
+              15.980998,
+              45.8122479
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-gavella-trg-bana-jelacica-6-6",
+      "properties": {
+        "id": "kuca-gavella-trg-bana-jelacica-6-6",
+        "name": "Kuća Gavella",
+        "address": "Trg bana Jelačića 6, 10000 Zagreb, Croatia",
+        "description": "Kuća Gavella na Trgu bana Jelačića 6 sagrađena je 1889. godine prema projektu arhitekta Kune Waidmanna. Originalno pročelje dvokatnice s polukatom i mansardnim sobama imalo je u srednjoj osi otvor veže uokviren baroknim dovratnikom. Srednja os je bila zaključena zabatom nad balustradom vijenca s grbom i inicijalima imena vlasnika. U prvom katu je ostao sačuvan balkon s polukružnom ogradom. Erkeri na bočnim rizalitima bili su zaobljeni i barokno ukrašeni, te zaključeni visokim volutasto lomljenim zabatima s jarbolima. Prozori prvog kata bili su bogato ukrašeni u zonama natprozornika medaljonima sa svitkovljem i putima. Profilirani doprozornici bili su zaključeni polukružnim lukovima. Za razliku od prvog kata, prozori su drugog kata bili pravokutni, a ispod ispod prozorskih klupica vegetabilni ukrasni motivi ispunjavali su parapetne zone. Kasetni friz završnog vijenca bio je ispunjen školjkama, a ispod vijenca tekao je niz gustih zubaca. Nadogradnja trećeg kata i purifikacija pročelja izvedene su 1933. prema projektu arhitekta Aleksandra Freudenreicha. Veći dio izvornog izgleda vraćen je 1987. prilikom restauracije pročelja kuće. (Cvitanović, 1969:91)",
+        "architects": [
+          "Kuno Waidmann"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-bana-jelacica-6?ulica=trg-bana-jelacica",
+        "osmRef": "way/105490828"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9775615,
+              45.813323
+            ],
+            [
+              15.977624,
+              45.8135231
+            ],
+            [
+              15.9776474,
+              45.8135979
+            ],
+            [
+              15.9773079,
+              45.8136506
+            ],
+            [
+              15.9772382,
+              45.8133794
+            ],
+            [
+              15.9773817,
+              45.813354
+            ],
+            [
+              15.9775615,
+              45.813323
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-kolmar-trg-bana-jelacica-7-7",
+      "properties": {
+        "id": "kuca-kolmar-trg-bana-jelacica-7-7",
+        "name": "Kuća Kolmar",
+        "address": "Trg bana Jelačića 7, 10000 Zagreb, Croatia",
+        "description": "Stambeno-trgovačka najamna zgrada, Trg bana Josipa Jelačića 7 /Pod zidom 8, građena je 1904./1905. godine za trgovca Roberta Kolmara prema projektu atelijera Hönigsberg i Deutsch. Tek što je sagrađena kuću su kupili industrijalac Žiga Stern, vlasnik kožare i veletrgovac drvom Filip Deutsch. Vlasnički stan zauzima cijeli prvi kat zgrade s glavnim prostorima prema Trgu i servisnim dijelom sa zasebnim ulazom s ulice Pod zidom. Prostorije vlasničkog stana od sredine 20. stoljeća koristi Društvo hrvatskih književnika. Pročelje je oblikovano u duhu slobodnog stila kasnog historicizma, a interijer zgrade očuvan je unatoč kasnijim zahvatima. Zgrada je vrijedan primjer stambene palače u opusu atelijera Hönigsberg i Deutsch i odlikuje se kvalitetno izvedenim obrtničkim detaljima i korištenjem suvremenih konstruktivnih rješenja. (Galerija nepokretnih kulturnih dobara grada Zagreba)",
+        "architects": [
+          "Hönigsberg",
+          "Deutsch"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-bana-jelacica-7?ulica=trg-bana-jelacica",
+        "osmRef": "way/105490828"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9775615,
+              45.813323
+            ],
+            [
+              15.977624,
+              45.8135231
+            ],
+            [
+              15.9776474,
+              45.8135979
+            ],
+            [
+              15.9773079,
+              45.8136506
+            ],
+            [
+              15.9772382,
+              45.8133794
+            ],
+            [
+              15.9773817,
+              45.813354
+            ],
+            [
+              15.9775615,
+              45.813323
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-popovic-trg-bana-jelacica-4-4",
+      "properties": {
+        "id": "kuca-popovic-trg-bana-jelacica-4-4",
+        "name": "Kuća Popović",
+        "address": "Trg bana Jelačića 4, 10000 Zagreb, Croatia",
+        "description": "Reprezentativna trokatna stambeno-poslovna palača Popović na uglu Jelačićev trg 4 /Splavnice /Pod zidom sagrađena je 1906./1907. prema projektu Aladara Baranyaija. Građena za zagrebačkog trgovca i kućevlasnika Fedora Popovića prva je velika narudžba atelijera Benedik i Baranyai i ujedno prvo u nizu Baranyaijevih uspjelih projektantskih rješenja donjogradskih blokova uglovnicama, kojima je zajedničko neutraliziranje masivnosti zaobljenim formama. Secesijsko pročelje je velik dio prvobitnog izgleda izgubilo purifikacijom iz 1915. god., kada su uklonjene kamene oplate i dio dekoracije, a prigradnjama 1932. god. odnosno pregradnjom 1940. god. znatno je preoblikovan i unutrašnji prostor. Visoki zaobljeni ugao s velikom zastakljenom plohom dodatno je istaknut balkonskim rešetkama od kovanog željeza i reljefnim figuralnim frizom izvedenim u poznatoj zagrebačkoj tvornici keramike Josipa Kalline po predlošku Ivana Meštrovića. Baranyaijevu plodnu suradnju s umjetnicima, koja se u najrazličitijim iskazima očituje tijekom cijeloga mu opusa, ovdje sjajno ilustrira stan i atelijer u kojem se neposredno po povratku iz Beča u Zagreb nastanio Tomislav Krizman, slikar i grafičar koji je u ovoj sredini značajan i kao pokretač umjetničkih zbivanja i začetnik modernog dizajna, a ta je »bohemska mansarda« gotovo puna tri desetljeća funkcionirala kao njihov “genius loci”. (Galjer, 1997:168, 175)",
+        "architects": [
+          "Aladár Baranyai",
+          "Slavko Benedik"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-bana-jelacica-4?ulica=trg-bana-jelacica",
+        "osmRef": "way/288838575"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9770962,
+              45.813681
+            ],
+            [
+              15.9768946,
+              45.8137104
+            ],
+            [
+              15.9768789,
+              45.8137109
+            ],
+            [
+              15.9768677,
+              45.8137082
+            ],
+            [
+              15.9768574,
+              45.8137025
+            ],
+            [
+              15.9768483,
+              45.8136951
+            ],
+            [
+              15.9768345,
+              45.8136623
+            ],
+            [
+              15.9768587,
+              45.8136568
+            ],
+            [
+              15.976801,
+              45.8134942
+            ],
+            [
+              15.9767854,
+              45.8134948
+            ],
+            [
+              15.9767773,
+              45.8134751
+            ],
+            [
+              15.9767743,
+              45.8134624
+            ],
+            [
+              15.9767765,
+              45.8134527
+            ],
+            [
+              15.9767823,
+              45.8134442
+            ],
+            [
+              15.9767898,
+              45.8134391
+            ],
+            [
+              15.9768002,
+              45.8134348
+            ],
+            [
+              15.9768408,
+              45.8134291
+            ],
+            [
+              15.9768508,
+              45.8134327
+            ],
+            [
+              15.9769939,
+              45.8134095
+            ],
+            [
+              15.9770223,
+              45.8134047
+            ],
+            [
+              15.9770962,
+              45.813681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-rado-trg-bana-jelacica-5-5",
+      "properties": {
+        "id": "kuca-rado-trg-bana-jelacica-5-5",
+        "name": "Kuća Rado",
+        "address": "Trg bana Jelačića 5, 10000 Zagreb, Croatia",
+        "description": "Kuća Rado na Trgu bana Jelačića 5 sagrađena je 1904./1905. prema projektu Vjekoslava Bastla (arhitektonski biro Hönigsberg & Deutsch). To je trgovačko-stambena zgrada protegnuta od glavnoga gradskog trga do ulice u zaleđu (Pod zidom), sa stanom i ordinacijom slavnoga zagrebačkog stomatologa dr. Eugena Rada u pianu nobile. Pojedine stambene jedinice s vremenom su pretvorene u poslovne prostore. Nosiva struktura zgrade je masivna s ojačanjima od kamenih blokova. Bogato raščlanjeno glavno pročelje, s atraktivnim ostakljenim verandama, te alegorijskim i animalnim ukrasnim skulpturama nad vijencem. U velikoj mjeri očuvan izvorni izgled ulaznog vestibula i stubišnog prostora. Suvremena kritika zgradu je ocijenila snažnim primjerom “visokog držanja stijega modernizma”. (Aleksander Laslo, 2011:58)",
+        "architects": [
+          "Vjekoslav Bastl"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-bana-jelacica-5?ulica=trg-bana-jelacica",
+        "osmRef": "way/288838575"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9770962,
+              45.813681
+            ],
+            [
+              15.9768946,
+              45.8137104
+            ],
+            [
+              15.9768789,
+              45.8137109
+            ],
+            [
+              15.9768677,
+              45.8137082
+            ],
+            [
+              15.9768574,
+              45.8137025
+            ],
+            [
+              15.9768483,
+              45.8136951
+            ],
+            [
+              15.9768345,
+              45.8136623
+            ],
+            [
+              15.9768587,
+              45.8136568
+            ],
+            [
+              15.976801,
+              45.8134942
+            ],
+            [
+              15.9767854,
+              45.8134948
+            ],
+            [
+              15.9767773,
+              45.8134751
+            ],
+            [
+              15.9767743,
+              45.8134624
+            ],
+            [
+              15.9767765,
+              45.8134527
+            ],
+            [
+              15.9767823,
+              45.8134442
+            ],
+            [
+              15.9767898,
+              45.8134391
+            ],
+            [
+              15.9768002,
+              45.8134348
+            ],
+            [
+              15.9768408,
+              45.8134291
+            ],
+            [
+              15.9768508,
+              45.8134327
+            ],
+            [
+              15.9769939,
+              45.8134095
+            ],
+            [
+              15.9770223,
+              45.8134047
+            ],
+            [
+              15.9770962,
+              45.813681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-stankovic-ilica-2-2",
+      "properties": {
+        "id": "kuca-stankovic-ilica-2-2",
+        "name": "Kuća Stanković",
+        "address": "Ilica 2 / Trg bana Jelačića 1, 10000 Zagreb, Croatia",
+        "description": "Trgovačko-stambena trokatnica na uglu Ilica 2 /Trg bana Jelačića 1 nastala je nadogradnjom kasnobarokne jednokatnice za investitora trgovca Kristofora Stankovića. Drugi kat nadograđen je 1837., a treći 1880. prema projektu Hermanna Bolléa, kada su pročelja preoblikovana u neorenesansnom stilu. Prizemlje je pregrađeno 1931./1934. kada je uklonjen portal i baldahinski svodovi u prizemlju, te rastvoreni veliki izlozi pregrađeni u nekoliko navrata nakon II. svjetskog rata. Kuća Stanković prva je trokatnica na Trgu bana Jelačića. Izvor: Galerija nepokretnih kulturnih dobara Grada Zagreba",
+        "architects": [
+          "Antun Cragnolini"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/ilica-2?ulica=trg-bana-jelacica",
+        "osmRef": "way/281505230"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9685785,
+              45.8124289
+            ],
+            [
+              15.9685898,
+              45.8124289
+            ],
+            [
+              15.9685938,
+              45.8126858
+            ],
+            [
+              15.9684299,
+              45.812687
+            ],
+            [
+              15.9682517,
+              45.8126883
+            ],
+            [
+              15.9682478,
+              45.8124314
+            ],
+            [
+              15.9685785,
+              45.8124289
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-zivkovic-trg-bana-jelacica-12-12",
+      "properties": {
+        "id": "kuca-zivkovic-trg-bana-jelacica-12-12",
+        "name": "Kuća Živković",
+        "address": "Trg bana Jelačića 12, 10000 Zagreb, Croatia",
+        "description": "Kuća Živković na Trgu bana Jelačića 12 današnji izgled dobila je 1876. godine. Ivan Plochberger st. projektirao je i izveo nadogradnju i novu fasadu na staroj jednokatnici baruna Jovana Živkovića. Dva pobočna rizalita oivičena kvadrima, zabati nad prozorima prvoga kata, i blagi lukovi nad onima drugoga kata tipični su neorenesansni atributi, koji rese ovu skladnu trokatnicu. Od vremena gradnje do danas izmijenjeno je na toj gradnji jedino prizemlje. (Lelja Dobronić -2, 1983:94)",
+        "architects": [
+          "Ivan Plochberger st."
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-bana-jelacica-12?ulica=trg-bana-jelacica",
+        "osmRef": "way/105490828"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9775615,
+              45.813323
+            ],
+            [
+              15.977624,
+              45.8135231
+            ],
+            [
+              15.9776474,
+              45.8135979
+            ],
+            [
+              15.9773079,
+              45.8136506
+            ],
+            [
+              15.9772382,
+              45.8133794
+            ],
+            [
+              15.9773817,
+              45.813354
+            ],
+            [
+              15.9775615,
+              45.813323
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "palaca-prve-hrvatske-stedionice-praska-2-2",
+      "properties": {
+        "id": "palaca-prve-hrvatske-stedionice-praska-2-2",
+        "name": "Palača Prve hrvatske štedionice",
+        "address": "Praška 2 / Trg bana Jelačića 14, 10000 Zagreb, Croatia",
+        "description": "Palača Prve hrvatske štedionice, kasnije “Singerova palača” na uglu Trg bana Jelačića 14 /Praška 2 sagrađena je 1870. prema projektu arhitektonskog biroa Grahor i Klein.［...］”Manirističko preobilje nakita, pa neki detalji (otvori u prizemlju, armatura krila balkonskih vratiju na rizalitima) još pripadaju Kleinovoj romantičnoj fazi. Motiv sažimanja katova proveden je polustupovima, pilastrima i hermama kroz sva tri kata, osobito naglašeno na rizalitu. Edo Šen izveo je za američku tvrtku Singer šivaći strojevi 1926./1927. potrebne adaptacije u unutrašnjosti, a s pročelja je uklonio sav figuralni ukras, ali je sačuvao glavnu misao povezivanja katova pilastrima kao osnovnim elementom. (Olga Maruševski, 1993:112)",
+        "architects": [
+          "Grahor",
+          "Klein"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/praska-2?ulica=trg-bana-jelacica",
+        "osmRef": "way/199905242"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              18.8345149,
+              42.2847586
+            ],
+            [
+              18.8345463,
+              42.2848873
+            ],
+            [
+              18.8345382,
+              42.2848869
+            ],
+            [
+              18.8345426,
+              42.2849115
+            ],
+            [
+              18.8344633,
+              42.2849244
+            ],
+            [
+              18.834404,
+              42.284942
+            ],
+            [
+              18.834386,
+              42.284868
+            ],
+            [
+              18.8344007,
+              42.2848652
+            ],
+            [
+              18.8343777,
+              42.2847757
+            ],
+            [
+              18.8345149,
+              42.2847586
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambeno-poslovna-zgrada-gradske-stedionice-trg-bana-jelacica-10a-10-10a",
+      "properties": {
+        "id": "stambeno-poslovna-zgrada-gradske-stedionice-trg-bana-jelacica-10a-10-10a",
+        "name": "Stambeno-poslovna zgrada Gradske štedionice",
+        "address": "Trg bana Jelačića 10A - 10, 10000 Zagreb, Croatia",
+        "description": "Palača Gradske štedionice, danas Zagrebačka banka na Trgu bana Jelačića 10-10A sagrađena je između 1923. i 1931. godine. Zrelo je ostvarenje poslovnice arhitekta Ignjata Fischera i značajan javni prostor međuratnog razdoblja u Zagrebu. Pored bankovnog prostora s obilježjima neoklasicizma i art decòa, značajni su interijeri Gradske kavane i Gradskog podruma kao omiljena okupljališta građana Zagreba. Kavana je uređena modernističkim i reduciranim arhitektonskim elementima s detaljima art decòa, a prostor restorana arhitekt Fischer uredio je nadahnut motivima narodne baštine. (Galerija nepokretnih kulturnih dobara grada Zagreba)",
+        "architects": [
+          "Ignjat Fischer"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-bana-jelacica-10?ulica=trg-bana-jelacica",
+        "osmRef": "way/105490828"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9775615,
+              45.813323
+            ],
+            [
+              15.977624,
+              45.8135231
+            ],
+            [
+              15.9776474,
+              45.8135979
+            ],
+            [
+              15.9773079,
+              45.8136506
+            ],
+            [
+              15.9772382,
+              45.8133794
+            ],
+            [
+              15.9773817,
+              45.813354
+            ],
+            [
+              15.9775615,
+              45.813323
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zgrada-assicurazioni-generali-trg-bana-jelacica-3-3",
+      "properties": {
+        "id": "zgrada-assicurazioni-generali-trg-bana-jelacica-3-3",
+        "name": "Zgrada Assicurazioni Generali",
+        "address": "Trg bana Jelačića 3, 10000 Zagreb, Croatia",
+        "description": "Zgrada Assicurazioni Generali na Trgu bana Jelačića 3 /Tkalčićeva 1 sagrađena je 1938./1939. prema projektu Marcella Piacentinija. Nabusita, masivna i akontekstualna gradnja talijanskog fascio-racionalizma, trajno osporavana zbog svog formata i grubog zaklanjanja vidika na gornjogradsku akropolu, no ujedno izvrsne prostorne organizacije, posebice korisničke distribucije u parternoj zoni, s elegantnim detaljiranjem u skupocjenom materijalu. U prvom katu dviju glavnih fronti zgrade poslovne prostorije Udruženja hrvatskih arhitekata i Društva arhitekata Zagreba. (Aleksander Laslo, 2011:86)",
+        "architects": [
+          "Marcello Piacentini"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-bana-jelacica-3?ulica=trg-bana-jelacica",
+        "osmRef": "way/105484833"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9766738,
+              45.8137186
+            ],
+            [
+              15.9766551,
+              45.8137222
+            ],
+            [
+              15.9766207,
+              45.8137289
+            ],
+            [
+              15.9766289,
+              45.8137598
+            ],
+            [
+              15.9765268,
+              45.8137867
+            ],
+            [
+              15.9764267,
+              45.8138103
+            ],
+            [
+              15.9763472,
+              45.8137606
+            ],
+            [
+              15.9761058,
+              45.8136698
+            ],
+            [
+              15.9762427,
+              45.8135255
+            ],
+            [
+              15.9765689,
+              45.8134801
+            ],
+            [
+              15.9765969,
+              45.8134755
+            ],
+            [
+              15.976601,
+              45.8134885
+            ],
+            [
+              15.9766738,
+              45.8137186
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zgrada-jugoslavenske-banke-d-d-praska-1-1",
+      "properties": {
+        "id": "zgrada-jugoslavenske-banke-d-d-praska-1-1",
+        "name": "Zgrada Jugoslavenske banke d.d.",
+        "address": "Praška 1 / Trg bana Jelačića 13, 10000 Zagreb, Croatia",
+        "description": "Zgrada Jugoslavenske banke d.d. (Hrvatske zemaljske banke), danas zgrada Croatia osiguranja na uglu Trg bana Jelačića 13 /Praška 1 nastala je spajanjem dvokatne kuće Prister na uglu Jelačićeva trga i Praške ulice (sagradio Janko Jambrišak 1881.) sa susjednom jednokatnom kućom u Praškoj ulici. Nadogradnja kuće u Praškoj i pregradnja obiju kuća izvedena je između 1920. i 1926. prema projektu Ignjata Fischera s kojim je na oblikovanju pročelja surađivao ruski arhitekt Petar Pavlović Fetisov. Fetisov se od 1920. godine nalazio u emigraciji u Zagrebu, gdje je na Arhitektonskom odjelu Tehničke visoke škole radio kao predavač. Pročelja zgrade oblikovana su u neoklasicističkom stilu. Ističu se dvokatni dorski polustupovi, a u krovnoj zoni alegorijske skulpture kipara Rudolfa Valdeca.",
+        "architects": [
+          "Janko Jambrišak",
+          "Ignjat Fischer"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/praska-1?ulica=trg-bana-jelacica",
+        "osmRef": "way/1018274834"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              19.4706334,
+              51.7443521
+            ],
+            [
+              19.4706936,
+              51.7442278
+            ],
+            [
+              19.4710755,
+              51.7443003
+            ],
+            [
+              19.4710204,
+              51.7444102
+            ],
+            [
+              19.4709879,
+              51.7444206
+            ],
+            [
+              19.4706334,
+              51.7443521
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zgrada-mirovinske-zaklade-gradske-stedionice-gajeva-2-2",
+      "properties": {
+        "id": "zgrada-mirovinske-zaklade-gradske-stedionice-gajeva-2-2",
+        "name": "Zgrada Mirovinske zaklade gradske štedionice",
+        "address": "Gajeva 2 / Trg bana Jelačića, 10000 Zagreb, Croatia",
+        "description": "Zgrada Mirovinske zaklade gradske štedionice na uglu Gajeva 2 /Trg bana Jelačića sagrađena je 1934. prema projektu Huga Ehrlicha. Ehrlich je dobio izvedbu na temelju natječaja, nakon što je nekad jedinstveni blok Zakladne bolnice bio rasparceliran. Način na koji je Ehrlich riješio zadatak doista je smion i moderan. Na toj je zgradi armiranobetonska konstrukcija omogućila kontinuirane pojaseve prozor koji teku cijelom širinom pročelja, dok je prizemni dio izbačen i prema ulici zatvoren transparentnom staklenom opnom, čime je postignuta potpuna inverzija klasične građevne tektonike. Po jasnoći osnovne dispozicije, suvremenom senzibilitetu i dorađenosti detalja, ta Ehrlichova građevina ide nesumnjivo među klasična ostvarenja naše međuratne arhitekture i čini, ne samo vremenski nego i sadržajno, zaključak njegova stvaralačkog puta. (Žarko Domljan -1, 1976:55)",
+        "architects": [
+          "Hugo Ehrlich"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/gajeva-2?ulica=trg-bana-jelacica",
+        "osmRef": "way/331291327"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9763022,
+              45.8126916
+            ],
+            [
+              15.9763277,
+              45.8128137
+            ],
+            [
+              15.9763338,
+              45.8128412
+            ],
+            [
+              15.9760264,
+              45.8128902
+            ],
+            [
+              15.976019,
+              45.8128589
+            ],
+            [
+              15.976,
+              45.8127213
+            ],
+            [
+              15.9759838,
+              45.8127226
+            ],
+            [
+              15.9759746,
+              45.8126863
+            ],
+            [
+              15.9760465,
+              45.8126753
+            ],
+            [
+              15.97607,
+              45.8127567
+            ],
+            [
+              15.9761689,
+              45.8127465
+            ],
+            [
+              15.976165,
+              45.8126977
+            ],
+            [
+              15.9763022,
+              45.8126916
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

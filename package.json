@@ -6,11 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "geocode": "tsx scripts/geocode.ts",
+    "footprints": "tsx scripts/fetch_footprints.ts",
+    "build:geojson": "tsx scripts/build_geojson.ts",
+    "pipeline": "npm run geocode && npm run footprints && npm run build:geojson",
+    "scrape:trg-jelacica": "tsx scripts/scrape_trg_bana_jelacica.ts",
+    "normalize:trg-jelacica": "tsx scripts/normalize_raw.ts",
+    "report:collisions": "tsx scripts/report_footprint_collisions.ts"
   },
   "dependencies": {
+    "@turf/area": "^7.3.1",
+    "@turf/boolean-point-in-polygon": "^7.3.1",
+    "@turf/helpers": "^7.3.1",
     "maplibre-gl": "^5.15.0",
     "next": "16.1.1",
+    "osmtogeojson": "^3.0.0-beta.5",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
@@ -19,9 +30,13 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cheerio": "^1.1.2",
+    "csv-parse": "^6.1.0",
+    "csv-stringify": "^6.6.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
