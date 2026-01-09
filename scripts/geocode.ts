@@ -39,6 +39,17 @@ function normalizeAddress(a: string) {
   return a.trim().replace(/\s+/g, " ");
 }
 
+function choosePrimaryAddress(addr: string): string {
+    const parts = addr.split("/").map(s => s.trim());
+  
+    const trg = parts.find(p =>
+      /trg bana/i.test(p)
+    );
+  
+    return trg ?? parts[0];
+  }
+  
+
 async function readJsonIfExists<T>(p: string, fallback: T): Promise<T> {
   try {
     const txt = await fs.readFile(p, "utf8");
@@ -52,6 +63,8 @@ async function writeJson(p: string, data: unknown) {
   await fs.mkdir(path.dirname(p), { recursive: true });
   await fs.writeFile(p, JSON.stringify(data, null, 2), "utf8");
 }
+
+
 
 async function geocodeNominatim(address: string): Promise<GeocodeCacheEntry> {
   const url = new URL("https://nominatim.openstreetmap.org/search");
@@ -146,7 +159,7 @@ async function main() {
 
   for (let i = 0; i < rows.length; i++) {
     const r = rows[i];
-    const addr = normalizeAddress(r.address);
+    const addr = normalizeAddress(choosePrimaryAddress(r.address));
     const primaryAddr = addr.split("/")[0].trim();
     const cacheKey = primaryAddr.toLowerCase();
     
