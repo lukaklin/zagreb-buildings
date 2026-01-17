@@ -8,6 +8,46 @@ type Props = {
   onSelectBuilding: (b: Building | null) => void;
 };
 
+function parseArchitects(raw: any): string[] | null {
+  if (raw == null) return null;
+
+  const cleanToken = (t: string) =>
+    t
+      .replace(/^Arhitekti\s*;?\s*/i, "")
+      .replace(/^\s*\[|\]\s*$/g, "")
+      .replace(/"/g, "")
+      .trim();
+
+  const expandOne = (v: any): string[] => {
+    if (v == null) return [];
+    const s = String(v).trim();
+    if (!s) return [];
+
+    // If element is itself a JSON array string like '["A","B"]'
+    if (s.startsWith("[") && s.endsWith("]")) {
+      try {
+        const arr = JSON.parse(s);
+        if (Array.isArray(arr)) return arr.map(String);
+      } catch {
+        // fall through
+      }
+    }
+
+    // Otherwise split by ; or ,
+    return s.split(/[;,]/g).map((x) => x.trim());
+  };
+
+  const items: string[] = Array.isArray(raw) ? raw.flatMap(expandOne) : expandOne(raw);
+
+  const cleaned = items
+    .map(cleanToken)
+    .filter(Boolean)
+    // dedupe case-insensitive
+    .filter((v, i, arr) => arr.findIndex((x) => x.toLowerCase() === v.toLowerCase()) === i);
+
+  return cleaned.length ? cleaned : null;
+}
+
 export function MapView({ onSelectBuilding }: Props) {
   const mapRef = useRef<Map | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -76,7 +116,7 @@ export function MapView({ onSelectBuilding }: Props) {
       map.addSource("buildings", {
         type: "geojson",
         data: geojson,
-        promoteId: "id", // use properties.id as the feature id for feature-state
+        promoteId: "id",
       });
 
       map.addLayer({
@@ -147,25 +187,21 @@ export function MapView({ onSelectBuilding }: Props) {
       map.on("click", "buildings-fill", (e: MapLayerMouseEvent) => {
         const f = e.features?.[0];
         const p = (f?.properties ?? {}) as any;
-      
+
         const id = p.id ?? null;
         setSelected(map, id);
-      
+
         const b: Building = {
           id: String(p.id ?? ""),
           name: p.name ? String(p.name) : null,
           address: p.address ? String(p.address) : null,
           description: p.description ? String(p.description) : null,
-          architects: p.architects
-            ? Array.isArray(p.architects)
-              ? p.architects
-              : [String(p.architects)]
-            : null,
+          architects: parseArchitects(p.architects),
           sourceUrl: p.sourceUrl ? String(p.sourceUrl) : null,
         };
-      
+
         onSelectBuilding(b);
-      });      
+      });
 
       // Click empty space clears selection
       map.on("click", (e) => {
@@ -180,21 +216,6 @@ export function MapView({ onSelectBuilding }: Props) {
     });
 
     mapRef.current = map;
-
-        // DEBUG: log rendered features on click
-    map.on("click", (e) => {
-      const features = map.queryRenderedFeatures(e.point);
-
-      console.log(
-        "Rendered features under click:",
-        features.map((f) => ({
-          layer: f.layer.id,
-          id: f.id,
-          properties: f.properties,
-        }))
-      );
-    });
-
 
     return () => {
       map.remove();
