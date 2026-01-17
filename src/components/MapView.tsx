@@ -181,6 +181,21 @@ export function MapView({ onSelectBuilding }: Props) {
 
     mapRef.current = map;
 
+        // DEBUG: log rendered features on click
+    map.on("click", (e) => {
+      const features = map.queryRenderedFeatures(e.point);
+
+      console.log(
+        "Rendered features under click:",
+        features.map((f) => ({
+          layer: f.layer.id,
+          id: f.id,
+          properties: f.properties,
+        }))
+      );
+    });
+
+
     return () => {
       map.remove();
       mapRef.current = null;
