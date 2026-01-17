@@ -314,6 +314,17 @@ function nearlyEqual(a: number, b: number, eps = 1e-6) {
     await fs.writeFile(cachePath, JSON.stringify(payload, null, 2), "utf8");
   }  
 
+  async function fetchOverpassById(osmType: "way" | "relation", osmId: string) {
+    const query = `
+  [out:json][timeout:25];
+  ${osmType}(${osmId});
+  (._;>;);
+  out body;
+  `;
+    return fetchOverpass(query);
+  }
+  
+
 async function main() {
   await ensureDir(CACHE_DIR);
   await ensureDir("output");
@@ -371,9 +382,20 @@ async function main() {
       await sleep(RATE_LIMIT_MS);
     }    
 
-    const feats = toFeatures(overpassJson);
     const override = overrides[r.id];
+
+    let feats: GeoJSON.Feature[];
+    
+    if (override) {
+      console.log(`  -> 🔒 override present, fetching ${override.osm_type}/${override.osm_id}`);
+      const overrideJson = await fetchOverpassById(override.osm_type, override.osm_id);
+      feats = toFeatures(overrideJson);
+    } else {
+      feats = toFeatures(overpassJson);
+    }
+    
     const best = pickBest(feats, lat, lon, r.address, override);
+    
 
     if (!best || !best.geometry) {
       console.log(`  -> ❌ No polygon match for ${r.id}`);
