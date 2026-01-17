@@ -1,6 +1,6 @@
 "use client";
 
-import maplibregl, { Map, MapMouseEvent } from "maplibre-gl";
+import maplibregl, { Map, MapLayerMouseEvent } from "maplibre-gl";
 import { useEffect, useRef } from "react";
 import type { Building } from "@/lib/types";
 
@@ -144,13 +144,13 @@ export function MapView({ onSelectBuilding }: Props) {
       });
 
       // Click selection (polygon only)
-      map.on("click", "buildings-fill", (e: MapMouseEvent) => {
+      map.on("click", "buildings-fill", (e: MapLayerMouseEvent) => {
         const f = e.features?.[0];
         const p = (f?.properties ?? {}) as any;
-
+      
         const id = p.id ?? null;
         setSelected(map, id);
-
+      
         const b: Building = {
           id: String(p.id ?? ""),
           name: p.name ? String(p.name) : null,
@@ -163,9 +163,9 @@ export function MapView({ onSelectBuilding }: Props) {
             : null,
           sourceUrl: p.sourceUrl ? String(p.sourceUrl) : null,
         };
-
+      
         onSelectBuilding(b);
-      });
+      });      
 
       // Click empty space clears selection
       map.on("click", (e) => {
