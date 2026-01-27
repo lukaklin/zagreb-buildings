@@ -3,6 +3,125 @@
   "features": [
     {
       "type": "Feature",
+      "id": "dom-hrvatskih-likovnih-umjetnika-trg-zrtava-fasizma-bb-10000",
+      "properties": {
+        "id": "dom-hrvatskih-likovnih-umjetnika-trg-zrtava-fasizma-bb-10000",
+        "name": "Dom hrvatskih likovnih umjetnika",
+        "address": "Trg žrtava fašizma BB, 10000 Zagreb, Croatia",
+        "description": "Zgrada Doma hrvatskih likovnih umjetnika, slobodnostojeći jednokatni izložbeni paviljon, na Trgu žrtava fašizma BB sagrađena je 1934./1938. prema idejnom rješenju Ivana Meštrovića i tehničkoj razradi Harolda Bilinića i Lavoslava Horvata. Zgrada je 1942./1943. prenamijenjena i pregrađena u džamiju (Zvonimir Požgaj; fontana i minareti Stjepan Planić). 1947. prenamijenjena je u Muzej, ali zagrepčani ju još uvijek kolokvijalno zovu Džamija. U izvornom obliku, kao organska sinteza lapidarne skulpturalne monumentalnosti i virtuozne građevne tehnologije, unikatno je i kapitalno ostvarenje hrvatske moderne arhitekture. (Galerija nepokretnih kulturnih dobara grada Zagreba)",
+        "architects": [
+          "Ivan Meštrović",
+          "Harold Bilinić",
+          "Lavoslav Horvat"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-zrtava-fasizma-bb_1?ulica=trg-zrtava-fasizma",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20%C5%BErtava%20fa%C5%A1.%20BB%20%201_0b3c.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20zrtava%20fas.%20bb%20%201_0b3c.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/587748701"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9869943,
+              45.8098277
+            ],
+            [
+              15.9870456,
+              45.8097984
+            ],
+            [
+              15.9871059,
+              45.809779
+            ],
+            [
+              15.9871713,
+              45.809771
+            ],
+            [
+              15.9872374,
+              45.8097748
+            ],
+            [
+              15.9873,
+              45.8097901
+            ],
+            [
+              15.987355,
+              45.809816
+            ],
+            [
+              15.9873988,
+              45.8098508
+            ],
+            [
+              15.9874285,
+              45.8098922
+            ],
+            [
+              15.9874421,
+              45.8099375
+            ],
+            [
+              15.9874388,
+              45.8099837
+            ],
+            [
+              15.9874188,
+              45.8100278
+            ],
+            [
+              15.9873735,
+              45.8100749
+            ],
+            [
+              15.9873094,
+              45.8101098
+            ],
+            [
+              15.987233,
+              45.8101293
+            ],
+            [
+              15.9871517,
+              45.8101312
+            ],
+            [
+              15.9870735,
+              45.8101156
+            ],
+            [
+              15.9870061,
+              45.8100838
+            ],
+            [
+              15.9869561,
+              45.8100391
+            ],
+            [
+              15.9869285,
+              45.8099857
+            ],
+            [
+              15.9869259,
+              45.8099291
+            ],
+            [
+              15.9869486,
+              45.8098746
+            ],
+            [
+              15.9869943,
+              45.8098277
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "hotel-milinov-danas-hotel-dubrovnik-gajeva-1-1",
       "properties": {
         "id": "hotel-milinov-danas-hotel-dubrovnik-gajeva-1-1",
@@ -16,51 +135,63 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Gajeva_1_-Trg_bana_Jela%C4%8Di%C4%87a__1.jpg",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/gajeva_1_-trg_bana_jelacica__1.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/584569598"
+        "osmRef": "way/97165331"
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              15.9764938,
-              45.812494
+              15.9760264,
+              45.8128902
             ],
             [
-              15.9764475,
-              45.812078
+              15.9760348,
+              45.812947
             ],
             [
-              15.9767342,
-              45.8120587
+              15.9760367,
+              45.8129599
             ],
             [
-              15.9767466,
-              45.8121243
+              15.97592,
+              45.8129672
             ],
             [
-              15.9767745,
-              45.812245
+              15.9758641,
+              45.8129704
             ],
             [
-              15.9768041,
-              45.8123697
+              15.9758602,
+              45.8129578
             ],
             [
-              15.9768281,
-              45.8124704
+              15.9758544,
+              45.8129104
             ],
             [
-              15.9768947,
-              45.8127604
+              15.9758261,
+              45.8127341
             ],
             [
-              15.9765464,
-              45.8128126
+              15.975896,
+              45.8127289
             ],
             [
-              15.9764938,
-              45.812494
+              15.9759838,
+              45.8127226
+            ],
+            [
+              15.976,
+              45.8127213
+            ],
+            [
+              15.976019,
+              45.8128589
+            ],
+            [
+              15.9760264,
+              45.8128902
             ]
           ]
         ]
@@ -141,6 +272,75 @@
     },
     {
       "type": "Feature",
+      "id": "kuca-benedik-kovacic-trg-zrtava-fasizma-5-5",
+      "properties": {
+        "id": "kuca-benedik-kovacic-trg-zrtava-fasizma-5-5",
+        "name": "Kuća Benedik-Kovačić",
+        "address": "Trg žrtava fašizma 5, 10000 Zagreb, Croatia",
+        "description": "Kuća Benedik-Kovačić na Trgu žrtava fašizma 5 sagrađena je 1928./1929. prema projektu Aladara Baranyaija (Benedik & Baranyai). Kao i kod susjedne Baranyaijeve kuće na kbr. 4 i kod ove kuće vidljiv je pomak prema modernistički jednostavnim oblicima. To je uglovnica jednostavna i snažna volumena, kojoj na pročelju pojedini katovi nisu odvojeni vijencima, osim po površini kvadratičnog erkera na samom uglu. Potkrovni dio kuće Benedik-Kovačić, međutim, donosi motiv balkonske lođe s tordiranim stupovima. To ovu kuću dovodi u kronološku i tipološku vezu s nedalekim kućama Kunetz (Zvonimirova 6) i kućom na uglu Trga i Višeslavove. Jedini preostali element tradicije jesu još plitke polukružne lunete iznad kvadratičnih prozora ugaonog erkera. (Andreja Der Hazarijan-Vukić)",
+        "architects": [
+          "Aladár Baranyai"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-zrtava-fasizma-5?ulica=trg-zrtava-fasizma",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_%C5%BErtava_fa%C5%A1_5__1.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_zrtava_fas_5__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/289540860"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9877478,
+              45.8107084
+            ],
+            [
+              15.9877408,
+              45.8108035
+            ],
+            [
+              15.9876854,
+              45.810803
+            ],
+            [
+              15.9876944,
+              45.8107171
+            ],
+            [
+              15.9876545,
+              45.8107061
+            ],
+            [
+              15.9876625,
+              45.8105961
+            ],
+            [
+              15.9879746,
+              45.8106126
+            ],
+            [
+              15.9879563,
+              45.8108056
+            ],
+            [
+              15.9878279,
+              45.8108044
+            ],
+            [
+              15.9878323,
+              45.8107103
+            ],
+            [
+              15.9877478,
+              45.8107084
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "kuca-demeter-trg-bana-jelacica-2-2",
       "properties": {
         "id": "kuca-demeter-trg-bana-jelacica-2-2",
@@ -201,6 +401,67 @@
             [
               15.9757279,
               45.813471
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-deutsch-maceljski-trg-zrtava-fasizma-2-2",
+      "properties": {
+        "id": "kuca-deutsch-maceljski-trg-zrtava-fasizma-2-2",
+        "name": "Kuća Deutsch-Maceljski",
+        "address": "Trg žrtava fašizma 2, 10000 Zagreb, Croatia",
+        "description": "Kuća Deutsch-Maceljski na Trgu žrtava fašizma 2 sagrađena je 1922./1924. prema projektu Aladara Baranyaija (građevno poduzeće „Benedik & Baranyai, arhitekt i graditelj“). Trokatna stambeno-poslovna zgrada s mezaninom, izvedena za Roberta i Vlatku Deutsch-Maceljski, jedan je od najreprezentativnijih primjera novog tipa gradske palače iz razdoblja prve polovine trećeg desetljeća. U susjedstvu su kuće Benedik (Trg žrtava fašizma 9, 1923./1924.), Benedik-Maceljski (Trg žrtava fašizma 6, 1923./1925.) i Rosenberger-Rosenstock (Trg žrtava fašizma 4, 1927./1928.) koje reinterpretacijama na temu klasicizma uspostavljaju sklad monumentalizma, reprezentativnosti i funkcionalizma u urbanom mjerilu i identitetu arhitektonike novonastalog trga. Svojevrsni manifest vrhunske kvalitete stanovanja u tom okviru predstavlja oblikovanje stana za trgovca Roberta Deutsch-Maceljskog. Različito od ranijih Baranyaijevih interijerskih rješenja, u oblikovanju prostora prevladavaju dekorativni oblici u znaku Art Décoa, kakav je, primjerice, plasticizam štuko dekoracija u salonu, gdje novost predstavljaju kružne i profilacije nepravilnih geometrijskih formi. Zaobljene forme prevladavaju i u namještaju za sjedenje, presvučenom koloristicki efektnim tkaninama u maniri Décoa, s velikim cvjetnim uzorkom između okomitih bordura. (Jasna Galjer)",
+        "architects": [
+          "Aladár Baranyai"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-zrtava-fasizma-2?ulica=trg-zrtava-fasizma",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_%C5%BErtava_fa%C5%A1_2__1.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_zrtava_fas_2__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/289540859"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9868,
+              45.8105754
+            ],
+            [
+              15.9868313,
+              45.8105771
+            ],
+            [
+              15.9870944,
+              45.8105824
+            ],
+            [
+              15.9870858,
+              45.8107051
+            ],
+            [
+              15.9869952,
+              45.8107044
+            ],
+            [
+              15.9869947,
+              45.8107847
+            ],
+            [
+              15.9868232,
+              45.8107752
+            ],
+            [
+              15.986797,
+              45.8107737
+            ],
+            [
+              15.9868,
+              45.8105754
             ]
           ]
         ]
@@ -422,6 +683,51 @@
     },
     {
       "type": "Feature",
+      "id": "kuca-kanitz-kralja-zvonimira-1-1",
+      "properties": {
+        "id": "kuca-kanitz-kralja-zvonimira-1-1",
+        "name": "Kuća Kanitz",
+        "address": "Kralja Zvonimira 1 / Trg žrtava fašizma 7, 10000 Zagreb, Croatia",
+        "description": "Kuća Kanitz na uglu Ulica kralja Zvonimira 1 /Trg žrtava fašizma 7 sagrađena je 1922./1923. prema projektu Rudolfa Lubynskog. Masivna uglovnica nastala je u postsecesijskom razdoblju djelovanja ovog velikana hrvatske secesije. Zgradu obilježuju neki tradicionalni arhitektonski elementi poput arkada koje rastvaraju prizemlje, polukružnih erkera, lezena koje flankiraju prozore na drugom i trećem katu, plitkih polukružnih luneta iznad prozora i krovnog vijenca na konzolama, što je tipično za monumentalnu neohistoricističku arhitekturu 1920-ih godina.",
+        "architects": [
+          "Rudolf Lubynski"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/kralja-zvonimira-1?ulica=trg-zrtava-fasizma",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Zvonimirova_1__1.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/zvonimirova_1__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/966784471"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              17.0008472,
+              43.8311641
+            ],
+            [
+              17.0008024,
+              43.8310552
+            ],
+            [
+              17.0009224,
+              43.8310295
+            ],
+            [
+              17.0009672,
+              43.8311383
+            ],
+            [
+              17.0008472,
+              43.8311641
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "kuca-kolmar-trg-bana-jelacica-7-7",
       "properties": {
         "id": "kuca-kolmar-trg-bana-jelacica-7-7",
@@ -635,6 +941,120 @@
     },
     {
       "type": "Feature",
+      "id": "kuca-rosenberg-rosenstock-trg-zrtava-fasizma-4-4",
+      "properties": {
+        "id": "kuca-rosenberg-rosenstock-trg-zrtava-fasizma-4-4",
+        "name": "Kuća Rosenberg-Rosenstock",
+        "address": "Trg žrtava fašizma 4, 10000 Zagreb, Croatia",
+        "description": "Kuća Rosenberg-Rosenstock na Trgu žrtava fašizma 4 sagrađena je 1927./1928. prema projektu Aladara Baranyaija (Benedik & Baranyai). Kod zgrade realizirane u duhu modernističke redukcije oblika na tradiciju asociraju još samo simetrično pročelje, horizontalna razdioba pojedinih katova diskretnim vijencima, balkon na konzolama i jednostavno profilirani otvori vertikalnog tipa. Pored interpretacija na temu historicističkog vokabulara za sve Baranyaijeve zgrade na Trgu žrtava fašizma zajedničko je i oblikovanje stanova koje uspostavlja nove parametre funkcionalnosti i luksuza. (Jasna Galjer)",
+        "architects": [
+          "Aladár Baranyai"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-zrtava-fasizma-4?ulica=trg-zrtava-fasizma",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_%C5%BErtava_fa%C5%A1_4__1.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_zrtava_fas_4__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/289540862"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9874144,
+              45.8105924
+            ],
+            [
+              15.9876625,
+              45.8105961
+            ],
+            [
+              15.9876545,
+              45.8107061
+            ],
+            [
+              15.987576,
+              45.8107047
+            ],
+            [
+              15.9875763,
+              45.8107415
+            ],
+            [
+              15.9875577,
+              45.8107406
+            ],
+            [
+              15.9875566,
+              45.8107895
+            ],
+            [
+              15.9874803,
+              45.8107884
+            ],
+            [
+              15.9874817,
+              45.8107118
+            ],
+            [
+              15.987409,
+              45.8107076
+            ],
+            [
+              15.9874144,
+              45.8105924
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-salomona-i-terezije-benedik-kneza-viseslava",
+      "properties": {
+        "id": "kuca-salomona-i-terezije-benedik-kneza-viseslava",
+        "name": "Kuća Salomona i Terezije Benedik",
+        "address": "Kneza Višeslava / Trg žrtava fašizma 9, 10000 Zagreb, Croatia",
+        "description": "Kuća Salomona i Terezije Benedik na uglu Trg žrtava fašizma 9 /Kneza Višeslava sagrađena je 1923./1924. prema projektu Aladara Baranyaija (arhitektonski biro Benedik & Baranyai). Na kući se pojavljuje karakterističan motiv uzdignutog pročelja, odnosno ornamentalni elementi na višim etažama. Posebno je zanimljiv motiv tordiranih stupova na drugom, trećem i četvrtom katu, monumentalnih dimenzija, na blago zakrivljenom uglu stambene kuće. Središnji horizontalni korpus te zgrade definiran je dvama jakim i bogato profiliranim vijencima, a prozori su uglavnom kvadratičnog oblika. (Andreja Der-Hazarijan Vukić)",
+        "architects": [
+          "Aladár Baranyai"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/kneza-viseslava?ulica=trg-zrtava-fasizma",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20%C5%BErt.fa%C5%A1.%209%20-Vi%C5%A1eslav%20%203%20%201_7524.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20zrt.fas.%209%20-viseslav%20%203%20%201_7524.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/765832816"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              20.4363705,
+              44.7615499
+            ],
+            [
+              20.4361954,
+              44.76136
+            ],
+            [
+              20.4363256,
+              44.7612995
+            ],
+            [
+              20.4365007,
+              44.7614894
+            ],
+            [
+              20.4363705,
+              44.7615499
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "kuca-stankovic-ilica-2-2",
       "properties": {
         "id": "kuca-stankovic-ilica-2-2",
@@ -839,52 +1259,405 @@
     },
     {
       "type": "Feature",
-      "id": "stambeno-poslovna-zgrada-gradske-stedionice-trg-bana-jelacica-10a-10-10a",
+      "id": "poslovno-trgovacko-stambena-zgrada-osiguravajuceg-drustva-triglav-kneza-mislava-17-17",
       "properties": {
-        "id": "stambeno-poslovna-zgrada-gradske-stedionice-trg-bana-jelacica-10a-10-10a",
-        "name": "Stambeno-poslovna zgrada Gradske štedionice",
-        "address": "Trg bana Jelačića 10A - 10, 10000 Zagreb, Croatia",
-        "description": "Palača Gradske štedionice, danas Zagrebačka banka na Trgu bana Jelačića 10-10A sagrađena je između 1923. i 1931. godine. Zrelo je ostvarenje poslovnice arhitekta Ignjata Fischera i značajan javni prostor međuratnog razdoblja u Zagrebu. Pored bankovnog prostora s obilježjima neoklasicizma i art decòa, značajni su interijeri Gradske kavane i Gradskog podruma kao omiljena okupljališta građana Zagreba. Kavana je uređena modernističkim i reduciranim arhitektonskim elementima s detaljima art decòa, a prostor restorana arhitekt Fischer uredio je nadahnut motivima narodne baštine. (Galerija nepokretnih kulturnih dobara grada Zagreba)",
+        "id": "poslovno-trgovacko-stambena-zgrada-osiguravajuceg-drustva-triglav-kneza-mislava-17-17",
+        "name": "Poslovno-trgovačko-stambena zgrada Osiguravajućeg društva Triglav",
+        "address": "Kneza Mislava 17 / Trg žrtava fašizma 14, 10000 Zagreb, Croatia",
+        "description": "Poslovno-trgovačko-stambena zgrada Osiguravajućeg društva Triglav na uglu Kneza Mislava 17 /Trg žrtava fašizma 14 sagrađena je 1923. prema projektu Dionisa Sunka. Zgradi čiji je ugaoni položaj naglašen kupolom, monumentalnost daju jonski pilastri i polustupovi velikog reda na uličnim pročeljima. Oblikovanje zgrada u stilu moderniziranog neoklasicizma karakteristično je za međuratnu zagrebačku arhitekturu.",
         "architects": [
-          "Ignjat Fischer"
+          "Dionis Sunko"
         ],
-        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-bana-jelacica-10?ulica=trg-bana-jelacica",
-        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20bana%20Jela%C4%8Di%C4%87a%209%20i%2010%20%201_cf24.JPG",
-        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20bana%20jelacica%209%20i%2010%20%201_cf24.jpg",
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/kneza-mislava-17?ulica=trg-zrtava-fasizma",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Kneza%20Mislava%2017%20-Trg%20%C5%BErt.fa%C5%A1.14%20%201_6485.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/kneza%20mislava%2017%20-trg%20zrt.fas.14%20%201_6485.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/105487407"
+        "osmRef": "way/289540874"
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              15.9786622,
-              45.8131945
+              15.9861571,
+              45.8094742
             ],
             [
-              15.9785294,
-              45.8128597
+              15.9861114,
+              45.8095056
             ],
             [
-              15.9791015,
-              45.8128232
+              15.9860813,
+              45.8094855
             ],
             [
-              15.9791704,
-              45.8128172
+              15.9860304,
+              45.809523
             ],
             [
-              15.9791739,
-              45.8129017
+              15.985969,
+              45.80954
             ],
             [
-              15.9791657,
-              45.8131459
+              15.9859514,
+              45.8095154
             ],
             [
-              15.9786622,
-              45.8131945
+              15.9860224,
+              45.8094615
+            ],
+            [
+              15.9859952,
+              45.8094473
+            ],
+            [
+              15.985928,
+              45.8094932
+            ],
+            [
+              15.9858936,
+              45.8094687
+            ],
+            [
+              15.9859603,
+              45.8094136
+            ],
+            [
+              15.9859412,
+              45.8094004
+            ],
+            [
+              15.9860413,
+              45.8093177
+            ],
+            [
+              15.9860801,
+              45.8093425
+            ],
+            [
+              15.9862504,
+              45.8094512
+            ],
+            [
+              15.9861844,
+              45.8094687
+            ],
+            [
+              15.9861571,
+              45.8094742
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambeno-poslovna-zgrada-brunner-rackoga",
+      "properties": {
+        "id": "stambeno-poslovna-zgrada-brunner-rackoga",
+        "name": "Stambeno-poslovna zgrada Brunner",
+        "address": "Račkoga / Trg žrtava fašizma 1, 10000 Zagreb, Croatia",
+        "description": "Stambeno-poslovna zgrada Brunner na uglu Trg žrtava fašizma 1 /Račkoga sagrađena je 1922./1923. prema projektu Ignjata Fischera.［...］\"Fasadni plašt zgrade je za svoje vrijeme neobično jednostavan. Prizemlje je rastvoreno elegantnim arkadama, motivom koji će Fischer kasnije ponoviti na još nekoliko svojih zgrada čije je prizemlje bilo namijenjeno trgovanju. Prozori katova nižu se u mirnom ritmu, njihovi su okviri fino profilirani i plitki, kao i razdjelni vijenci. Jedini plastični elementi pročelja su profilirani korniš i balkon s konzolama naglašenoga plasticiteta, smješten na drugom katu na samom uglu zgrade. Glavni je ulaz zgrade obilježen nešto širim lukom, a apostrofira ga i reljefni ukras nad prozorom prvoga kata. Među zgradama na tadašnjem Trgu N građenima u isto vrijeme kad i kuća Brunner samo pročelje Kovačićeve kuće na kbr. 3 govori istim jezikom suzdržanog (neo)neoklasicizma. Susjedne kuće atelijera Benedik & Baranyai, Rudolfa Lubynskog, Lava Kalde i Dionisa Sunka u to su vrijeme tipični primjeri monumentalne neohistoricističke arhitekture 1920-ih godina.\"¹ Izvor: ¹Marina Bagarić, 2011:299",
+        "architects": [
+          "Ignjat Fischer"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/rackoga?ulica=trg-zrtava-fasizma",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_%C5%BErtava_fa%C5%A1izma_1__55.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_zrtava_fasizma_1__55.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/396304781"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              20.4778443,
+              44.8157934
+            ],
+            [
+              20.4778457,
+              44.8156673
+            ],
+            [
+              20.4779892,
+              44.8156682
+            ],
+            [
+              20.4779877,
+              44.8157942
+            ],
+            [
+              20.4778443,
+              44.8157934
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambeno-poslovna-zgrada-danas-hotel-le-premier-kralja-drzislava-5-5",
+      "properties": {
+        "id": "stambeno-poslovna-zgrada-danas-hotel-le-premier-kralja-drzislava-5-5",
+        "name": "Stambeno-poslovna zgrada, danas hotel Le Premier",
+        "address": "Kralja Držislava 5 / Trg žrtava fašizma, 10000 Zagreb, Croatia",
+        "description": "Stambeno-poslovna zgrada na uglu Ulica kralja Držislava 5 /Trg žrtava fašizma sagrađena je 1922./1923. prema projektu Lava Kalde. Masivna uglovnica s mansardnim krovištem prema ulici i ravnim krovom prema dvorištu nastala je između dva svjetska rata, u razdoblju između secesijske moderne i racionalnog funkcionalizma.¹ Danas je to luksuzni boutique hotel Le Premier u vlasništvu Sveučilišta Libertas. Izvor: ¹ Darja Radović Mahečić -1",
+        "architects": [
+          "Lav Kalda"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/kralja-drzislava-5?ulica=trg-zrtava-fasizma",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Kralja%20Dr%C5%BEislava%205%20%201_3c9c.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/kralja%20drzislava%205%20%201_3c9c.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/289540864"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9862029,
+              45.8103802
+            ],
+            [
+              15.986,
+              45.8102628
+            ],
+            [
+              15.98601,
+              45.8101478
+            ],
+            [
+              15.9858045,
+              45.8101433
+            ],
+            [
+              15.9858075,
+              45.8100311
+            ],
+            [
+              15.9861018,
+              45.8100455
+            ],
+            [
+              15.9862238,
+              45.8100526
+            ],
+            [
+              15.986225,
+              45.8103481
+            ],
+            [
+              15.9862029,
+              45.8103802
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambeno-poslovna-zgrada-eksploatacija-drva-d-d-trg-zrtava-fasizma-3-3",
+      "properties": {
+        "id": "stambeno-poslovna-zgrada-eksploatacija-drva-d-d-trg-zrtava-fasizma-3-3",
+        "name": "Stambeno-poslovna zgrada Eksploatacija drva d.d.",
+        "address": "Trg žrtava fašizma 3, 10000 Zagreb, Croatia",
+        "description": "Stambeno-poslovna zgrada Eksploatacija drva d.d. na Trgu žrtava fašizma 3 sagrađena je 1922./1923. prema projektu Viktora Kovačića. Zgrada zorno govori o filtriranju oblikovanja, o novom rasteru otvora koji teži prema standardiziranju, o pročelju koje prestaje biti kulisa i koje odbacuje reprezentativnost kao obilježje kvalitete. Kovačić na manje reprezentativan način varira temu palače Slaveks sa Svačićeva trga. Temeljna oznaka pročelja izrazita je jednostavnost, ali uz maksimalnu uravnoteženost otvora koji, uz malo naglašeni meandrirani friz iznad prizemlja i okrugle medaljone pod prozorima katova, nemaju drugog plastičnog ukrasa. Usput ne smijemo zaboraviti da je to prethodnica arhitekture tridesetih godina, prethodnica koja je već riješila mnoge probleme i čije rješenje postaje sastavnim dijelom novih razmišljanja. (Maroević -2, 2007:108, 130)",
+        "architects": [
+          "Viktor Kovačić"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-zrtava-fasizma-3?ulica=trg-zrtava-fasizma",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_%C5%BErtava_fa%C5%A1_3__1.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_zrtava_fas_3__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/289540868"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9870944,
+              45.8105824
+            ],
+            [
+              15.9874144,
+              45.8105924
+            ],
+            [
+              15.987409,
+              45.8107076
+            ],
+            [
+              15.9874086,
+              45.8107266
+            ],
+            [
+              15.9873547,
+              45.8107259
+            ],
+            [
+              15.9873488,
+              45.8108159
+            ],
+            [
+              15.9872644,
+              45.8108127
+            ],
+            [
+              15.9872721,
+              45.8107151
+            ],
+            [
+              15.9872059,
+              45.8107107
+            ],
+            [
+              15.9872034,
+              45.8108105
+            ],
+            [
+              15.9871213,
+              45.8108072
+            ],
+            [
+              15.987126,
+              45.8107064
+            ],
+            [
+              15.9870858,
+              45.8107051
+            ],
+            [
+              15.9870944,
+              45.8105824
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambeno-trgovacka-zgrada-kraus-muacevic-kralja-zvonimira-2-2",
+      "properties": {
+        "id": "stambeno-trgovacka-zgrada-kraus-muacevic-kralja-zvonimira-2-2",
+        "name": "Stambeno-trgovačka zgrada Kraus-Muačević",
+        "address": "Kralja Zvonimira 2 / Trg žrtava fašizma 8, 10000 Zagreb, Croatia",
+        "description": "Stambeno-trgovačka zgrada dr. Ivana Rikarda Krausa i Jelke Kraus Muačević na uglu Ulica kralja Zvonimira 2 /Trg žrtava fašizma 8 sagrađena je 1924./1925. prema projektu Ignjata Fischera.［...］\"Prizemlje kuće rastvoreno je arkadama profiliranih okvira, etaže dijele razdjelni vijenci, prozori su uokvireni jednostavnim profiliranim okvirima, osim onih na drugome katu koji imaju trokutne zabate. Pročelja kuće imaju središnje rizalite s balkonima na drugom katu, a završavaju trokutnim zabatima. Balkoni punih ograda počivaju na dva, odnosno tri luka koje “nose” predimenzionirane pune konzole s reljfno ukrašenim stranicama. Dubina balkona i lukova s izduženim konzolama daje zgradi ekspresivnu monumentalnost.\"¹ Izvor: ¹Marina Bagarić, 2011:302",
+        "architects": [
+          "Ignjat Fischer"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/kralja-zvonimira-2?ulica=trg-zrtava-fasizma",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_%C5%BErtava_fa%C5%A1_8__1.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_zrtava_fas_8__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/521945197"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              17.0006345,
+              43.8313978
+            ],
+            [
+              17.0006016,
+              43.8312873
+            ],
+            [
+              17.0007831,
+              43.8312592
+            ],
+            [
+              17.0008159,
+              43.8313697
+            ],
+            [
+              17.0006345,
+              43.8313978
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "trgovacko-stambena-zgrada-ullmann-kralja-drzislava",
+      "properties": {
+        "id": "trgovacko-stambena-zgrada-ullmann-kralja-drzislava",
+        "name": "Trgovačko­-stambena zgrada Ullmann",
+        "address": "Kralja Držislava / Trg žrtava fašizma 15, 10000 Zagreb, Croatia",
+        "description": "Trgovačko­-stambena zgrada Ullmann na uglu Trg žrtava faš­izma 15 /Ulica kralja Držislava sagrađena je 1924./1925. prema projektu Lava Kalde. Kao i druge Kaldine palače nastale u međuratnom razdoblju i ova se gradnja odlikuje racionalnoš­ću, jednostavnom monumentalnoš­ću, elegantnim mjerilom, vješ­tom prostornom dispozicijom i visokom razinom izvedbe. (Darja Radović Mahečić -1)",
+        "architects": [
+          "Lav Kalda"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/kralja-drzislava?ulica=trg-zrtava-fasizma",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20%C5%BErtava%20fa%C5%A1izma%2015%20-Kralja%20Dr%C5%BEislava%20%201_8fa0.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20zrtava%20fasizma%2015%20-kralja%20drzislava%20%201_8fa0.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/559850159"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              18.6930718,
+              45.5587536
+            ],
+            [
+              18.6930496,
+              45.5587667
+            ],
+            [
+              18.6930224,
+              45.5587738
+            ],
+            [
+              18.6929934,
+              45.558774
+            ],
+            [
+              18.6929676,
+              45.558768
+            ],
+            [
+              18.6929458,
+              45.5587567
+            ],
+            [
+              18.6929302,
+              45.558741
+            ],
+            [
+              18.692955,
+              45.5587371
+            ],
+            [
+              18.6929486,
+              45.5587171
+            ],
+            [
+              18.6930596,
+              45.5587
+            ],
+            [
+              18.6930659,
+              45.5587202
+            ],
+            [
+              18.6930918,
+              45.5587162
+            ],
+            [
+              18.6930865,
+              45.5587361
+            ],
+            [
+              18.6930718,
+              45.5587536
             ]
           ]
         ]
@@ -962,6 +1735,119 @@
             [
               15.9766738,
               45.8137186
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zgrada-jugoslavenske-akademije-znanosti-i-umjetnosti-trg-zrtava-fasizma-11-11",
+      "properties": {
+        "id": "zgrada-jugoslavenske-akademije-znanosti-i-umjetnosti-trg-zrtava-fasizma-11-11",
+        "name": "Zgrada Jugoslavenske akademije znanosti i umjetnosti",
+        "address": "Trg žrtava fašizma 11, 10000 Zagreb, Croatia",
+        "description": "Zgrada Jugoslavenske akademije znanosti i umjetnosti, potom Studentski dom “Ivan Meštrović”, danas zgrada u vlasništvu HAZU-a na Trgu žrtava fašizma 11 sagrađena je 1933./1934. prema projektu Ede Šena. Široka zgrada zauzima cijelu južnu stranu toga trga.［...］”Tu je uočljiva jednostavnost oblikovanja arhitekta koji svoju maštu podređuje elementima gabarita i volumena. U rasteru otvora na jednostavnom pročelju ostvaruje svoju oblikovnu misao. I to je sve, a za uzvrat dobivamo definiranu modernost izraza, koja je još uvijek u hodu, u traženju rješenja, ali i u čvrsto određenom htijenju.”¹ Izvor: ¹Ivo Maroević -2, 2007:130",
+        "architects": [
+          "Edo Šen"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-zrtava-fasizma-11?ulica=trg-zrtava-fasizma",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_%C5%BErtava_fa%C5%A1_11__1.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_zrtava_fas_11__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/245735487"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9879944,
+              45.8092923
+            ],
+            [
+              15.9878855,
+              45.8093274
+            ],
+            [
+              15.9877812,
+              45.8093364
+            ],
+            [
+              15.9871817,
+              45.8093169
+            ],
+            [
+              15.9865919,
+              45.8093026
+            ],
+            [
+              15.9864481,
+              45.8092602
+            ],
+            [
+              15.9865374,
+              45.8091645
+            ],
+            [
+              15.9868204,
+              45.8091779
+            ],
+            [
+              15.9868216,
+              45.8092087
+            ],
+            [
+              15.9869089,
+              45.8092131
+            ],
+            [
+              15.9869129,
+              45.8091777
+            ],
+            [
+              15.9871179,
+              45.8091876
+            ],
+            [
+              15.9871162,
+              45.8092177
+            ],
+            [
+              15.9871897,
+              45.8092191
+            ],
+            [
+              15.9873277,
+              45.8092217
+            ],
+            [
+              15.9873302,
+              45.8091949
+            ],
+            [
+              15.9875384,
+              45.8091999
+            ],
+            [
+              15.9875333,
+              45.809229
+            ],
+            [
+              15.9876961,
+              45.8092329
+            ],
+            [
+              15.9876925,
+              45.8092098
+            ],
+            [
+              15.9878827,
+              45.8092068
+            ],
+            [
+              15.9879944,
+              45.8092923
             ]
           ]
         ]

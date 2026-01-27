@@ -110,7 +110,7 @@ export function MapView({ onSelectBuilding }: Props) {
     map.addControl(new maplibregl.NavigationControl(), "top-left");
 
     map.on("load", async () => {
-      const res = await fetch("/data/buildings.geojson");
+      const res = await fetch("/data/buildings_combined.geojson");
       const geojson = await res.json();
 
       map.addSource("buildings", {
@@ -198,7 +198,14 @@ export function MapView({ onSelectBuilding }: Props) {
           description: p.description ? String(p.description) : null,
           architects: parseArchitects(p.architects),
           sourceUrl: p.sourceUrl ? String(p.sourceUrl) : null,
+
+          imageThumbUrl: p.imageThumbUrl ? String(p.imageThumbUrl) : null,
+          imageFullUrl: p.imageFullUrl ? String(p.imageFullUrl) : null,
+          builtYear: p.builtYear ? String(p.builtYear) : "Unknown",
         };
+
+        console.log("IMG DEBUG", b.id, b.imageThumbUrl, b.imageFullUrl);
+
 
         onSelectBuilding(b);
       });

@@ -59,6 +59,37 @@ export function DetailsPanel({ building, onClose }: Props) {
         </div>
 
         <div className="p-4 space-y-5">
+        {building.imageThumbUrl || building.imageFullUrl ? (
+            <div>
+              <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                Photo
+              </div>
+
+              <a
+                href={building.imageFullUrl || building.imageThumbUrl || "#"}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-2 block"
+              >
+                <img
+                  src={building.imageThumbUrl || building.imageFullUrl || ""}
+                  alt={title}
+                  className="w-full rounded-xl border"
+                  loading="lazy"
+                />
+              </a>
+            </div>
+          ) : null}
+
+          <div>
+            <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+              Built year
+            </div>
+            <div className="mt-1 text-sm text-gray-900">
+              {building.builtYear || "Unknown"}
+            </div>
+          </div>
+
           <div>
             <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">
               Address

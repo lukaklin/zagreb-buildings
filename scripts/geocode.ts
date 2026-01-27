@@ -2,6 +2,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { parse } from "csv-parse/sync";
 import { stringify } from "csv-stringify/sync";
+import { validateCoordinates, withErrorHandling, writeValidationReport } from "./validation.ts";
 
 type CanonicalRow = {
   id: string;
@@ -10,7 +11,12 @@ type CanonicalRow = {
   description: string;
   architects: string;
   source_url: string;
+
+  image_full_url: string;
+  image_thumb_url: string;
+  built_year: string;
 };
+
 
 type GeocodeCacheEntry = {
   lat: number | null;
@@ -21,9 +27,12 @@ type GeocodeCacheEntry = {
   raw?: unknown; // optional for debugging
 };
 
-const INPUT_CSV = path.join("input", "canonical", "buildings_canonical.csv");
-const OUTPUT_CSV = path.join("input", "canonical", "buildings_geocoded.csv");
-const CACHE_PATH = path.join("cache", "geocode.json");
+// Accept area as command line argument, default to combined for backward compatibility
+const AREA_SLUG = process.argv[2] || "combined";
+
+const INPUT_CSV = path.join("input", "canonical", `buildings_${AREA_SLUG}_canonical.csv`);
+const OUTPUT_CSV = path.join("input", "canonical", `buildings_${AREA_SLUG}_geocoded.csv`);
+const CACHE_PATH = path.join("cache", `geocode_${AREA_SLUG}.json`);
 
 // Be a good citizen: 1 request / second
 const RATE_LIMIT_MS = 1100;
@@ -134,73 +143,127 @@ async function geocodeNominatim(address: string): Promise<GeocodeCacheEntry> {
 }
 
 async function main() {
-  // Ensure cache dir exists
-  await fs.mkdir("cache", { recursive: true });
+  const result = await withErrorHandling(async () => {
+    // Ensure cache dir exists
+    await fs.mkdir("cache", { recursive: true });
 
-  const csvText = await fs.readFile(INPUT_CSV, "utf8");
-  const rows = parse(csvText, {
-    columns: true,
-    skip_empty_lines: true,
-    trim: true,
-  }) as CanonicalRow[];
+    const csvText = await fs.readFile(INPUT_CSV, "utf8");
+    const rows = parse(csvText, {
+      columns: true,
+      skip_empty_lines: true,
+      trim: true,
+    }) as CanonicalRow[];
 
-  // Basic validation
-  const required = ["id", "name", "address", "description", "architects", "source_url"] as const;
-  for (const [i, r] of rows.entries()) {
-    for (const k of required) {
-      if (!(k in r)) throw new Error(`Missing column '${k}' in row ${i + 2}`);
-    }
-    if (!r.id?.trim()) throw new Error(`Row ${i + 2}: empty id`);
-  }
+    console.log(`📊 Processing ${rows.length} building records for geocoding`);
 
-  const cache = await readJsonIfExists<Record<string, GeocodeCacheEntry>>(CACHE_PATH, {});
-
-  const out: Array<CanonicalRow & { lat: string; lon: string; geocode_display_name: string }> = [];
-
-  for (let i = 0; i < rows.length; i++) {
-    const r = rows[i];
-    const addr = normalizeAddress(choosePrimaryAddress(r.address));
-    const primaryAddr = addr.split("/")[0].trim();
-    const cacheKey = primaryAddr.toLowerCase();
-    
-    let entry = cache[cacheKey];
-
-    if (!entry) {
-      console.log(`[${i + 1}/${rows.length}] Geocoding: ${primaryAddr} (from: ${addr})`);
-      entry = await geocodeNominatim(primaryAddr);
-      cache[cacheKey] = entry;
-      await writeJson(CACHE_PATH, cache);
-      await sleep(RATE_LIMIT_MS);
-    } else {
-      console.log(`[${i + 1}/${rows.length}] Cache hit: ${addr}`);
-    }
-
-    out.push({
-      ...r,
-      lat: entry.lat === null ? "" : String(entry.lat),
-      lon: entry.lon === null ? "" : String(entry.lon),
-      geocode_display_name: entry.display_name ?? "",
-    });
-  }
-
-  const outCsv = stringify(out, {
-    header: true,
-    columns: [
+    // Enhanced validation
+    const required = [
       "id",
       "name",
       "address",
       "description",
       "architects",
       "source_url",
-      "lat",
-      "lon",
-      "geocode_display_name",
-    ],
-  });
+      "image_full_url",
+      "image_thumb_url",
+      "built_year",
+    ] as const;
 
-  await fs.writeFile(OUTPUT_CSV, outCsv, "utf8");
-  console.log(`\n✅ Wrote ${OUTPUT_CSV}`);
-  console.log(`✅ Cache updated at ${CACHE_PATH}\n`);
+    for (const [i, r] of rows.entries()) {
+      for (const k of required) {
+        if (!(k in r)) throw new Error(`Missing column '${k}' in row ${i + 2}`);
+      }
+      if (!r.id?.trim()) throw new Error(`Row ${i + 2}: empty id`);
+    }
+
+    const cache = await readJsonIfExists<Record<string, GeocodeCacheEntry>>(CACHE_PATH, {});
+
+    const out: Array<CanonicalRow & { lat: string; lon: string; geocode_display_name: string }> = [];
+    const validationResults = [];
+
+    let geocodingSuccess = 0;
+    let geocodingFailed = 0;
+    let cacheHits = 0;
+
+    for (let i = 0; i < rows.length; i++) {
+      const r = rows[i];
+      const addr = normalizeAddress(choosePrimaryAddress(r.address));
+      const primaryAddr = addr.split("/")[0].trim();
+      const cacheKey = primaryAddr.toLowerCase();
+
+      let entry = cache[cacheKey];
+
+      if (!entry) {
+        console.log(`[${i + 1}/${rows.length}] Geocoding: ${primaryAddr} (from: ${addr})`);
+        entry = await geocodeNominatim(primaryAddr);
+        cache[cacheKey] = entry;
+        await writeJson(CACHE_PATH, cache);
+        await sleep(RATE_LIMIT_MS);
+      } else {
+        console.log(`[${i + 1}/${rows.length}] Cache hit: ${addr}`);
+        cacheHits++;
+      }
+
+      // Validate geocoding results
+      const validation = validateCoordinates(entry.lat, entry.lon);
+      validationResults.push(validation);
+
+      if (validation.isValid) {
+        geocodingSuccess++;
+      } else {
+        geocodingFailed++;
+        console.warn(`⚠️  Geocoding validation failed for "${primaryAddr}":`, validation.errors);
+      }
+
+      out.push({
+        ...r,
+        lat: entry.lat === null ? "" : String(entry.lat),
+        lon: entry.lon === null ? "" : String(entry.lon),
+        geocode_display_name: entry.display_name ?? "",
+      });
+    }
+
+    const outCsv = stringify(out, {
+      header: true,
+      columns: [
+        "id",
+        "name",
+        "address",
+        "description",
+        "architects",
+        "source_url",
+        "image_full_url",
+        "image_thumb_url",
+        "built_year",
+        "lat",
+        "lon",
+        "geocode_display_name",
+      ],
+    });
+
+    await fs.writeFile(OUTPUT_CSV, outCsv, "utf8");
+
+    // Write geocoding validation report
+    const geocodingReportPath = path.join("output", "geocoding_validation.json");
+    await writeValidationReport(geocodingReportPath, validationResults, "Geocoding Validation");
+
+    console.log(`\n✅ Wrote ${OUTPUT_CSV}`);
+    console.log(`✅ Cache updated at ${CACHE_PATH}`);
+    console.log(`📊 Geocoding results: ${geocodingSuccess} success, ${geocodingFailed} failed, ${cacheHits} cache hits`);
+
+    return {
+      totalRecords: rows.length,
+      geocodingSuccess,
+      geocodingFailed,
+      cacheHits
+    };
+
+  }, "Geocoding process");
+
+  if (!result.success) {
+    console.error("❌ Geocoding failed with errors:", result.errors);
+    process.exit(1);
+  }
 }
 
 main().catch((err) => {

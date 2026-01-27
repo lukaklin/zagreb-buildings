@@ -339,16 +339,9 @@ function extractHouseNumberFromAddress(addr: string): string | null {
       console.log(`    Trying radius ${radius}m for ${buildingId}`);
 
       const query = overpassQuery(lat, lon, radius);
-      let overpassJson: any;
-
-      try {
-        overpassJson = await fetchOverpass(query);
-      } catch (e) {
-        console.warn(`      ⚠️ Overpass failed at radius ${radius}m for ${buildingId}, skipping radius`);
-        continue; // ⬅️ THIS is the key line
-      }
-      
+      const overpassJson = await fetchOverpass(query);
       const features = toFeatures(overpassJson);
+
       const result = pickBest(features, lat, lon, canonicalAddress, override);
 
       if (result.feature) {
