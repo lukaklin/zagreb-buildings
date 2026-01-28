@@ -6,35 +6,8 @@ import {
   detectIdCollisions,
   withErrorHandling,
   writeValidationReport
-} from "./validation.ts";
-
-type RawBuilding = {
-  source: string;
-  source_url: string;
-  retrieved_at: string;
-
-  name: string | null;
-  address: string | null;
-  architects_raw: string | null;
-  description_raw: string | null;
-
-  image_full_url: string | null;
-  image_thumb_url: string | null;
-  built_year: "Unknown";
-};
-
-type CanonicalRow = {
-  id: string;
-  name: string;
-  address: string;
-  description: string;
-  architects: string;
-  source_url: string;
-
-  image_full_url: string;
-  image_thumb_url: string;
-  built_year: string;
-};
+} from "./validation";
+import type { RawBuilding, CanonicalRow } from "./types";
 
 
 // Accept area as command line argument, default to trg-bana-jelacica for backward compatibility
@@ -109,6 +82,109 @@ function normalizeAddress(rawAddr: string | null) {
   return a;
 }
 
+/**
+ * Expands an address range into endpoints only.
+ * Handles patterns like "Trg bana Jelačića 10A - 10" or "Jurišićeva 1-4"
+ * Returns only endpoints, not expanded numeric ranges.
+ */
+function expandAddressRange(rangeStr: string): string[] {
+  const normalized = normalizeWhitespace(rangeStr);
+  
+  // Match dash separators: " - " (with spaces), "-" (without spaces), " – " (en-dash), " — " (em-dash)
+  const dashPattern = /\s*[-\u2013\u2014]\s*/;
+  const match = normalized.match(dashPattern);
+  
+  if (!match) {
+    // No dash found, return as-is
+    return [normalized];
+  }
+  
+  const dashIndex = match.index!;
+  const firstPart = normalizeWhitespace(normalized.slice(0, dashIndex));
+  const secondPart = normalizeWhitespace(normalized.slice(dashIndex + match[0].length));
+  
+  if (!firstPart || !secondPart) {
+    // Invalid range, return as-is
+    return [normalized];
+  }
+  
+  // Extract street and house number from first part
+  const { street: firstStreet, house_number: firstNumber } = parseStreetAndHouseNumber(firstPart);
+  
+  // Check if second part is just a number/house number (no street name)
+  const secondNumberMatch = secondPart.match(/^\s*(\d+[A-Za-z]?)\s*$/);
+  
+  if (secondNumberMatch) {
+    // Second part is just a number, prepend the street from first part
+    const secondNumber = secondNumberMatch[1];
+    const secondAddress = firstStreet ? `${firstStreet} ${secondNumber}` : secondNumber;
+    
+    // Return endpoints only (do not expand numeric ranges)
+    return [firstPart, secondAddress];
+  } else {
+    // Second part already contains a street name, use as-is
+    // Extract street from second part to verify
+    const { street: secondStreet } = parseStreetAndHouseNumber(secondPart);
+    
+    if (!secondStreet || secondStreet.length < 3) {
+      // Second part doesn't look like a full address, try prepending first street
+      const { house_number: secondNumber } = parseStreetAndHouseNumber(secondPart);
+      if (secondNumber && firstStreet) {
+        return [firstPart, `${firstStreet} ${secondNumber}`];
+      }
+    }
+    
+    // Both parts are full addresses
+    return [firstPart, secondPart];
+  }
+}
+
+function splitMultiAddress(rawAddr: string) {
+  // First split on "/" to separate different streets
+  const parts = rawAddr
+    .split("/")
+    .map((s) => normalizeWhitespace(s))
+    .filter(Boolean);
+  
+  // Expand any dash-separated ranges in each part
+  const expanded: string[] = [];
+  for (const part of parts) {
+    // Check if part contains a dash separator
+    const hasDash = /\s*[-\u2013\u2014]\s*/.test(part);
+    
+    if (hasDash) {
+      // Expand the range (returns endpoints only)
+      const rangeParts = expandAddressRange(part);
+      expanded.push(...rangeParts);
+    } else {
+      // No dash, add as-is
+      expanded.push(part);
+    }
+  }
+  
+  return expanded;
+}
+
+function choosePrimaryAddressFromParts(parts: string[]) {
+  // Keep behavior aligned with geocoder heuristics: prefer trg-bana segment if present.
+  const trg = parts.find((p) => /trg bana/i.test(p));
+  return trg ?? parts[0] ?? "";
+}
+
+function parseStreetAndHouseNumber(addr: string): { street: string; house_number: string } {
+  // Strip trailing city/postcode/country
+  const core = normalizeWhitespace(addr.replace(/,\s*.*$/, ""));
+  const m = core.match(/\b(\d+[A-Za-z]?)\b/);
+  const house_number = m ? m[1] : "";
+
+  if (!m || m.index == null) {
+    return { street: core, house_number };
+  }
+
+  const street = normalizeWhitespace(core.slice(0, m.index)).replace(/[,\-–]+$/g, "").trim();
+  return { street: street || core, house_number };
+}
+
 function extractStreetAndNumber(address: string) {
   // Best-effort: take the first segment before "/" for slugging
   const primary = normalizeWhitespace(address.split("/")[0] ?? address);
@@ -155,7 +231,8 @@ async function main() {
 
     for (const r of raws) {
       const name = normalizeWhitespace(r.name ?? "");
-      const address = normalizeAddress(r.address);
+      const address_raw = normalizeWhitespace(r.address ?? "");
+      const address = normalizeAddress(address_raw);
       const architects = normalizeArchitects(r.architects_raw);
       const description = normalizeWhitespace(r.description_raw ?? "");
       const source_url = r.source_url;
@@ -172,10 +249,25 @@ async function main() {
 
       const id = makeStableId(name, address);
 
+      const addressPartsRaw = splitMultiAddress(address_raw || address);
+      const primaryAddressRaw = choosePrimaryAddressFromParts(addressPartsRaw);
+
+      const normalizedAddressParts = addressPartsRaw.map((p) => {
+        const normalized = normalizeAddress(p);
+        const { street, house_number } = parseStreetAndHouseNumber(p);
+        return { raw: p, normalized, street, house_number };
+      });
+
+      const primary_address = normalizeAddress(primaryAddressRaw || address);
+      const addresses_json = JSON.stringify(normalizedAddressParts);
+
       canonical.push({
         id,
         name,
         address,
+        address_raw,
+        primary_address,
+        addresses_json,
         description: description || "(TODO) Add short description",
         architects: architects || "Unknown",
         source_url,
@@ -213,6 +305,9 @@ async function main() {
         "id",
         "name",
         "address",
+        "address_raw",
+        "primary_address",
+        "addresses_json",
         "description",
         "architects",
         "source_url",

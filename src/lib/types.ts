@@ -10,17 +10,3 @@ export type Building = {
   imageFullUrl?: string | null;
   builtYear?: string | null; // "Unknown" for now
 };
-
-// Minimal shape of our GeoJSON feature properties
-export type BuildingProperties = {
-  id: string;
-  name?: string;
-  address?: string;
-  description?: string;
-  architects?: string[];
-  sourceUrl?: string;
-
-  imageThumbUrl?: string;
-  imageFullUrl?: string;
-  builtYear?: string;
-};

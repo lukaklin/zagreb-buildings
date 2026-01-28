@@ -123,6 +123,7 @@ export function MapView({ onSelectBuilding }: Props) {
         id: "buildings-fill",
         type: "fill",
         source: "buildings",
+        filter: ["!=", ["geometry-type"], "Point"],
         paint: {
           "fill-color": [
             "case",
@@ -147,6 +148,7 @@ export function MapView({ onSelectBuilding }: Props) {
         id: "buildings-outline",
         type: "line",
         source: "buildings",
+        filter: ["!=", ["geometry-type"], "Point"],
         paint: {
           "line-color": [
             "case",
@@ -168,6 +170,41 @@ export function MapView({ onSelectBuilding }: Props) {
         },
       });
 
+      map.addLayer({
+        id: "buildings-points",
+        type: "circle",
+        source: "buildings",
+        filter: ["==", ["geometry-type"], "Point"],
+        paint: {
+          "circle-radius": [
+            "case",
+            ["boolean", ["feature-state", "selected"], false],
+            10,
+            ["boolean", ["feature-state", "hover"], false],
+            8,
+            6,
+          ],
+          "circle-color": [
+            "case",
+            ["boolean", ["feature-state", "selected"], false],
+            "#2563eb",
+            ["boolean", ["feature-state", "hover"], false],
+            "#60a5fa",
+            "#f59e0b",
+          ],
+          "circle-opacity": 0.85,
+          "circle-stroke-width": [
+            "case",
+            ["boolean", ["feature-state", "selected"], false],
+            3,
+            ["boolean", ["feature-state", "hover"], false],
+            2,
+            1.5,
+          ],
+          "circle-stroke-color": "#1e3a8a",
+        },
+      });
+
       // Hover highlight
       map.on("mousemove", "buildings-fill", (e) => {
         const f = e.features?.[0];
@@ -178,7 +215,21 @@ export function MapView({ onSelectBuilding }: Props) {
         setHover(map, id);
       });
 
+      map.on("mousemove", "buildings-points", (e) => {
+        const f = e.features?.[0];
+        const id = (f?.properties as any)?.id ?? null;
+        if (id == null) return;
+
+        map.getCanvas().style.cursor = "pointer";
+        setHover(map, id);
+      });
+
       map.on("mouseleave", "buildings-fill", () => {
+        map.getCanvas().style.cursor = "";
+        setHover(map, null);
+      });
+
+      map.on("mouseleave", "buildings-points", () => {
         map.getCanvas().style.cursor = "";
         setHover(map, null);
       });
@@ -204,8 +255,28 @@ export function MapView({ onSelectBuilding }: Props) {
           builtYear: p.builtYear ? String(p.builtYear) : "Unknown",
         };
 
-        console.log("IMG DEBUG", b.id, b.imageThumbUrl, b.imageFullUrl);
+        onSelectBuilding(b);
+      });
 
+      map.on("click", "buildings-points", (e: MapLayerMouseEvent) => {
+        const f = e.features?.[0];
+        const p = (f?.properties ?? {}) as any;
+
+        const id = p.id ?? null;
+        setSelected(map, id);
+
+        const b: Building = {
+          id: String(p.id ?? ""),
+          name: p.name ? String(p.name) : null,
+          address: p.address ? String(p.address) : null,
+          description: p.description ? String(p.description) : null,
+          architects: parseArchitects(p.architects),
+          sourceUrl: p.sourceUrl ? String(p.sourceUrl) : null,
+
+          imageThumbUrl: p.imageThumbUrl ? String(p.imageThumbUrl) : null,
+          imageFullUrl: p.imageFullUrl ? String(p.imageFullUrl) : null,
+          builtYear: p.builtYear ? String(p.builtYear) : "Unknown",
+        };
 
         onSelectBuilding(b);
       });
@@ -213,7 +284,7 @@ export function MapView({ onSelectBuilding }: Props) {
       // Click empty space clears selection
       map.on("click", (e) => {
         const features = map.queryRenderedFeatures(e.point, {
-          layers: ["buildings-fill"],
+          layers: ["buildings-fill", "buildings-points"],
         });
         if (features.length === 0) {
           setSelected(map, null);

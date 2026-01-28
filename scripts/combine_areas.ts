@@ -3,18 +3,7 @@ import path from "node:path";
 import { parse } from "csv-parse/sync";
 import { stringify } from "csv-stringify/sync";
 import { detectIdCollisions, withErrorHandling } from "./validation.ts";
-
-type CanonicalRow = {
-  id: string;
-  name: string;
-  address: string;
-  description: string;
-  architects: string;
-  source_url: string;
-  image_full_url: string;
-  image_thumb_url: string;
-  built_year: string;
-};
+import type { CanonicalRow } from "./types";
 
 // Accept area slugs as command line arguments
 const areaSlugs = process.argv.slice(2);
@@ -86,6 +75,9 @@ async function main() {
         "id",
         "name",
         "address",
+        "address_raw",
+        "primary_address",
+        "addresses_json",
         "description",
         "architects",
         "source_url",

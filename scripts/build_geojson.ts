@@ -1,21 +1,10 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { parse } from "csv-parse/sync";
-import { withErrorHandling, writeValidationReport } from "./validation.ts";
+import { withErrorHandling, writeValidationReport } from "./validation";
+import type { ValidationResult } from "./validation";
 import turfArea from "@turf/area";
-
-type CanonicalRow = {
-  id: string;
-  name: string;
-  address: string;
-  description: string;
-  architects: string;
-  source_url: string;
-
-  image_full_url: string;
-  image_thumb_url: string;
-  built_year: string;
-};
+import type { CanonicalRow } from "./types";
 
 
 type GeometryPick = {
@@ -23,11 +12,30 @@ type GeometryPick = {
   geometry: GeoJSON.Geometry;
 };
 
+type FootprintResultFile = {
+  area: string;
+  results: Array<{
+    building_id: string;
+    status: string;
+    strategy: string;
+    confidence: string;
+    osm_refs: string[];
+    geometry: GeoJSON.Geometry | null;
+  }>;
+  counts?: Record<string, number>;
+};
+
+type GeocodedRow = CanonicalRow & {
+  lat?: string;
+  lon?: string;
+};
+
 // Accept area as command line argument, default to combined for backward compatibility
 const AREA_SLUG = process.argv[2] || "combined";
 
 const CANONICAL_CSV = path.join("input", "canonical", `buildings_${AREA_SLUG}_geocoded.csv`);
 const GEOMS_PATH = path.join("output", `geometries_${AREA_SLUG}.json`);
+const FOOTPRINT_RESULTS_PATH = path.join("output", `footprint_results_${AREA_SLUG}.json`);
 const OUT_GEOJSON = path.join("public", "data", `buildings_${AREA_SLUG}.geojson`);
 const QA_REPORT = path.join("output", `qa_report_${AREA_SLUG}.json`);
 
@@ -39,6 +47,15 @@ function splitArchitects(s: string | undefined): string[] {
     .filter(Boolean);
 }
 
+async function readJsonIfExists<T>(p: string): Promise<T | null> {
+  try {
+    const txt = await fs.readFile(p, "utf8");
+    return JSON.parse(txt) as T;
+  } catch {
+    return null;
+  }
+}
+
 async function main() {
   const result = await withErrorHandling(async () => {
     // --- read canonical CSV ---
@@ -47,40 +64,69 @@ async function main() {
       columns: true,
       skip_empty_lines: true,
       trim: true,
-    }) as CanonicalRow[];
+    }) as GeocodedRow[];
 
     // --- read geometries ---
     const geomMap = JSON.parse(
       await fs.readFile(GEOMS_PATH, "utf8")
     ) as Record<string, GeometryPick>;
 
-    console.log(`📊 Building GeoJSON from ${rows.length} canonical records and ${Object.keys(geomMap).length} geometries`);
+    const footprintResults = await readJsonIfExists<FootprintResultFile>(FOOTPRINT_RESULTS_PATH);
+    const footprintById: Record<string, FootprintResultFile["results"][number]> = {};
+    if (footprintResults?.results) {
+      for (const r of footprintResults.results) {
+        footprintById[r.building_id] = r;
+      }
+    }
+
+    console.log(
+      `📊 Building GeoJSON from ${rows.length} geocoded records, ${Object.keys(geomMap).length} geometries, and ${Object.keys(footprintById).length} footprint results`
+    );
 
     const features: GeoJSON.Feature[] = [];
     const missingGeometry: string[] = [];
-    const validationResults = [];
+    const validationResults: ValidationResult[] = [];
 
     // Geometry area statistics
     const areas: number[] = [];
 
     for (const r of rows) {
       const pick = geomMap[r.id];
+      const fp = footprintById[r.id];
 
-      if (!pick || !pick.geometry) {
+      const lat = Number((r as any).lat ?? "");
+      const lon = Number((r as any).lon ?? "");
+      const hasPoint = Number.isFinite(lat) && Number.isFinite(lon);
+
+      let geometry: GeoJSON.Geometry | null = fp?.geometry ?? pick?.geometry ?? null;
+      let footprintStatus = fp?.status ?? (pick?.geometry ? "matched_legacy" : "not_found");
+      let footprintStrategy = fp?.strategy ?? (pick?.geometry ? "legacy_geometries_map" : "none");
+      let footprintConfidence = fp?.confidence ?? "";
+      let footprintOsmRefs = fp?.osm_refs ?? (pick?.osm_ref ? [pick.osm_ref] : []);
+
+      if (!geometry && hasPoint) {
+        geometry = { type: "Point", coordinates: [lon, lat] };
+        footprintStatus = "not_found_point_fallback";
+        footprintStrategy = "point_fallback";
+      }
+
+      if (!geometry) {
         missingGeometry.push(r.id);
         continue;
       }
 
       // Calculate area for statistics
-      try {
-        const area = turfArea({
-          type: 'Feature',
-          geometry: pick.geometry,
-          properties: {}
-        });
-        areas.push(area);
-      } catch (e) {
-        console.warn(`Could not calculate area for ${r.id}:`, e);
+      if (geometry.type === "Polygon" || geometry.type === "MultiPolygon") {
+        try {
+          const area = turfArea({
+            type: "Feature",
+            geometry,
+            properties: {},
+          });
+          areas.push(area);
+        } catch (e) {
+          console.warn(`Could not calculate area for ${r.id}:`, e);
+        }
       }
 
       features.push({
@@ -98,9 +144,15 @@ async function main() {
           imageThumbUrl: r.image_thumb_url || undefined,
           builtYear: r.built_year || "Unknown",
 
-          osmRef: pick.osm_ref || undefined, // debugging helper
+          osmRef: footprintOsmRefs?.[0] || pick?.osm_ref || undefined, // debugging helper
+          osmRefs: footprintOsmRefs?.length ? footprintOsmRefs : undefined,
+          footprintStatus,
+          footprintStrategy,
+          footprintConfidence,
+          lat: hasPoint ? lat : undefined,
+          lon: hasPoint ? lon : undefined,
         },
-        geometry: pick.geometry,
+        geometry,
       });
     }
 
@@ -123,7 +175,9 @@ async function main() {
         total_rows: rows.length,
         features_written: features.length,
         missing_geometry_count: missingGeometry.length,
-        match_rate: `${((features.length / rows.length) * 100).toFixed(1)}%`
+        point_features: features.filter((f) => (f.geometry as any)?.type === "Point").length,
+        polygon_features: features.filter((f) => ["Polygon", "MultiPolygon"].includes((f.geometry as any)?.type)).length,
+        match_rate: `${((features.length / rows.length) * 100).toFixed(1)}%`,
       },
       geometry_stats: areas.length > 0 ? {
         count: areas.length,

@@ -3,6 +3,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import * as cheerio from "cheerio";
+import type { RawBuilding } from "./types";
 
 // Accept area as command line argument, default to trg-bana-jelacica for backward compatibility
 const AREA_SLUG = process.argv[2] || "trg-bana-jelacica";
@@ -18,22 +19,6 @@ const CACHE_DIR = path.join("cache", "html");
 const USER_AGENT =
   "zagreb-buildings-info-app/0.1 (contact: lukaklincic@hotmail.com)";
 const SLEEP_MS = 700;
-
-type RawBuilding = {
-  source: string;
-  source_url: string;
-  retrieved_at: string;
-
-  name: string | null;
-  address: string | null;
-  architects_raw: string | null;
-  description_raw: string | null;
-
-  // NEW
-  image_full_url: string | null;
-  image_thumb_url: string | null;
-  built_year: "Unknown";
-};
 
 
 function sleep(ms: number) {

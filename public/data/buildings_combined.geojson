@@ -18,7 +18,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20%C5%BErtava%20fa%C5%A1.%20BB%20%201_0b3c.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20zrtava%20fas.%20bb%20%201_0b3c.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/587748701"
+        "osmRef": "way/587748701",
+        "osmRefs": [
+          "way/587748701"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8099552,
+        "lon": 15.9872367
       },
       "geometry": {
         "type": "Polygon",
@@ -135,63 +143,66 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Gajeva_1_-Trg_bana_Jela%C4%8Di%C4%87a__1.jpg",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/gajeva_1_-trg_bana_jelacica__1.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/97165331"
+        "osmRef": "way/584464569",
+        "osmRefs": [
+          "way/584464569",
+          "way/1109233192"
+        ],
+        "footprintStatus": "matched_parts_merged",
+        "footprintStrategy": "radius_80m_parts_merged_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8126272,
+        "lon": 15.97669
       },
       "geometry": {
-        "type": "Polygon",
+        "type": "MultiPolygon",
         "coordinates": [
           [
             [
-              15.9760264,
-              45.8128902
-            ],
+              [
+                15.9768281,
+                45.8124704
+              ],
+              [
+                15.9768947,
+                45.8127604
+              ],
+              [
+                15.9765464,
+                45.8128126
+              ],
+              [
+                15.9764938,
+                45.812494
+              ],
+              [
+                15.9768281,
+                45.8124704
+              ]
+            ]
+          ],
+          [
             [
-              15.9760348,
-              45.812947
-            ],
-            [
-              15.9760367,
-              45.8129599
-            ],
-            [
-              15.97592,
-              45.8129672
-            ],
-            [
-              15.9758641,
-              45.8129704
-            ],
-            [
-              15.9758602,
-              45.8129578
-            ],
-            [
-              15.9758544,
-              45.8129104
-            ],
-            [
-              15.9758261,
-              45.8127341
-            ],
-            [
-              15.975896,
-              45.8127289
-            ],
-            [
-              15.9759838,
-              45.8127226
-            ],
-            [
-              15.976,
-              45.8127213
-            ],
-            [
-              15.976019,
-              45.8128589
-            ],
-            [
-              15.9760264,
-              45.8128902
+              [
+                15.9765907,
+                45.8125845
+              ],
+              [
+                15.9767286,
+                45.8125711
+              ],
+              [
+                15.9767574,
+                45.812716
+              ],
+              [
+                15.9766196,
+                45.8127293
+              ],
+              [
+                15.9765907,
+                45.8125845
+              ]
             ]
           ]
         ]
@@ -212,7 +223,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20bana%20Jela%C4%8Di%C4%87a%208%20%201_f1af.jpg",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20bana%20jelacica%208%20%201_f1af.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/105486195"
+        "osmRef": "way/105486195",
+        "osmRefs": [
+          "way/105486195"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8132372,
+        "lon": 15.9780259
       },
       "geometry": {
         "type": "Polygon",
@@ -285,7 +304,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_%C5%BErtava_fa%C5%A1_5__1.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_zrtava_fas_5__1.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/289540860"
+        "osmRef": "way/289540860",
+        "osmRefs": [
+          "way/289540860"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8106486,
+        "lon": 15.9877994
       },
       "geometry": {
         "type": "Polygon",
@@ -341,6 +368,83 @@
     },
     {
       "type": "Feature",
+      "id": "kuca-benedik-maceljski-trg-zrtava-fasizma-6-6",
+      "properties": {
+        "id": "kuca-benedik-maceljski-trg-zrtava-fasizma-6-6",
+        "name": "Kuća Benedik-Maceljski",
+        "address": "Trg žrtava fašizma 6, 10000 Zagreb, Croatia",
+        "description": "Kuća Slavka i Jelke Benedik-Maceljski na Trgu žrtava fašizma 6 sagrađena je 1923./1925. prema projektu Aladara Baranyaija (Benedik & Baranyai). Ova kuća posebno je zanimljiva za cjelovit uvid u Baranyaijev specifični postupak s klasičnim elementima arhitekture. Pročelje je koncipirano u tri dijela. Razizemlje i prvi kat u nešto su tamnijoj žbuci, definirani horizontalno profiliranim jonskim stupovima. Na svakom je katu po pet prozora, srednja tri su vertikalna, a iznad krajnjih prozora prvog kata dodani su lučni završeci. Iznad snažnog vijenca prvog kata dižu se drugi i treći kat, definirani samo horizontalno profiliranim pilastrima na lijevom i desnom kraju te klasičnim vijencem na vrhu. Ploha zida drugog i trećeg kata potpuno je čista, rastvorena jedino kvadratnim prozorima, dok se na krajnjim prozorskim otvorima drugog kata ponovno pojavljuje jedan stari element Baranyaijeve arhitekture - blago istaknuti prozor-erker. Četvrti kat kuće Maceljski, koji ima funkciju mansarde, ponovno je drukčije oblikovan od nižih razina, jer su upotrijebljene samo reljefne pravokutne tablature. Takav neobični trodjelni tretman pročelja, u kojem se klasični elementi slobodno slažu, na ovoj je kući uglavnom primijenjen u skladu s iskustvima secesije, ali - tipično za ovu Baranyaievu fazu: bez samih secesijskih ukrasa. (Andreja Der Hazarijan-Vukić)",
+        "architects": [
+          "Aladár Baranyai"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-zrtava-fasizma-6?ulica=trg-zrtava-fasizma",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_%C5%BErtava_fa%C5%A1_6__1.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_zrtava_fas_6__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/289862300",
+        "osmRefs": [
+          "way/289862300"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.810471,
+        "lon": 15.988291
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9882281,
+              45.8105855
+            ],
+            [
+              15.9882435,
+              45.8103928
+            ],
+            [
+              15.9884402,
+              45.8104004
+            ],
+            [
+              15.9885698,
+              45.8104054
+            ],
+            [
+              15.9886324,
+              45.8104079
+            ],
+            [
+              15.9886256,
+              45.8104927
+            ],
+            [
+              15.9885423,
+              45.8104894
+            ],
+            [
+              15.9885362,
+              45.8105662
+            ],
+            [
+              15.9884358,
+              45.8105624
+            ],
+            [
+              15.9884333,
+              45.8105935
+            ],
+            [
+              15.9882281,
+              45.8105855
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "kuca-demeter-trg-bana-jelacica-2-2",
       "properties": {
         "id": "kuca-demeter-trg-bana-jelacica-2-2",
@@ -354,7 +458,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20bana%20Jela%C4%8Di%C4%87a%202%20%202_67fb.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20bana%20jelacica%202%20%202_67fb.jpg",
         "builtYear": "Unknown",
-        "osmRef": "relation/3881852"
+        "osmRef": "relation/3881852",
+        "osmRefs": [
+          "relation/3881852"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8134445,
+        "lon": 15.9760469
       },
       "geometry": {
         "type": "Polygon",
@@ -421,7 +533,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_%C5%BErtava_fa%C5%A1_2__1.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_zrtava_fas_2__1.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/289540859"
+        "osmRef": "way/289540859",
+        "osmRefs": [
+          "way/289540859"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8106434,
+        "lon": 15.9869445
       },
       "geometry": {
         "type": "Polygon",
@@ -482,7 +602,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20bana%20Jela%C4%8Di%C4%87a%2015%20%201_6079.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20bana%20jelacica%2015%20%201_6079.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/97235393"
+        "osmRef": "way/97235393",
+        "osmRefs": [
+          "way/97235393"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8125369,
+        "lon": 15.9771393
       },
       "geometry": {
         "type": "Polygon",
@@ -521,12 +649,8 @@
               45.8123178
             ],
             [
-              15.977153,
-              45.8123054
-            ],
-            [
-              15.9771581,
-              45.8123363
+              15.9771424,
+              45.8123015
             ],
             [
               15.9771701,
@@ -572,7 +696,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Juri%C5%A1i%C4%87eva%201-1A%20%201_2f79.jpg",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/jurisiceva%201-1a%20%201_2f79.jpg",
         "builtYear": "Unknown",
-        "osmRef": "relation/3853100"
+        "osmRef": "relation/3853100",
+        "osmRefs": [
+          "relation/3853100"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8126992,
+        "lon": 15.9786398
       },
       "geometry": {
         "type": "Polygon",
@@ -643,7 +775,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20bana%20Jela%C4%8Di%C4%87a%206%20%201_454c.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20bana%20jelacica%206%20%201_454c.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/105490828"
+        "osmRef": "way/105490828",
+        "osmRefs": [
+          "way/105490828"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8134056,
+        "lon": 15.977322
       },
       "geometry": {
         "type": "Polygon",
@@ -696,7 +836,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Zvonimirova_1__1.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/zvonimirova_1__1.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/966784471"
+        "osmRef": "way/966784471",
+        "osmRefs": [
+          "way/966784471"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 43.8310968,
+        "lon": 17.0008848
       },
       "geometry": {
         "type": "Polygon",
@@ -742,7 +890,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20bana%20Jela%C4%8Di%C4%87a%207%20%201_f578.jpg",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20bana%20jelacica%207%20%201_f578.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/105486205"
+        "osmRef": "way/105486205",
+        "osmRefs": [
+          "way/105486205"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8133259,
+        "lon": 15.9776192
       },
       "geometry": {
         "type": "Polygon",
@@ -800,7 +956,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20bana%20Jela%C4%8Di%C4%87a%204%20%201_fa4b.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20bana%20jelacica%204%20%201_fa4b.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/288838575"
+        "osmRef": "way/288838575",
+        "osmRefs": [
+          "way/288838575"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8134872,
+        "lon": 15.9769406
       },
       "geometry": {
         "type": "Polygon",
@@ -909,7 +1073,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_bana_Jela%C4%8Di%C4%87a_5__11.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_bana_jelacica_5__11.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/105485745"
+        "osmRef": "way/105485745",
+        "osmRefs": [
+          "way/105485745"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8134726,
+        "lon": 15.9771426
       },
       "geometry": {
         "type": "Polygon",
@@ -954,7 +1126,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_%C5%BErtava_fa%C5%A1_4__1.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_zrtava_fas_4__1.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/289540862"
+        "osmRef": "way/289540862",
+        "osmRefs": [
+          "way/289540862"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8106504,
+        "lon": 15.9875351
       },
       "geometry": {
         "type": "Polygon",
@@ -1023,31 +1203,83 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20%C5%BErt.fa%C5%A1.%209%20-Vi%C5%A1eslav%20%203%20%201_7524.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20zrt.fas.%209%20-viseslav%20%203%20%201_7524.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/765832816"
+        "osmRef": "way/289862231",
+        "osmRefs": [
+          "way/289862231"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8095135,
+        "lon": 15.9883424
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              20.4363705,
-              44.7615499
+              15.9886065,
+              45.8096515
             ],
             [
-              20.4361954,
-              44.76136
+              15.9885434,
+              45.809652
             ],
             [
-              20.4363256,
-              44.7612995
+              15.9882295,
+              45.809632
             ],
             [
-              20.4365007,
-              44.7614894
+              15.9882364,
+              45.809526
             ],
             [
-              20.4363705,
-              44.7615499
+              15.9882408,
+              45.809458
+            ],
+            [
+              15.9883744,
+              45.809375
+            ],
+            [
+              15.9884674,
+              45.8094505
+            ],
+            [
+              15.9884231,
+              45.8094806
+            ],
+            [
+              15.9884346,
+              45.8094975
+            ],
+            [
+              15.9884331,
+              45.8095098
+            ],
+            [
+              15.988462,
+              45.8095171
+            ],
+            [
+              15.988461,
+              45.8095448
+            ],
+            [
+              15.9885502,
+              45.8095516
+            ],
+            [
+              15.988591,
+              45.8095531
+            ],
+            [
+              15.9886092,
+              45.8095825
+            ],
+            [
+              15.9886065,
+              45.8096515
             ]
           ]
         ]
@@ -1068,7 +1300,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20bana%20Jela%C4%8Di%C4%87a%201%20-Ilica%202%20%201_0c6c.jpg",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20bana%20jelacica%201%20-ilica%202%20%201_0c6c.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/365493822"
+        "osmRef": "way/365493822",
+        "osmRefs": [
+          "way/365493822"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8133072,
+        "lon": 15.976192
       },
       "geometry": {
         "type": "Polygon",
@@ -1117,7 +1357,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20bana%20Jela%C4%8Di%C4%87a%2012%20%201.1_624c.jpg",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20bana%20jelacica%2012%20%201.1_624c.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/105489668"
+        "osmRef": "way/105489668",
+        "osmRefs": [
+          "way/105489668"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8123925,
+        "lon": 15.9781751
       },
       "geometry": {
         "type": "Polygon",
@@ -1195,63 +1443,55 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Pra%C5%A1ka%202%20-Trg%20bana%20Jela%C4%8Di%C4%87a%2014%20%201.1_59fc.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/praska%202%20-trg%20bana%20jelacica%2014%20%201.1_59fc.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/97235397"
+        "osmRef": "way/199905261",
+        "osmRefs": [
+          "way/199905261"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 42.2848248,
+        "lon": 18.8346573
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              15.9771701,
-              45.8124092
+              18.8345803,
+              42.2849051
             ],
             [
-              15.9773435,
-              45.8123898
+              18.8345557,
+              42.284764
             ],
             [
-              15.9774684,
-              45.8123758
+              18.8346475,
+              42.2847538
             ],
             [
-              15.9775078,
-              45.8125621
+              18.834651,
+              42.2847788
             ],
             [
-              15.9775234,
-              45.8126461
+              18.8347402,
+              42.2847703
             ],
             [
-              15.9775061,
-              45.8126622
+              18.8347552,
+              42.2848708
             ],
             [
-              15.9774719,
-              45.8126692
+              18.8346912,
+              42.2848782
             ],
             [
-              15.9772199,
-              45.8127119
+              18.8346939,
+              42.2848955
             ],
             [
-              15.9772031,
-              45.8125891
-            ],
-            [
-              15.9773314,
-              45.8125763
-            ],
-            [
-              15.9773105,
-              45.8124745
-            ],
-            [
-              15.9771789,
-              45.8124846
-            ],
-            [
-              15.9771701,
-              45.8124092
+              18.8345803,
+              42.2849051
             ]
           ]
         ]
@@ -1272,7 +1512,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Kneza%20Mislava%2017%20-Trg%20%C5%BErt.fa%C5%A1.14%20%201_6485.jpg",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/kneza%20mislava%2017%20-trg%20zrt.fas.14%20%201_6485.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/289540874"
+        "osmRef": "way/289540874",
+        "osmRefs": [
+          "way/289540874"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8094305,
+        "lon": 15.9860789
       },
       "geometry": {
         "type": "Polygon",
@@ -1365,31 +1613,95 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_%C5%BErtava_fa%C5%A1izma_1__55.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_zrtava_fasizma_1__55.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/396304781"
+        "osmRef": "way/289540843",
+        "osmRefs": [
+          "way/289540843"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8105993,
+        "lon": 15.9864773
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              20.4778443,
-              44.8157934
+              15.986288,
+              45.8106486
             ],
             [
-              20.4778457,
-              44.8156673
+              15.9863994,
+              45.8105842
             ],
             [
-              20.4779892,
-              44.8156682
+              15.9864345,
+              45.810571
             ],
             [
-              20.4779877,
-              44.8157942
+              15.986467,
+              45.8105651
             ],
             [
-              20.4778443,
-              44.8157934
+              15.9865016,
+              45.8105615
+            ],
+            [
+              15.9866636,
+              45.810571
+            ],
+            [
+              15.9868,
+              45.8105754
+            ],
+            [
+              15.986797,
+              45.8107737
+            ],
+            [
+              15.9867759,
+              45.8107722
+            ],
+            [
+              15.9867634,
+              45.8109584
+            ],
+            [
+              15.9865751,
+              45.8109574
+            ],
+            [
+              15.9865785,
+              45.8108922
+            ],
+            [
+              15.9866536,
+              45.8108933
+            ],
+            [
+              15.9866577,
+              45.8107219
+            ],
+            [
+              15.9866421,
+              45.8107224
+            ],
+            [
+              15.9865595,
+              45.8107223
+            ],
+            [
+              15.9864655,
+              45.810677
+            ],
+            [
+              15.9863733,
+              45.8107251
+            ],
+            [
+              15.986288,
+              45.8106486
             ]
           ]
         ]
@@ -1410,7 +1722,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Kralja%20Dr%C5%BEislava%205%20%201_3c9c.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/kralja%20drzislava%205%20%201_3c9c.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/289540864"
+        "osmRef": "way/289540864",
+        "osmRefs": [
+          "way/289540864"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8102053,
+        "lon": 15.9861147
       },
       "geometry": {
         "type": "Polygon",
@@ -1471,7 +1791,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_%C5%BErtava_fa%C5%A1_3__1.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_zrtava_fas_3__1.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/289540868"
+        "osmRef": "way/289540868",
+        "osmRefs": [
+          "way/289540868"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8106488,
+        "lon": 15.9872508
       },
       "geometry": {
         "type": "Polygon",
@@ -1539,6 +1867,67 @@
     },
     {
       "type": "Feature",
+      "id": "stambeno-poslovna-zgrada-gradske-stedionice-trg-bana-jelacica-10a-10-10a",
+      "properties": {
+        "id": "stambeno-poslovna-zgrada-gradske-stedionice-trg-bana-jelacica-10a-10-10a",
+        "name": "Stambeno-poslovna zgrada Gradske štedionice",
+        "address": "Trg bana Jelačića 10A - 10, 10000 Zagreb, Croatia",
+        "description": "Palača Gradske štedionice, danas Zagrebačka banka na Trgu bana Jelačića 10-10A sagrađena je između 1923. i 1931. godine. Zrelo je ostvarenje poslovnice arhitekta Ignjata Fischera i značajan javni prostor međuratnog razdoblja u Zagrebu. Pored bankovnog prostora s obilježjima neoklasicizma i art decòa, značajni su interijeri Gradske kavane i Gradskog podruma kao omiljena okupljališta građana Zagreba. Kavana je uređena modernističkim i reduciranim arhitektonskim elementima s detaljima art decòa, a prostor restorana arhitekt Fischer uredio je nadahnut motivima narodne baštine. (Galerija nepokretnih kulturnih dobara grada Zagreba)",
+        "architects": [
+          "Ignjat Fischer"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-bana-jelacica-10?ulica=trg-bana-jelacica",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20bana%20Jela%C4%8Di%C4%87a%209%20i%2010%20%201_cf24.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20bana%20jelacica%209%20i%2010%20%201_cf24.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/295793324",
+        "osmRefs": [
+          "way/295793324"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_address_match_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8129215,
+        "lon": 15.9785864
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9778118,
+              45.8135113
+            ],
+            [
+              15.9779346,
+              45.8135658
+            ],
+            [
+              15.978018,
+              45.8136028
+            ],
+            [
+              15.9779398,
+              45.8136884
+            ],
+            [
+              15.9777149,
+              45.8135904
+            ],
+            [
+              15.9777672,
+              45.8135477
+            ],
+            [
+              15.9778118,
+              45.8135113
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "stambeno-trgovacka-zgrada-kraus-muacevic-kralja-zvonimira-2-2",
       "properties": {
         "id": "stambeno-trgovacka-zgrada-kraus-muacevic-kralja-zvonimira-2-2",
@@ -1552,31 +1941,51 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_%C5%BErtava_fa%C5%A1_8__1.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_zrtava_fas_8__1.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/521945197"
+        "osmRef": "way/289862287",
+        "osmRefs": [
+          "way/289862287"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8097829,
+        "lon": 15.988406
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              17.0006345,
-              43.8313978
+              15.9882152,
+              45.8098449
             ],
             [
-              17.0006016,
-              43.8312873
+              15.9882295,
+              45.809632
             ],
             [
-              17.0007831,
-              43.8312592
+              15.9885434,
+              45.809652
             ],
             [
-              17.0008159,
-              43.8313697
+              15.9885398,
+              45.8097193
             ],
             [
-              17.0006345,
-              43.8313978
+              15.9885986,
+              45.8097208
+            ],
+            [
+              15.9885848,
+              45.8098629
+            ],
+            [
+              15.9884017,
+              45.8098539
+            ],
+            [
+              15.9882152,
+              45.8098449
             ]
           ]
         ]
@@ -1597,67 +2006,87 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20%C5%BErtava%20fa%C5%A1izma%2015%20-Kralja%20Dr%C5%BEislava%20%201_8fa0.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20zrtava%20fasizma%2015%20-kralja%20drzislava%20%201_8fa0.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/559850159"
+        "osmRef": "way/289540871",
+        "osmRefs": [
+          "way/289540871"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8097687,
+        "lon": 15.9861921
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              18.6930718,
-              45.5587536
+              15.986111,
+              45.8097562
             ],
             [
-              18.6930496,
-              45.5587667
+              15.9861122,
+              45.8097206
             ],
             [
-              18.6930224,
-              45.5587738
+              15.9860643,
+              45.8097195
             ],
             [
-              18.6929934,
-              45.558774
+              15.9860649,
+              45.8096891
             ],
             [
-              18.6929676,
-              45.558768
+              15.9859766,
+              45.8096818
             ],
             [
-              18.6929458,
-              45.5587567
+              15.9859784,
+              45.8096392
             ],
             [
-              18.6929302,
-              45.558741
+              15.9860819,
+              45.8096438
             ],
             [
-              18.692955,
-              45.5587371
+              15.9860961,
+              45.8096623
             ],
             [
-              18.6929486,
-              45.5587171
+              15.9861323,
+              45.8096662
             ],
             [
-              18.6930596,
-              45.5587
+              15.9861347,
+              45.8096436
             ],
             [
-              18.6930659,
-              45.5587202
+              15.9862662,
+              45.809648
             ],
             [
-              18.6930918,
-              45.5587162
+              15.9862644,
+              45.809667
             ],
             [
-              18.6930865,
-              45.5587361
+              15.9862622,
+              45.809704
             ],
             [
-              18.6930718,
-              45.5587536
+              15.9862602,
+              45.8097811
+            ],
+            [
+              15.9862576,
+              45.8098577
+            ],
+            [
+              15.9862299,
+              45.8098735
+            ],
+            [
+              15.986111,
+              45.8097562
             ]
           ]
         ]
@@ -1678,7 +2107,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20bana%20Jela%C4%8Di%C4%87a%203%20%201_1e8a.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20bana%20jelacica%203%20%201_1e8a.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/105484833"
+        "osmRef": "way/105484833",
+        "osmRefs": [
+          "way/105484833"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.813597,
+        "lon": 15.9764008
       },
       "geometry": {
         "type": "Polygon",
@@ -1755,7 +2192,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_%C5%BErtava_fa%C5%A1_11__1.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_zrtava_fas_11__1.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/245735487"
+        "osmRef": "way/245735487",
+        "osmRefs": [
+          "way/245735487"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.809294,
+        "lon": 15.9872432
       },
       "geometry": {
         "type": "Polygon",
@@ -1869,47 +2314,43 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Pra%C5%A1ka%201%20%201.1_1e29.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/praska%201%20%201.1_1e29.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/105489672"
+        "osmRef": "way/1018274834",
+        "osmRefs": [
+          "way/1018274834"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 51.7443262,
+        "lon": 19.4708542
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              15.9776643,
-              45.8122526
+              19.4706334,
+              51.7443521
             ],
             [
-              15.9777943,
-              45.8122384
+              19.4706936,
+              51.7442278
             ],
             [
-              15.9778149,
-              45.8123974
+              19.4710755,
+              51.7443003
             ],
             [
-              15.9778279,
-              45.8124975
+              19.4710204,
+              51.7444102
             ],
             [
-              15.9779459,
-              45.8124789
+              19.4709879,
+              51.7444206
             ],
             [
-              15.9779781,
-              45.812563
-            ],
-            [
-              15.9777823,
-              45.8126022
-            ],
-            [
-              15.9777099,
-              45.812563
-            ],
-            [
-              15.9776643,
-              45.8122526
+              19.4706334,
+              51.7443521
             ]
           ]
         ]
@@ -1930,7 +2371,15 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Gajeva_2__22.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/gajeva_2__22.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/331291327"
+        "osmRef": "way/331291327",
+        "osmRefs": [
+          "way/331291327"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8127852,
+        "lon": 15.9761653
       },
       "geometry": {
         "type": "Polygon",

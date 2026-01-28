@@ -2,20 +2,8 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { parse } from "csv-parse/sync";
 import { stringify } from "csv-stringify/sync";
-import { validateCoordinates, withErrorHandling, writeValidationReport } from "./validation.ts";
-
-type CanonicalRow = {
-  id: string;
-  name: string;
-  address: string;
-  description: string;
-  architects: string;
-  source_url: string;
-
-  image_full_url: string;
-  image_thumb_url: string;
-  built_year: string;
-};
+import { validateCoordinates, withErrorHandling, writeValidationReport } from "./validation";
+import type { CanonicalRow } from "./types";
 
 
 type GeocodeCacheEntry = {
@@ -49,15 +37,90 @@ function normalizeAddress(a: string) {
 }
 
 function choosePrimaryAddress(addr: string): string {
-    const parts = addr.split("/").map(s => s.trim());
-  
-    const trg = parts.find(p =>
-      /trg bana/i.test(p)
-    );
-  
-    return trg ?? parts[0];
+  const parts = addr.split("/").map((s) => s.trim());
+
+  const trg = parts.find((p) => /trg bana/i.test(p));
+
+  return trg ?? parts[0];
+}
+
+function safeJsonParse<T>(s: string | undefined): T | null {
+  if (!s) return null;
+  try {
+    return JSON.parse(s) as T;
+  } catch {
+    return null;
   }
-  
+}
+
+function uniqueCaseInsensitive(values: string[]): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const v of values) {
+    const k = v.trim().toLowerCase();
+    if (!k) continue;
+    if (seen.has(k)) continue;
+    seen.add(k);
+    out.push(v.trim());
+  }
+  return out;
+}
+
+type AddressPartLike = { raw?: string; normalized?: string };
+
+function addressQueriesForRow(r: CanonicalRow): string[] {
+  const fromJson =
+    safeJsonParse<AddressPartLike[]>(r.addresses_json)?.map((p) => p.normalized || p.raw || "").filter(Boolean) ?? [];
+
+  const fromSplit = String(r.address ?? "")
+    .split("/")
+    .map((s) => normalizeAddress(s));
+
+  // Prefer explicit `primary_address` if present, then the rest.
+  const primary = r.primary_address ? normalizeAddress(r.primary_address) : normalizeAddress(choosePrimaryAddress(r.address));
+
+  const combined = uniqueCaseInsensitive([primary, ...fromJson, ...fromSplit]);
+  // Avoid sending multi-address strings with '/' to Nominatim; always geocode individual variants.
+  return combined.filter((q) => q && !q.includes("/"));
+}
+
+function scoreGeocodeEntry(entry: GeocodeCacheEntry, query: string): number {
+  // Higher is better. Deterministic based on returned hit metadata.
+  let s = 0;
+
+  if (entry.lat == null || entry.lon == null || !Number.isFinite(entry.lat) || !Number.isFinite(entry.lon)) {
+    return -1_000_000;
+  }
+
+  const raw = (entry.raw ?? {}) as any;
+  const category = String(raw.category ?? "");
+  const addresstype = String(raw.addresstype ?? "");
+  const type = String(raw.type ?? "");
+
+  // Prefer building-level hits
+  if (category === "building") s += 300;
+  if (addresstype === "building") s += 250;
+
+  // Penalize common "place" and "square" results (landmark centerpoints)
+  if (category === "place" && (type === "square" || addresstype === "square")) s -= 250;
+  if (category === "leisure" && type === "park") s -= 200;
+  if (category === "highway") s -= 250;
+
+  // Small positive bias toward objects (ways/relations) vs nodes
+  if (entry.osm_type === "way" || entry.osm_type === "relation") s += 50;
+
+  // House number presence in display name (helps distinguish square vs address)
+  const hnMatch = query.match(/\b(\d+[A-Za-z]?)\b/);
+  const display = String(entry.display_name ?? "").toLowerCase();
+  if (hnMatch) {
+    const hn = hnMatch[1].toLowerCase();
+    if (display.startsWith(`${hn},`)) s += 80;
+    else if (display.includes(` ${hn},`)) s += 50;
+  }
+
+  return s;
+}
+
 
 async function readJsonIfExists<T>(p: string, fallback: T): Promise<T> {
   try {
@@ -82,18 +145,50 @@ async function geocodeNominatim(address: string): Promise<GeocodeCacheEntry> {
   url.searchParams.set("limit", "5");
   url.searchParams.set("addressdetails", "0");
 
-  const res = await fetch(url.toString(), {
-    headers: {
-      "User-Agent": USER_AGENT,
-      "Accept-Language": "en",
-    },
-  });
+  const maxAttempts = 3;
+  let lastErr: unknown = null;
+  let res: Response | null = null;
 
-  if (!res.ok) {
-    return { lat: null, lon: null, raw: { status: res.status, statusText: res.statusText } };
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      res = await fetch(url.toString(), {
+        headers: {
+          "User-Agent": USER_AGENT,
+          "Accept-Language": "en",
+        },
+      });
+
+      if (!res.ok) {
+        const retryable = [429, 502, 503, 504].includes(res.status);
+        if (retryable && attempt < maxAttempts) {
+          const backoffMs = 800 * 2 ** (attempt - 1);
+          await sleep(backoffMs);
+          continue;
+        }
+        return { lat: null, lon: null, raw: { status: res.status, statusText: res.statusText } };
+      }
+
+      break;
+    } catch (e) {
+      lastErr = e;
+      if (attempt < maxAttempts) {
+        const backoffMs = 800 * 2 ** (attempt - 1);
+        await sleep(backoffMs);
+        continue;
+      }
+    }
   }
 
-  const data = (await res.json()) as any[];
+  if (!res) {
+    return { lat: null, lon: null, raw: { error: String(lastErr ?? "fetch failed") } };
+  }
+
+  let data: any[] = [];
+  try {
+    data = (await res.json()) as any[];
+  } catch (e) {
+    return { lat: null, lon: null, raw: { error: "invalid_json", detail: String(e) } };
+  }
 
   if (!data || data.length === 0) return { lat: null, lon: null, raw: [] };
   
@@ -178,7 +273,18 @@ async function main() {
 
     const cache = await readJsonIfExists<Record<string, GeocodeCacheEntry>>(CACHE_PATH, {});
 
-    const out: Array<CanonicalRow & { lat: string; lon: string; geocode_display_name: string }> = [];
+    const out: Array<
+      CanonicalRow & {
+        lat: string;
+        lon: string;
+        geocode_display_name: string;
+        geocode_query: string;
+        geocode_osm_type: string;
+        geocode_osm_id: string;
+        geocode_category: string;
+        geocode_addresstype: string;
+      }
+    > = [];
     const validationResults = [];
 
     let geocodingSuccess = 0;
@@ -187,22 +293,72 @@ async function main() {
 
     for (let i = 0; i < rows.length; i++) {
       const r = rows[i];
-      const addr = normalizeAddress(choosePrimaryAddress(r.address));
-      const primaryAddr = addr.split("/")[0].trim();
-      const cacheKey = primaryAddr.toLowerCase();
 
-      let entry = cache[cacheKey];
+      const queries = addressQueriesForRow(r);
+      const scoredCandidates: Array<{ query: string; entry: GeocodeCacheEntry; score: number }> = [];
 
-      if (!entry) {
-        console.log(`[${i + 1}/${rows.length}] Geocoding: ${primaryAddr} (from: ${addr})`);
-        entry = await geocodeNominatim(primaryAddr);
-        cache[cacheKey] = entry;
-        await writeJson(CACHE_PATH, cache);
-        await sleep(RATE_LIMIT_MS);
-      } else {
-        console.log(`[${i + 1}/${rows.length}] Cache hit: ${addr}`);
-        cacheHits++;
+      for (const q of queries) {
+        const cacheKey = q.toLowerCase();
+        let entry = cache[cacheKey];
+
+        if (!entry) {
+          console.log(`[${i + 1}/${rows.length}] Geocoding: ${q}`);
+          entry = await geocodeNominatim(q);
+          cache[cacheKey] = entry;
+          await writeJson(CACHE_PATH, cache);
+          await sleep(RATE_LIMIT_MS);
+        } else {
+          cacheHits++;
+        }
+
+        scoredCandidates.push({
+          query: q,
+          entry,
+          score: scoreGeocodeEntry(entry, q),
+        });
       }
+
+      // Name-assisted query for landmarks: only if the best hit looks like a square/place.
+      const bestSoFar = [...scoredCandidates].sort((a, b) => b.score - a.score)[0];
+      const bestRaw = (bestSoFar?.entry.raw ?? {}) as any;
+      const bestCategory = String(bestRaw.category ?? "");
+      const bestType = String(bestRaw.type ?? "");
+      const looksLikeLandmark = bestCategory === "place" && bestType === "square";
+
+      if (looksLikeLandmark && queries.length > 0) {
+        const q = normalizeAddress(`${r.name}, ${queries[0]}`);
+        const cacheKey = q.toLowerCase();
+        let entry = cache[cacheKey];
+
+        if (!entry) {
+          console.log(`[${i + 1}/${rows.length}] Geocoding (name-assisted): ${q}`);
+          entry = await geocodeNominatim(q);
+          cache[cacheKey] = entry;
+          await writeJson(CACHE_PATH, cache);
+          await sleep(RATE_LIMIT_MS);
+        } else {
+          cacheHits++;
+        }
+
+        scoredCandidates.push({
+          query: q,
+          entry,
+          score: scoreGeocodeEntry(entry, q),
+        });
+      }
+
+      // Pick best deterministically: score desc, then candidate order.
+      scoredCandidates.sort((a, b) => {
+        if (b.score !== a.score) return b.score - a.score;
+        return queries.indexOf(a.query) - queries.indexOf(b.query);
+      });
+
+      const chosen = scoredCandidates[0];
+      const entry = chosen?.entry ?? { lat: null, lon: null };
+      const geocode_query = chosen?.query ?? "";
+      const raw = (entry.raw ?? {}) as any;
+      const geocode_category = String(raw.category ?? "");
+      const geocode_addresstype = String(raw.addresstype ?? "");
 
       // Validate geocoding results
       const validation = validateCoordinates(entry.lat, entry.lon);
@@ -212,7 +368,7 @@ async function main() {
         geocodingSuccess++;
       } else {
         geocodingFailed++;
-        console.warn(`⚠️  Geocoding validation failed for "${primaryAddr}":`, validation.errors);
+        console.warn(`⚠️  Geocoding validation failed for "${geocode_query}":`, validation.errors);
       }
 
       out.push({
@@ -220,6 +376,11 @@ async function main() {
         lat: entry.lat === null ? "" : String(entry.lat),
         lon: entry.lon === null ? "" : String(entry.lon),
         geocode_display_name: entry.display_name ?? "",
+        geocode_query,
+        geocode_osm_type: entry.osm_type ? String(entry.osm_type) : "",
+        geocode_osm_id: entry.osm_id == null ? "" : String(entry.osm_id),
+        geocode_category,
+        geocode_addresstype,
       });
     }
 
@@ -229,6 +390,9 @@ async function main() {
         "id",
         "name",
         "address",
+        "address_raw",
+        "primary_address",
+        "addresses_json",
         "description",
         "architects",
         "source_url",
@@ -238,6 +402,11 @@ async function main() {
         "lat",
         "lon",
         "geocode_display_name",
+        "geocode_query",
+        "geocode_osm_type",
+        "geocode_osm_id",
+        "geocode_category",
+        "geocode_addresstype",
       ],
     });
 
