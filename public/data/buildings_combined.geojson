@@ -155,54 +155,50 @@
         "lon": 15.97669
       },
       "geometry": {
-        "type": "MultiPolygon",
+        "type": "Polygon",
         "coordinates": [
           [
             [
-              [
-                15.9768281,
-                45.8124704
-              ],
-              [
-                15.9768947,
-                45.8127604
-              ],
-              [
-                15.9765464,
-                45.8128126
-              ],
-              [
-                15.9764938,
-                45.812494
-              ],
-              [
-                15.9768281,
-                45.8124704
-              ]
+              15.9768281,
+              45.8124704
+            ],
+            [
+              15.9768947,
+              45.8127604
+            ],
+            [
+              15.9765464,
+              45.8128126
+            ],
+            [
+              15.9764938,
+              45.812494
+            ],
+            [
+              15.9768281,
+              45.8124704
             ]
           ],
           [
             [
-              [
-                15.9765907,
-                45.8125845
-              ],
-              [
-                15.9767286,
-                45.8125711
-              ],
-              [
-                15.9767574,
-                45.812716
-              ],
-              [
-                15.9766196,
-                45.8127293
-              ],
-              [
-                15.9765907,
-                45.8125845
-              ]
+              15.9765907,
+              45.8125845
+            ],
+            [
+              15.9767286,
+              45.8125711
+            ],
+            [
+              15.9767574,
+              45.812716
+            ],
+            [
+              15.9766196,
+              45.8127293
+            ],
+            [
+              15.9765907,
+              45.8125845
             ]
           ]
         ]
@@ -836,39 +832,75 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Zvonimirova_1__1.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/zvonimirova_1__1.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/966784471",
+        "osmRef": "way/289862290",
         "osmRefs": [
-          "way/966784471"
+          "way/289862290"
         ],
         "footprintStatus": "matched",
-        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
-        "footprintConfidence": "high",
-        "lat": 43.8310968,
-        "lon": 17.0008848
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8102755,
+        "lon": 15.9883028
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              17.0008472,
-              43.8311641
+              15.9886501,
+              45.8101624
             ],
             [
-              17.0008024,
-              43.8310552
+              15.9886413,
+              45.8102724
             ],
             [
-              17.0009224,
-              43.8310295
+              15.98864,
+              45.8102888
             ],
             [
-              17.0009672,
-              43.8311383
+              15.9885793,
+              45.8102865
             ],
             [
-              17.0008472,
-              43.8311641
+              15.9885093,
+              45.8102838
+            ],
+            [
+              15.9884497,
+              45.8102815
+            ],
+            [
+              15.988442,
+              45.8103782
+            ],
+            [
+              15.9884402,
+              45.8104004
+            ],
+            [
+              15.9882435,
+              45.8103928
+            ],
+            [
+              15.9882458,
+              45.8103638
+            ],
+            [
+              15.988263,
+              45.8101474
+            ],
+            [
+              15.9882646,
+              45.8101475
+            ],
+            [
+              15.9885191,
+              45.8101571
+            ],
+            [
+              15.9886501,
+              45.8101624
             ]
           ]
         ]
@@ -1443,55 +1475,67 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Pra%C5%A1ka%202%20-Trg%20bana%20Jela%C4%8Di%C4%87a%2014%20%201.1_59fc.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/praska%202%20-trg%20bana%20jelacica%2014%20%201.1_59fc.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/199905261",
+        "osmRef": "way/97235397",
         "osmRefs": [
-          "way/199905261"
+          "way/97235397"
         ],
         "footprintStatus": "matched",
-        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
-        "footprintConfidence": "high",
-        "lat": 42.2848248,
-        "lon": 18.8346573
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8126692,
+        "lon": 15.9774719
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              18.8345803,
-              42.2849051
+              15.9771701,
+              45.8124092
             ],
             [
-              18.8345557,
-              42.284764
+              15.9774684,
+              45.8123758
             ],
             [
-              18.8346475,
-              42.2847538
+              15.9775078,
+              45.8125621
             ],
             [
-              18.834651,
-              42.2847788
+              15.9775234,
+              45.8126461
             ],
             [
-              18.8347402,
-              42.2847703
+              15.9775061,
+              45.8126622
             ],
             [
-              18.8347552,
-              42.2848708
+              15.9774719,
+              45.8126692
             ],
             [
-              18.8346912,
-              42.2848782
+              15.9772199,
+              45.8127119
             ],
             [
-              18.8346939,
-              42.2848955
+              15.9772031,
+              45.8125891
             ],
             [
-              18.8345803,
-              42.2849051
+              15.9773314,
+              45.8125763
+            ],
+            [
+              15.9773105,
+              45.8124745
+            ],
+            [
+              15.9771789,
+              45.8124846
+            ],
+            [
+              15.9771701,
+              45.8124092
             ]
           ]
         ]
@@ -1512,87 +1556,83 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Kneza%20Mislava%2017%20-Trg%20%C5%BErt.fa%C5%A1.14%20%201_6485.jpg",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/kneza%20mislava%2017%20-trg%20zrt.fas.14%20%201_6485.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/289540874",
+        "osmRef": "way/1138963942",
         "osmRefs": [
-          "way/289540874"
+          "way/1138963942"
         ],
         "footprintStatus": "matched",
         "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
         "footprintConfidence": "high",
-        "lat": 45.8094305,
-        "lon": 15.9860789
+        "lat": 45.8095875,
+        "lon": 15.9861901
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              15.9861571,
-              45.8094742
+              15.9862504,
+              45.8094512
+            ],
+            [
+              15.9862807,
+              45.809468
+            ],
+            [
+              15.986286,
+              45.8094754
+            ],
+            [
+              15.9862888,
+              45.8094792
+            ],
+            [
+              15.9862889,
+              45.8094908
+            ],
+            [
+              15.9862783,
+              45.8095036
+            ],
+            [
+              15.9862774,
+              45.8095125
+            ],
+            [
+              15.9862662,
+              45.809648
+            ],
+            [
+              15.9861347,
+              45.8096436
+            ],
+            [
+              15.9861008,
+              45.8096432
+            ],
+            [
+              15.986117,
+              45.8095318
+            ],
+            [
+              15.9861005,
+              45.8095165
             ],
             [
               15.9861114,
               45.8095056
             ],
             [
-              15.9860813,
-              45.8094855
-            ],
-            [
-              15.9860304,
-              45.809523
-            ],
-            [
-              15.985969,
-              45.80954
-            ],
-            [
-              15.9859514,
-              45.8095154
-            ],
-            [
-              15.9860224,
-              45.8094615
-            ],
-            [
-              15.9859952,
-              45.8094473
-            ],
-            [
-              15.985928,
-              45.8094932
-            ],
-            [
-              15.9858936,
-              45.8094687
-            ],
-            [
-              15.9859603,
-              45.8094136
-            ],
-            [
-              15.9859412,
-              45.8094004
-            ],
-            [
-              15.9860413,
-              45.8093177
-            ],
-            [
-              15.9860801,
-              45.8093425
-            ],
-            [
-              15.9862504,
-              45.8094512
+              15.9861571,
+              45.8094742
             ],
             [
               15.9861844,
               45.8094687
             ],
             [
-              15.9861571,
-              45.8094742
+              15.9862504,
+              45.8094512
             ]
           ]
         ]
@@ -1880,12 +1920,12 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20bana%20Jela%C4%8Di%C4%87a%209%20i%2010%20%201_cf24.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20bana%20jelacica%209%20i%2010%20%201_cf24.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/295793324",
+        "osmRef": "way/105487407",
         "osmRefs": [
-          "way/295793324"
+          "way/105487407"
         ],
         "footprintStatus": "matched",
-        "footprintStrategy": "radius_80m_address_match_only",
+        "footprintStrategy": "radius_120m_point_containment_only",
         "footprintConfidence": "medium",
         "lat": 45.8129215,
         "lon": 15.9785864
@@ -1895,32 +1935,32 @@
         "coordinates": [
           [
             [
-              15.9778118,
-              45.8135113
+              15.9786622,
+              45.8131945
             ],
             [
-              15.9779346,
-              45.8135658
+              15.9785294,
+              45.8128597
             ],
             [
-              15.978018,
-              45.8136028
+              15.9791015,
+              45.8128232
             ],
             [
-              15.9779398,
-              45.8136884
+              15.9791704,
+              45.8128172
             ],
             [
-              15.9777149,
-              45.8135904
+              15.9791739,
+              45.8129017
             ],
             [
-              15.9777672,
-              45.8135477
+              15.9791657,
+              45.8131459
             ],
             [
-              15.9778118,
-              45.8135113
+              15.9786622,
+              45.8131945
             ]
           ]
         ]
@@ -2314,43 +2354,55 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Pra%C5%A1ka%201%20%201.1_1e29.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/praska%201%20%201.1_1e29.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/1018274834",
+        "osmRef": "way/105489672",
         "osmRefs": [
-          "way/1018274834"
+          "way/105489672"
         ],
         "footprintStatus": "matched",
-        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
-        "footprintConfidence": "high",
-        "lat": 51.7443262,
-        "lon": 19.4708542
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8125542,
+        "lon": 15.9778468
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              19.4706334,
-              51.7443521
+              15.9776643,
+              45.8122526
             ],
             [
-              19.4706936,
-              51.7442278
+              15.9777943,
+              45.8122384
             ],
             [
-              19.4710755,
-              51.7443003
+              15.9778149,
+              45.8123974
             ],
             [
-              19.4710204,
-              51.7444102
+              15.9778279,
+              45.8124975
             ],
             [
-              19.4709879,
-              51.7444206
+              15.9779459,
+              45.8124789
             ],
             [
-              19.4706334,
-              51.7443521
+              15.9779781,
+              45.812563
+            ],
+            [
+              15.9777823,
+              45.8126022
+            ],
+            [
+              15.9777099,
+              45.812563
+            ],
+            [
+              15.9776643,
+              45.8122526
             ]
           ]
         ]

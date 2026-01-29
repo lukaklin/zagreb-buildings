@@ -3,7 +3,8 @@ import path from "node:path";
 import { parse } from "csv-parse/sync";
 import osmtogeojson from "osmtogeojson";
 import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
-import { point as turfPoint } from "@turf/helpers";
+import booleanContains from "@turf/boolean-contains";
+import { point as turfPoint, polygon as turfPolygon } from "@turf/helpers";
 import turfArea from "@turf/area";
 import { validateGeometry, withErrorHandling, writeValidationReport } from "./validation";
 
@@ -464,17 +465,79 @@ function mergeBuildingParts(
 
   if (parts.length < 2) return null;
 
-  const polys: any[] = [];
+  // Collect all polygon coordinates with their areas
+  const polysWithArea: { coords: GeoJSON.Position[][]; area: number }[] = [];
   for (const p of parts) {
     const g = p.feature.geometry as GeoJSON.Geometry;
-    if (g.type === "Polygon") polys.push(g.coordinates);
-    else if (g.type === "MultiPolygon") polys.push(...g.coordinates);
+    if (g.type === "Polygon") {
+      const area = turfArea({ type: "Feature", geometry: g, properties: {} });
+      polysWithArea.push({ coords: g.coordinates, area });
+    } else if (g.type === "MultiPolygon") {
+      for (const polyCoords of g.coordinates) {
+        const polyGeom: GeoJSON.Polygon = { type: "Polygon", coordinates: polyCoords };
+        const area = turfArea({ type: "Feature", geometry: polyGeom, properties: {} });
+        polysWithArea.push({ coords: polyCoords, area });
+      }
+    }
   }
 
-  if (polys.length === 0) return null;
+  if (polysWithArea.length === 0) return null;
 
+  // Sort by area descending (largest first)
+  polysWithArea.sort((a, b) => b.area - a.area);
+
+  // Check if smaller polygons are contained within larger ones (courtyards/holes)
+  // Build a structure: outer polygons with their holes
+  const outerPolygons: { outer: GeoJSON.Position[][]; holes: GeoJSON.Position[][] }[] = [];
+  const usedAsHole = new Set<number>();
+
+  for (let i = 0; i < polysWithArea.length; i++) {
+    if (usedAsHole.has(i)) continue;
+
+    const outerCoords = polysWithArea[i].coords;
+    const holes: GeoJSON.Position[][] = [];
+
+    // Check if any smaller polygon is fully contained within this one
+    for (let j = i + 1; j < polysWithArea.length; j++) {
+      if (usedAsHole.has(j)) continue;
+
+      const innerCoords = polysWithArea[j].coords;
+      
+      try {
+        const outerPoly = turfPolygon(outerCoords);
+        const innerPoly = turfPolygon(innerCoords);
+        
+        if (booleanContains(outerPoly, innerPoly)) {
+          // This inner polygon is a hole (courtyard) in the outer polygon
+          holes.push(innerCoords[0]); // Add just the outer ring as a hole
+          usedAsHole.add(j);
+        }
+      } catch {
+        // If containment check fails, skip
+      }
+    }
+
+    // Create the polygon with its holes
+    if (holes.length > 0) {
+      // Polygon with holes: [outer_ring, hole1, hole2, ...]
+      outerPolygons.push({ outer: [outerCoords[0], ...holes], holes: [] });
+    } else {
+      outerPolygons.push({ outer: outerCoords, holes: [] });
+    }
+  }
+
+  // Build final geometry
+  if (outerPolygons.length === 1) {
+    return {
+      geometry: { type: "Polygon", coordinates: outerPolygons[0].outer } as GeoJSON.Geometry,
+      osm_refs: parts.map((p) => p.osm_ref),
+    };
+  }
+
+  // Multiple separate polygons -> MultiPolygon
+  const multiCoords = outerPolygons.map((p) => p.outer);
   return {
-    geometry: { type: "MultiPolygon", coordinates: polys } as GeoJSON.Geometry,
+    geometry: { type: "MultiPolygon", coordinates: multiCoords } as GeoJSON.Geometry,
     osm_refs: parts.map((p) => p.osm_ref),
   };
 }
@@ -552,6 +615,12 @@ async function findGeometryWithFallback(
 
   const radiusSteps = lowConfidenceGeocode ? [RADIUS_M, 120, 160, 200, 350] : [RADIUS_M, 120, 160, 200];
 
+  // Track best non-containing match as fallback
+  let bestNonContaining: {
+    picked: ReturnType<typeof pickBest>;
+    radius: number;
+  } | null = null;
+
   for (const radius of radiusSteps) {
     radii_tried.push(radius);
     console.log(`    Trying radius ${radius}m for ${buildingId}`);
@@ -571,28 +640,65 @@ async function findGeometryWithFallback(
     const picked = pickBest(features, lat, lon, canonicalAddresses);
 
     if (picked.best) {
-      // If the best candidate is a building part, try to merge parts deterministically.
-      const merged = mergeBuildingParts(picked.best, picked.topCandidates);
-      if (merged) {
+      // Only stop early if the match CONTAINS the geocoded point
+      // Otherwise, continue to larger radii to find a containing match
+      if (picked.best.contains) {
+        // High confidence - the point is inside this building
+        // If the best candidate is a building part, try to merge parts deterministically.
+        const merged = mergeBuildingParts(picked.best, picked.topCandidates);
+        if (merged) {
+          return {
+            geometry: merged.geometry,
+            osm_refs: merged.osm_refs,
+            strategy: `radius_${radius}m_parts_merged_${picked.strategy}`,
+            confidence: picked.confidence,
+            topCandidates: picked.topCandidates,
+            radii_tried,
+          };
+        }
+
         return {
-          geometry: merged.geometry,
-          osm_refs: merged.osm_refs,
-          strategy: `radius_${radius}m_parts_merged_${picked.strategy}`,
+          geometry: picked.best.feature.geometry as GeoJSON.Geometry,
+          osm_refs: [picked.best.osm_ref],
+          strategy: `radius_${radius}m_${picked.strategy}`,
           confidence: picked.confidence,
           topCandidates: picked.topCandidates,
           radii_tried,
         };
       }
 
+      // Save this as a fallback in case no containing match is found
+      if (!bestNonContaining || (picked.best.score > bestNonContaining.picked.best!.score)) {
+        bestNonContaining = { picked, radius };
+      }
+      // Continue to next radius to look for a containing match
+    }
+  }
+
+  // If no containing match was found, return the best non-containing fallback
+  if (bestNonContaining) {
+    const { picked, radius } = bestNonContaining;
+    // If the best candidate is a building part, try to merge parts deterministically.
+    const merged = mergeBuildingParts(picked.best!, picked.topCandidates);
+    if (merged) {
       return {
-        geometry: picked.best.feature.geometry as GeoJSON.Geometry,
-        osm_refs: [picked.best.osm_ref],
-        strategy: `radius_${radius}m_${picked.strategy}`,
+        geometry: merged.geometry,
+        osm_refs: merged.osm_refs,
+        strategy: `radius_${radius}m_parts_merged_${picked.strategy}_fallback`,
         confidence: picked.confidence,
         topCandidates: picked.topCandidates,
         radii_tried,
       };
     }
+
+    return {
+      geometry: picked.best!.feature.geometry as GeoJSON.Geometry,
+      osm_refs: [picked.best!.osm_ref],
+      strategy: `radius_${radius}m_${picked.strategy}_fallback`,
+      confidence: picked.confidence,
+      topCandidates: picked.topCandidates,
+      radii_tried,
+    };
   }
 
   return {

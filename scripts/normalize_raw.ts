@@ -165,10 +165,21 @@ function splitMultiAddress(rawAddr: string) {
   return expanded;
 }
 
-function choosePrimaryAddressFromParts(parts: string[]) {
-  // Keep behavior aligned with geocoder heuristics: prefer trg-bana segment if present.
-  const trg = parts.find((p) => /trg bana/i.test(p));
-  return trg ?? parts[0] ?? "";
+function choosePrimaryAddressFromParts(parts: string[]): string {
+  // Parse each part to check for house numbers
+  const withNumbers = parts.filter((p) => {
+    const { house_number } = parseStreetAndHouseNumber(p);
+    return house_number !== "";
+  });
+
+  if (withNumbers.length === 0) {
+    // No addresses have house numbers, fallback to first
+    return parts[0] ?? "";
+  }
+
+  // Among addresses with numbers, prefer ones starting with "Trg"
+  const trgWithNumber = withNumbers.find((p) => /^trg\s/i.test(p));
+  return trgWithNumber ?? withNumbers[0] ?? "";
 }
 
 function parseStreetAndHouseNumber(addr: string): { street: string; house_number: string } {

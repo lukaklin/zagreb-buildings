@@ -69,8 +69,9 @@ function uniqueCaseInsensitive(values: string[]): string[] {
 type AddressPartLike = { raw?: string; normalized?: string };
 
 function addressQueriesForRow(r: CanonicalRow): string[] {
+  // Only use normalized addresses (with city suffix), not raw addresses
   const fromJson =
-    safeJsonParse<AddressPartLike[]>(r.addresses_json)?.map((p) => p.normalized || p.raw || "").filter(Boolean) ?? [];
+    safeJsonParse<AddressPartLike[]>(r.addresses_json)?.map((p) => p.normalized).filter(Boolean) ?? [];
 
   const fromSplit = String(r.address ?? "")
     .split("/")
@@ -81,7 +82,8 @@ function addressQueriesForRow(r: CanonicalRow): string[] {
 
   const combined = uniqueCaseInsensitive([primary, ...fromJson, ...fromSplit]);
   // Avoid sending multi-address strings with '/' to Nominatim; always geocode individual variants.
-  return combined.filter((q) => q && !q.includes("/"));
+  // Filter to ensure all queries have Zagreb context (safety net)
+  return combined.filter((q) => q && !q.includes("/") && /zagreb|croatia/i.test(q));
 }
 
 function scoreGeocodeEntry(entry: GeocodeCacheEntry, query: string): number {
