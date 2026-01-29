@@ -3,6 +3,175 @@
   "features": [
     {
       "type": "Feature",
+      "id": "burza-za-robu-i-vrednote-danas-hrvatska-narodna-banka-marticeva-2-2",
+      "properties": {
+        "id": "burza-za-robu-i-vrednote-danas-hrvatska-narodna-banka-marticeva-2-2",
+        "name": "Burza za robu i vrednote, danas Hrvatska narodna banka",
+        "address": "Martićeva 2 / Račkoga 1 / Trg hrvatskih velikana 3, 10000 Zagreb, Croatia",
+        "description": "Burza za robu i vrednote, danas Hrvatska narodna banka na Trgu hrvatskih velikana 3 /Račkoga 1 /Martićeva 2 sagrađena je 1923./1927. prema projektu Viktora Kovačića, na ulazu u tada novu gradsku četvrt. Nakon Kovačićeve smrti 1924. godine dovršenje gradnje preuzeo je Hugo Ehrlich u suradnji s Kovačićevim najbližim suradnikom/asistentom Alfredom Albinijem. prostorna dispozicija i kompozicija Kovačićevo su djelo, dok je unutarnji uređaj i opremu Ehrlich riješio samostalno, slijedeći Kovačićevu temeljnu ideju i načelne studijske skice. Klasično koncipirana palača svojom elegancijom, luksuznom izvedbom, plemenitim materijalima i uređenjem do danas je nenadmašeni primjer dostojanstvene reprezentativnosti, također ishodišni uzor neoklasične tendencije u našoj arhitekturi 1920-ih godina. Glavni prostori ulaznog vestibula, foajea, velike burzovne dvorane, sale gremija, sudnice, sjedničke dvorane burzovnog vijeća, biblioteke, u cijelosti su očuvani, dijelom također i namještaj ravnateljskih radnih kabineta. Posebno su atraktivni fasadna stolarija patenta “Nicolaus”, sustav klimatizacije i ventilacije burzovne dvorane, te sustav električnih satova koji je i danas u besprijekornom stanju. (Aleksander Laslo, 2011:66-67)",
+        "architects": [
+          "Viktor Kovačić"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/marticeva-2?ulica=trg-hrvatskih-velikana",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Marti%C4%87eva%202%20%201.1_5166.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/marticeva%202%20%201.1_5166.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/390946778",
+        "osmRefs": [
+          "way/390946778"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8116743,
+        "lon": 15.9847673
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9848618,
+              45.8120078
+            ],
+            [
+              15.9848525,
+              45.8121082
+            ],
+            [
+              15.9845587,
+              45.8120973
+            ],
+            [
+              15.9844104,
+              45.8120931
+            ],
+            [
+              15.9843001,
+              45.8120904
+            ],
+            [
+              15.98426,
+              45.812007
+            ],
+            [
+              15.9842206,
+              45.8119159
+            ],
+            [
+              15.9842414,
+              45.811907
+            ],
+            [
+              15.9844026,
+              45.8118038
+            ],
+            [
+              15.9847694,
+              45.8115845
+            ],
+            [
+              15.9853293,
+              45.8112498
+            ],
+            [
+              15.9854354,
+              45.811297
+            ],
+            [
+              15.9854047,
+              45.8115751
+            ],
+            [
+              15.9852272,
+              45.8115667
+            ],
+            [
+              15.9852319,
+              45.8115098
+            ],
+            [
+              15.9851887,
+              45.8115327
+            ],
+            [
+              15.9851746,
+              45.8115228
+            ],
+            [
+              15.9850278,
+              45.8116052
+            ],
+            [
+              15.9850584,
+              45.8116289
+            ],
+            [
+              15.9849565,
+              45.8116881
+            ],
+            [
+              15.984933,
+              45.8116637
+            ],
+            [
+              15.9848976,
+              45.8116849
+            ],
+            [
+              15.984865,
+              45.8117044
+            ],
+            [
+              15.984894,
+              45.8117303
+            ],
+            [
+              15.9847851,
+              45.8117993
+            ],
+            [
+              15.9848159,
+              45.8118261
+            ],
+            [
+              15.9848397,
+              45.8118603
+            ],
+            [
+              15.9848474,
+              45.8118844
+            ],
+            [
+              15.9848475,
+              45.8119067
+            ],
+            [
+              15.984839,
+              45.8119408
+            ],
+            [
+              15.9848203,
+              45.8119643
+            ],
+            [
+              15.9848741,
+              45.8119669
+            ],
+            [
+              15.9848698,
+              45.8120082
+            ],
+            [
+              15.9848618,
+              45.8120078
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "dom-hrvatskih-likovnih-umjetnika-trg-zrtava-fasizma-bb-10000",
       "properties": {
         "id": "dom-hrvatskih-likovnih-umjetnika-trg-zrtava-fasizma-bb-10000",
@@ -199,6 +368,83 @@
             [
               15.9765907,
               45.8125845
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "inzenjerski-dom-draskoviceva-15a-15a",
+      "properties": {
+        "id": "inzenjerski-dom-draskoviceva-15a-15a",
+        "name": "Inženjerski dom",
+        "address": "Draškovićeva 15A / Račkoga 2 / Trg hrvatskih velikana 6, 10000 Zagreb, Croatia",
+        "description": "Inženjerski dom na uglu Račkoga 2 /Trg hrvatskih velikana 6 /Draškovićeva 15A sagrađen je 1927. prema projektu Aladara Baranyaija (arhitektonsk biro Benedik i Baranyai). Autor je u Inženjerskom domu interpretirao zgradu Kovačićeve Burze, što je donekle uvjetovao i sličan položaj zgrade kojom su stvorene svojevrsne \"dveri\" istočnog Zagreba. Da je projektom Inženjerskog doma Baranyai zaista dobrim dijelom odustao od svojih uobičajenih i višestruko potvrđenih estetskih načela, svjedoči motiv četiri teška jonska stupa na pročelju zgrade, poput onih na pročelju Burze. Baranyai je u ovoj fazi djelovanja bio sklon primjeni klasičnih elemenata arhitekture, ali ih je rijetko upotrebljavao. U skladu s tradicionalnim zakonitostima kompozicija pročelja, motiv stupovlja obično je upotrebljavao tek u jednom dijelu pročelja, obično iznad prvog kata. Na Inženjerskom domu, međutim, dolazi do inverzije uobičajenog postupka, pa su katovi bez ikakvog ornamenta izuzevši tek one najviše, uključujući i mansardu. (Andreja Der-Hazarijan Vukić, 1995:37)",
+        "architects": [
+          "Aladár Baranyai"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/draskoviceva-15a?ulica=trg-hrvatskih-velikana",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Ra%C4%8Dkoga%202%20Trg%20hrvatskih%20velikana%206%20%201.1_3c75.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/rackoga%202%20trg%20hrvatskih%20velikana%206%20%201.1_3c75.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/138251357",
+        "osmRefs": [
+          "way/138251357"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8116578,
+        "lon": 15.9838753
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9837466,
+              45.8113189
+            ],
+            [
+              15.9838925,
+              45.8113194
+            ],
+            [
+              15.9840707,
+              45.8114524
+            ],
+            [
+              15.9842316,
+              45.8115724
+            ],
+            [
+              15.9839784,
+              45.8117344
+            ],
+            [
+              15.9837242,
+              45.8116568
+            ],
+            [
+              15.9837261,
+              45.8116263
+            ],
+            [
+              15.9837348,
+              45.8114898
+            ],
+            [
+              15.9837353,
+              45.8114831
+            ],
+            [
+              15.9837403,
+              45.8114099
+            ],
+            [
+              15.9837466,
+              45.8113189
             ]
           ]
         ]
@@ -1961,6 +2207,194 @@
             [
               15.9786622,
               45.8131945
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambeno-poslovna-zgrada-trg-hrvatskih-velikana-4-4",
+      "properties": {
+        "id": "stambeno-poslovna-zgrada-trg-hrvatskih-velikana-4-4",
+        "name": "Stambeno-poslovna zgrada",
+        "address": "Trg hrvatskih velikana 4, 10000 Zagreb, Croatia",
+        "description": "Stambeno-poslovna zgrada na Trgu hrvatskih velikana 4 sagrađena je 1931. prema projektu Aleksandra Freudenreicha i Pavla Deutscha.¹ Njihovo poduzeće \"Arhitekti – Freudenreich & Deutsch – graditelji\" od osnutka 1923. pa do kraja dvadesetih godina prošloga stoljeća projektiralo je i gradilo u maniri protomodernizma, a ovu zgradu projektiralo je u duhu moderne. Arhitektonska dekoracija potpuno je dokinuta, a pročelje je rastvoreno prozorskim otvorima horizontalnog formata. Izvor: ¹Tomislav Premerl -1",
+        "architects": [
+          "Aleksandar Freudenreich",
+          "Pavao Deutsch"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-hrvatskih-velikana-4?ulica=trg-hrvatskih-velikana",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20hrv.%20velikana%204%20%201_1c49.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20hrv.%20velikana%204%20%201_1c49.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/390945803",
+        "osmRefs": [
+          "way/390945803"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8116568,
+        "lon": 15.9832317
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9831559,
+              45.8115961
+            ],
+            [
+              15.9833215,
+              45.8116042
+            ],
+            [
+              15.983409,
+              45.8116018
+            ],
+            [
+              15.9834086,
+              45.8116169
+            ],
+            [
+              15.9834053,
+              45.811728
+            ],
+            [
+              15.9832437,
+              45.8117245
+            ],
+            [
+              15.9832429,
+              45.8116852
+            ],
+            [
+              15.9831328,
+              45.8116798
+            ],
+            [
+              15.9831274,
+              45.8117382
+            ],
+            [
+              15.983019,
+              45.8117336
+            ],
+            [
+              15.9829696,
+              45.8117315
+            ],
+            [
+              15.9829699,
+              45.8116897
+            ],
+            [
+              15.9830523,
+              45.8116899
+            ],
+            [
+              15.9830589,
+              45.8116298
+            ],
+            [
+              15.9831518,
+              45.8116338
+            ],
+            [
+              15.9831559,
+              45.8115961
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambeno-trgovacka-zgrada-baum-jurisiceva-30-30",
+      "properties": {
+        "id": "stambeno-trgovacka-zgrada-baum-jurisiceva-30-30",
+        "name": "Stambeno-trgovačka zgrada Baum",
+        "address": "Jurišićeva 30 / Trg hrvatskih velikana 2, 10000 Zagreb, Croatia",
+        "description": "Stambeno-trgovačka zgrada Alberta i Antuna Baum (Braća Baum d.d.) na uglu Jurišićeva 30 /Trg hrvatskih velikana 2 sagrađena je 1929./1930. prema projektu Ignjata Fischera (suradnik Bela Auer). Na pročeljima modernističke četverokatnice s glatkom fasadom i prozorima raspoređenim u pravilnom ritmu od klasičnih arhitektonskih elemenata zadržani su samo kordonski vijenac između drugoga i trećeg kata i istureni završni vijenac. Dugi balkoni koji se lome preko ugla zgrade dodatno ga naglašavaju. Sličan motiv već je viđen na Behrensovoj zgradi Stern (bivša Bastlova zgrada Feller) na uglu Trg bana Jelačića 11 /Jurišićeva 1 (1928.), a kasnije i na Šterkovoj zgradi Rosinger-Jungwirth na uglu Draškovićeva 30 /Đorđićeva 23 (1931.)",
+        "architects": [
+          "Bela Auer",
+          "Ignjat Fischer"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/jurisiceva-30?ulica=trg-hrvatskih-velikana",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Juri%C5%A1i%C4%87eva%2030%20-Trg%20hrv.%20velikana%202%20%201_6f07.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/jurisiceva%2030%20-trg%20hrv.%20velikana%202%20%201_6f07.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/390945810",
+        "osmRefs": [
+          "way/390945810"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8118863,
+        "lon": 15.9832898
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9832308,
+              45.811975
+            ],
+            [
+              15.9832344,
+              45.8119055
+            ],
+            [
+              15.9832396,
+              45.8118051
+            ],
+            [
+              15.9832437,
+              45.8117245
+            ],
+            [
+              15.9834053,
+              45.811728
+            ],
+            [
+              15.9834116,
+              45.8119095
+            ],
+            [
+              15.9833977,
+              45.8121238
+            ],
+            [
+              15.983248,
+              45.812131
+            ],
+            [
+              15.9829867,
+              45.8121436
+            ],
+            [
+              15.9829808,
+              45.812019
+            ],
+            [
+              15.9829824,
+              45.8119829
+            ],
+            [
+              15.9830978,
+              45.811979
+            ],
+            [
+              15.9831701,
+              45.8119765
+            ],
+            [
+              15.9832308,
+              45.811975
             ]
           ]
         ]
