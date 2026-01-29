@@ -687,6 +687,136 @@
     },
     {
       "type": "Feature",
+      "id": "kuca-bezuk-boskoviceva-7-7",
+      "properties": {
+        "id": "kuca-bezuk-boskoviceva-7-7",
+        "name": "Kuća Bezuk",
+        "address": "Boškovićeva 7, 10000 Zagreb, Croatia",
+        "description": "Kuća Jurja i Gize Bezuk u Boškovićevoj 7 sagrađena je 1913./1914. prema projektu Ede Šena. Reprezentativno pročelje obilježuju klasicistički i secesijski dekorativni elementi. Središnji, rizalitno istaknuti dio zgrade, flankiran je udvojenim pilastrima velikog reda, a u zoni mansardnog krova zaključen je trokutastim zabatom. Na krajnjim bočnim osima u prvome katu su plitki zaobljeni secesijski erkeri. Kuću je sagradilo građevno poduzeće Gjure Carneluttija.",
+        "architects": [
+          "Edo Šen"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/boskoviceva-7?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Bo%C5%A1kovi%C4%87eva_7.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/boskoviceva_7.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288920712",
+        "osmRefs": [
+          "way/288920712"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8097519,
+        "lon": 15.9806075
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9805041,
+              45.8096948
+            ],
+            [
+              15.9806954,
+              45.8097077
+            ],
+            [
+              15.9806858,
+              45.8097767
+            ],
+            [
+              15.9806188,
+              45.8097721
+            ],
+            [
+              15.9806152,
+              45.8097974
+            ],
+            [
+              15.9805204,
+              45.8097909
+            ],
+            [
+              15.9805286,
+              45.8097316
+            ],
+            [
+              15.9804993,
+              45.8097296
+            ],
+            [
+              15.9805041,
+              45.8096948
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-cop-boskoviceva-18-18",
+      "properties": {
+        "id": "kuca-cop-boskoviceva-18-18",
+        "name": "Kuća Čop",
+        "address": "Boškovićeva 18 / Palmotićeva 36, 10000 Zagreb, Croatia",
+        "description": "Kuća Čop na uglu Boškovićeva 18 /Palmotićeva 36 sagrađena je 1907. prema projektu Aladara Baranyaija (arhitektonski biro Benedik & Baranyai). Uglovnica ima tri kata, u prizemlju su trgovine. Fasadni plašt bio je ukrašen elementima klasicizirane secesije. Pročelja su kasnije purificirana. (MUO, AthenaPlus)",
+        "architects": [
+          "Aladár Baranyai"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/palmoticeva-36-boskoviceva-18?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Bo%C5%A1kovi%C4%87eva_18__22.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/boskoviceva_18__22.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288916737",
+        "osmRefs": [
+          "way/288916737"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8095214,
+        "lon": 15.9816348
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9815004,
+              45.8095602
+            ],
+            [
+              15.9815167,
+              45.8094682
+            ],
+            [
+              15.9816455,
+              45.8094825
+            ],
+            [
+              15.9816521,
+              45.8093875
+            ],
+            [
+              15.9817748,
+              45.8093897
+            ],
+            [
+              15.9817566,
+              45.8095822
+            ],
+            [
+              15.9815004,
+              45.8095602
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "kuca-demeter-trg-bana-jelacica-2-2",
       "properties": {
         "id": "kuca-demeter-trg-bana-jelacica-2-2",
@@ -824,6 +954,84 @@
             [
               15.9868,
               45.8105754
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-ehrfort-boskoviceva-11-11",
+      "properties": {
+        "id": "kuca-ehrfort-boskoviceva-11-11",
+        "name": "Kuća Ehrfort",
+        "address": "Boškovićeva 11 / Palmotićeva 34, 10000 Zagreb, Croatia",
+        "description": "Kuća ing. Filipa Ehrforta na uglu Boškovićeva 11 /Palmotićeva 34 sagrađena je prema projektu arhitektonskog biroa Hönigsberg & Deutsch. Prema nacrtu iz 1896. godine dvokatnica je trebala biti izvedena s neobaroknim pročeljem, međutim, izvedena je 1903. s pročeljem u secesijskom stilu. Treći kat nadograđen joj je 1937. godine. (Lelja Dobronić, 1965:127)",
+        "architects": [
+          "Hönigsberg",
+          "Deutsch"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/boskoviceva-11?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Bo%C5%A1kovi%C4%87eva%2011%20%201_ad20.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/boskoviceva%2011%20%201_ad20.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288920689",
+        "osmRefs": [
+          "way/288920689"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8097729,
+        "lon": 15.9816754
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9817361,
+              45.8099773
+            ],
+            [
+              15.9815339,
+              45.8099665
+            ],
+            [
+              15.9815431,
+              45.8098823
+            ],
+            [
+              15.981494,
+              45.8098797
+            ],
+            [
+              15.9814974,
+              45.809848
+            ],
+            [
+              15.9814388,
+              45.8098449
+            ],
+            [
+              15.9814498,
+              45.8097609
+            ],
+            [
+              15.9816754,
+              45.8097729
+            ],
+            [
+              15.9817579,
+              45.8097773
+            ],
+            [
+              15.9817463,
+              45.8098839
+            ],
+            [
+              15.9817361,
+              45.8099773
             ]
           ]
         ]
@@ -1065,6 +1273,445 @@
     },
     {
       "type": "Feature",
+      "id": "kuca-grunwald-boskoviceva-8-8",
+      "properties": {
+        "id": "kuca-grunwald-boskoviceva-8-8",
+        "name": "Kuća Grünwald",
+        "address": "Boškovićeva 8, 10000 Zagreb, Croatia",
+        "description": "Kuća Ivana i Roze Grünwald u Boškovićevoj 8 sagrađena je 1910./1911. godine prema projektu Aladara Baranyaija (arhitektonski biro Benedik i Baranyai). Gotovo čitavo pročelje zgrade prekriveno je horizontalnom profilacijom. Ispod završnog vijenca uz balkone aplicirane su reljefne figuralne kompozicije. U središnjem dijelu između dvokatnih poligonalnih erkera smješten je plitki balkon. Erker je čest arhitektonski element u kasnosecesijskoj arhitekturi Aladara Baranyaija.",
+        "architects": [
+          "Aladár Baranyai"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/boskoviceva-8?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Bo%C5%A1kovi%C4%87eva%208%20%203_49cc.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/boskoviceva%208%20%203_49cc.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288916747",
+        "osmRefs": [
+          "way/288916747"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8094447,
+        "lon": 15.9805548
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9804597,
+              45.8094708
+            ],
+            [
+              15.9804714,
+              45.8094047
+            ],
+            [
+              15.980479,
+              45.8093618
+            ],
+            [
+              15.9805917,
+              45.8093715
+            ],
+            [
+              15.9805844,
+              45.8094129
+            ],
+            [
+              15.9806499,
+              45.8094185
+            ],
+            [
+              15.980638,
+              45.8094861
+            ],
+            [
+              15.9804597,
+              45.8094708
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-grunwald-kralja-drzislava-6-6",
+      "properties": {
+        "id": "kuca-grunwald-kralja-drzislava-6-6",
+        "name": "Kuća Grünwald",
+        "address": "Kralja Držislava 6, 10000 Zagreb, Croatia",
+        "description": "Kuća Ernesta Grünwalda u Ulici kralja Držislava 6 sagrađena je 1925. prema projektu Huge Ehrlicha. Ovo je prva Ehrlichova građevina koja je dosljedno moderno oblikovana, bez primjene dekorativnih ili stilsko-historijskih detalja, iako je u njoj još uvijek prisutna stanovita sklonost prema individualizaciji i ekspresivizaciji oblika, što je jedna od značajki Ehrlichove arhitekture tih godina. Ipak, treba zapaziti da je ta ekspresivizacija ograničena na nekoliko karakterističnih detalja kao što su balkon, odnosno masivni krovni vijenac, dok je cjelina riješena mirnim ritmom linija i kvadratičnih prozorskih otvora jednostavno urezanih u glatke plohe zida. (Žarko Domljan, 1979:138)",
+        "architects": [
+          "Hugo Ehrlich"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/kralja-drzislava-6?ulica=kralja-drzislava",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Kralja%20Dr%C5%BEislava%206%20%201_1c42.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/kralja%20drzislava%206%20%201_1c42.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/289540877",
+        "osmRefs": [
+          "way/289540877"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8096156,
+        "lon": 15.9847162
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9849553,
+              45.8098259
+            ],
+            [
+              15.9849234,
+              45.8098242
+            ],
+            [
+              15.9846461,
+              45.8098095
+            ],
+            [
+              15.98466,
+              45.8095639
+            ],
+            [
+              15.9846629,
+              45.8095203
+            ],
+            [
+              15.9846639,
+              45.8095051
+            ],
+            [
+              15.9847387,
+              45.809508
+            ],
+            [
+              15.9847807,
+              45.80951
+            ],
+            [
+              15.9847726,
+              45.8096673
+            ],
+            [
+              15.9849281,
+              45.8096749
+            ],
+            [
+              15.9849617,
+              45.8096765
+            ],
+            [
+              15.9849553,
+              45.8098259
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-hinka-grunwalda-boskoviceva-2-2",
+      "properties": {
+        "id": "kuca-hinka-grunwalda-boskoviceva-2-2",
+        "name": "Kuća Hinka Grünwalda",
+        "address": "Boškovićeva 2 / Strossmayerov trg 1, 10000 Zagreb, Croatia",
+        "description": "Kuća Hinka Grünwalda na uglu Boškovićeva 2 /Strossmayerov trg 1 sagrađena je 1885./1886. prema projektu Ivana Plochbergera st. Gradnju je vodio Janko Jambrišak, jedan od najjačih zagrebačkih graditelja u ono vrijeme. Kod ove neorenesansne dvokatnice rizalitno su istaknute prve prozorske osi s udvojenim prozorima uz sami ugao zgrade, a zaključene su atikom s balustradama iznad krovnog vijenca. Uglovnice s kupolom na zaobljenom uglu okarakterizirale su kasnohistoricističku arhitekturu Zagreba. Upravo ova kuća je bila prva uglovnica u Zagrebu s tako riješenim uglom. Slavko Benedik izveo je dogradnju i pregradnju 1905., a Gjuro Carnelutti prigradnju dvorišnog trakta 1910. godine.",
+        "architects": [
+          "Ivan Plochberger st."
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/strossmayerov-trg-1-boskoviceva-2?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Strossmayerov_trg_1_-_Bo%C5%A1kovi%C4%87eva_2__1.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/strossmayerov_trg_1_-_boskoviceva_2__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/287887081",
+        "osmRefs": [
+          "way/287887081"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8091491,
+        "lon": 15.9794367
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9793251,
+              45.8092061
+            ],
+            [
+              15.9793304,
+              45.8091248
+            ],
+            [
+              15.9793356,
+              45.8090456
+            ],
+            [
+              15.9794763,
+              45.8090555
+            ],
+            [
+              15.9795696,
+              45.8090625
+            ],
+            [
+              15.9797073,
+              45.8090744
+            ],
+            [
+              15.979708,
+              45.8091047
+            ],
+            [
+              15.979512,
+              45.8090982
+            ],
+            [
+              15.979511,
+              45.8091129
+            ],
+            [
+              15.979547,
+              45.8091141
+            ],
+            [
+              15.9795429,
+              45.8091742
+            ],
+            [
+              15.9795149,
+              45.8091733
+            ],
+            [
+              15.9795122,
+              45.8092124
+            ],
+            [
+              15.9793251,
+              45.8092061
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-hirschl-boskoviceva-13-13",
+      "properties": {
+        "id": "kuca-hirschl-boskoviceva-13-13",
+        "name": "Kuća Hirschl",
+        "address": "Boškovićeva 13 / Palmotićeva 27, 10000 Zagreb, Croatia",
+        "description": "Kuća Hirschl na uglu Palmotićeva 27 /Boškovićeva podignuta je 1910. godine prema projektu Otta Goldscheidera (arhitektonski biro Hönigsberg & Deutsch). Kasnosecesijska uglovnica s različito oblikovanim pročeljima. U arhitektonskoj kompoziciji vidljiva je asimetrija u pozicioniranju erkera i ritmu prozorskih otvora. Na trokatnici je 1938./1939. izvedena dvokatna terasasta nadogradnja prema izuzetno dobrom projektu Stjepana Planića. Radove je izveo ovlašteni graditelj Franjo Car.",
+        "architects": [
+          "Otto Goldscheider"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/palmoticeva-27-boskoviceva-13?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Palmoti%C4%87eva_27_1.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/palmoticeva_27_1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288841235",
+        "osmRefs": [
+          "way/288841235"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8099132,
+        "lon": 15.9820795
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9819361,
+              45.8098071
+            ],
+            [
+              15.9822393,
+              45.8098347
+            ],
+            [
+              15.9822194,
+              45.8099917
+            ],
+            [
+              15.9822155,
+              45.8100267
+            ],
+            [
+              15.9821769,
+              45.8100246
+            ],
+            [
+              15.9819236,
+              45.8100114
+            ],
+            [
+              15.9819361,
+              45.8098071
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-hirsl-boskoviceva-15-15",
+      "properties": {
+        "id": "kuca-hirsl-boskoviceva-15-15",
+        "name": "Kuća Hiršl",
+        "address": "Boškovićeva 15, 10000 Zagreb, Croatia",
+        "description": "Kuća Miroslava Hiršla u Boškovićevoj 15 sagrađena je 1902. prema projektu arhitektonskog biroa Hönigsberg & Deutsch. To je ulična dvokatnica s pet prozorskih osi. U srednjem dijelu flankiranom s dva pilastra smješten je ulaz, a u krovnoj zoni bio je mansardni prozor sa zabatnim završetkom. Godine 1922. nadograđen je treći kat, a vjerojatno su uklonjeni i neki ornamentalni ukrasi pročelja. (Lelja Dobronić, 1965:127)",
+        "architects": [
+          "Hönigsberg",
+          "Deutsch"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/boskoviceva-15?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Bo%C5%A1kovi%C4%87eva%2015%20%201_4b68.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/boskoviceva%2015%20%201_4b68.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/289506208",
+        "osmRefs": [
+          "way/289506208"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8099181,
+        "lon": 15.982527
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9826271,
+              45.809971
+            ],
+            [
+              15.9825903,
+              45.809969
+            ],
+            [
+              15.9825785,
+              45.8100742
+            ],
+            [
+              15.9824032,
+              45.8100647
+            ],
+            [
+              15.9824102,
+              45.8100021
+            ],
+            [
+              15.9824296,
+              45.8098488
+            ],
+            [
+              15.9826389,
+              45.8098671
+            ],
+            [
+              15.9826271,
+              45.809971
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-josipa-lukasa-boskoviceva-20-20",
+      "properties": {
+        "id": "kuca-josipa-lukasa-boskoviceva-20-20",
+        "name": "Kuća Josipa Lukasa",
+        "address": "Boškovićeva 20, 10000 Zagreb, Croatia",
+        "description": "Kuća Josipa Lukasa u Boškovićevoj 20 sagrađena je 1894. prema projektu Janka Josipa Grahora. Stambena jednokatnica imala je skromno pročelje, raščlanjeno s dva rubna rizalita i pet prozorskih osi, bez bogate arhitektonske dekoracije, karakteristične za kasni historicizam. Kuća je 1909. pregrađena i nadograđeni su joj drugi i treći kat, a pročeljem, vertikalno raščlanjenim s dva rubna erkera i središnjim rizalitom, prevladavaju elementi neobaroka i secesijski motivi.",
+        "architects": [
+          "Janko Josip Grahor"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/boskoviceva-20?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Bo%C5%A1kovi%C4%87eva%2020%20%202_7072.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/boskoviceva%2020%20%202_7072.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/289508930",
+        "osmRefs": [
+          "way/289508930"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8096005,
+        "lon": 15.9823178
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9824175,
+              45.8096591
+            ],
+            [
+              15.9821998,
+              45.8096427
+            ],
+            [
+              15.9822158,
+              45.809554
+            ],
+            [
+              15.982246,
+              45.8095579
+            ],
+            [
+              15.9822566,
+              45.809503
+            ],
+            [
+              15.9823404,
+              45.8095108
+            ],
+            [
+              15.9823458,
+              45.8094826
+            ],
+            [
+              15.9824246,
+              45.8094899
+            ],
+            [
+              15.9824119,
+              45.8095553
+            ],
+            [
+              15.982436,
+              45.8095582
+            ],
+            [
+              15.9824175,
+              45.8096591
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "kuca-kanitz-kralja-zvonimira-1-1",
       "properties": {
         "id": "kuca-kanitz-kralja-zvonimira-1-1",
@@ -1213,6 +1860,291 @@
             [
               15.9776474,
               45.8135979
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-kulmer-boskoviceva-1-1",
+      "properties": {
+        "id": "kuca-kulmer-boskoviceva-1-1",
+        "name": "Kuća Kulmer",
+        "address": "Boškovićeva 1 / Zrinski trg 10, 10000 Zagreb, Croatia",
+        "description": "Kuća grofa Miroslava i grofice Elvire Kulmer na uglu Boškovićeva 1 /Zrinski trg 10 sagrađena je 1987./1888. prema projektu arhitekta Aleksandera Seća. Neorenesansna dvokatnica s reprezentativnim ulazom na središnjoj osi krila zgrade prema trgu, iznad kojega je plitki balkon oslonjen na stupove s korintskim kapitelima. Na uglu je dvokatni polukružni erker koji završava cilindričnim tornjićem s kupolom.",
+        "architects": [
+          "Aleksandar Seć"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/boskoviceva-1-zrinski-trg-10?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Bo%C5%A1kovi%C4%87eva_1.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/boskoviceva_1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/732284618",
+        "osmRefs": [
+          "way/732284618"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8096293,
+        "lon": 15.9794663
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9793903,
+              45.8097092
+            ],
+            [
+              15.9794183,
+              45.8095912
+            ],
+            [
+              15.9796413,
+              45.8096101
+            ],
+            [
+              15.9796149,
+              45.8097292
+            ],
+            [
+              15.9793903,
+              45.8097092
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-lea-sterna-boskoviceva-3-3",
+      "properties": {
+        "id": "kuca-lea-sterna-boskoviceva-3-3",
+        "name": "Kuća Lea Sterna",
+        "address": "Boškovićeva 3 / Petrinjska 22, 10000 Zagreb, Croatia",
+        "description": "Kuća Lea Sterna na uglu Boškovićeva 3 /Petrinjska 22 sagrađena je 1906/1907. prema projektu arhitektonskog biroa Benedik i Baranyai. Izvorno je to bila secesijska dvokatnica na kojoj se ističu dva polukružna erkera na pročelju prema Boškovićevoj ulici. Dvokatni erkeri jednim su dijelom obloženi keramičkim pločicama. Treći kat s ravnim krovom prema dvorištu i mansardni krov prema ulicama kasnije je nadogradio Dionis Sunko.",
+        "architects": [
+          "Aladár Baranyai"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/boskoviceva-3-petrinjska-22?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Bo%C5%A1kovi%C4%87eva_3__11.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/boskoviceva_3__11.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/390984156",
+        "osmRefs": [
+          "way/390984156"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8096516,
+        "lon": 15.9797649
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9799266,
+              45.8098519
+            ],
+            [
+              15.9797746,
+              45.8098448
+            ],
+            [
+              15.9796805,
+              45.809834
+            ],
+            [
+              15.9796914,
+              45.8097878
+            ],
+            [
+              15.9798051,
+              45.8098008
+            ],
+            [
+              15.9798118,
+              45.8097723
+            ],
+            [
+              15.9797758,
+              45.8097682
+            ],
+            [
+              15.9797738,
+              45.8097768
+            ],
+            [
+              15.9797114,
+              45.8097697
+            ],
+            [
+              15.9797205,
+              45.8097308
+            ],
+            [
+              15.9796837,
+              45.8097266
+            ],
+            [
+              15.9796717,
+              45.8097777
+            ],
+            [
+              15.9796054,
+              45.8097698
+            ],
+            [
+              15.9796149,
+              45.8097292
+            ],
+            [
+              15.9796413,
+              45.8096101
+            ],
+            [
+              15.9799505,
+              45.8096373
+            ],
+            [
+              15.9799266,
+              45.8098519
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-ljudevita-ivancana-boskoviceva-10-10",
+      "properties": {
+        "id": "kuca-ljudevita-ivancana-boskoviceva-10-10",
+        "name": "Kuća Ljudevita Ivančana",
+        "address": "Boškovićeva 10, 10000 Zagreb, Croatia",
+        "description": "Kuća Ivančan u Boškovićevoj 10 sagrađena je 1903./1904. prema projektu Viktora Kovačića. To je jedno od prvih samostalnih Kovačićevih djela, a ostvareno je za arhitektonsko-građevno poduzeće Pilar & Mally & Bauda, koje je u to vrijeme, zapošljavanjem mladih arhitekata Aladara Baranyija, Lava Kalde, Josipa Markovića i Kovačića, napravilo odmak od historicizma. Pročelje s pet prozorskih osi i središnjim ulazom diskretno je ukrašeno s nešto secesijskih i tradicionalnih arhitektonskih dekorativnih elemenata. U svojoj biografiji s popisom djela za posao nastavnika na Visokoj tehničkoj školi Kovačić (protagonist moderne) je izostavio ovu kuću, kao i kuću Kornitzer (Gundulićeva 22), vjerojatno zbog nezadovoljstva svojim prvim radovima. Dvokatnici je kasnije nadograđen treći kat.",
+        "architects": [
+          "Viktor Kovačić"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/boskoviceva-10?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Bo%C5%A1kovi%C4%87eva%2010%20%202_4e07.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/boskoviceva%2010%20%202_4e07.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288916748",
+        "osmRefs": [
+          "way/288916748"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8094588,
+        "lon": 15.9807579
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.980638,
+              45.8094861
+            ],
+            [
+              15.9806499,
+              45.8094185
+            ],
+            [
+              15.9807369,
+              45.809426
+            ],
+            [
+              15.980749,
+              45.8093572
+            ],
+            [
+              15.9808332,
+              45.8093644
+            ],
+            [
+              15.9808222,
+              45.8094266
+            ],
+            [
+              15.9808779,
+              45.8094314
+            ],
+            [
+              15.9808647,
+              45.8095056
+            ],
+            [
+              15.980638,
+              45.8094861
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-philipa-ehrforta-boskoviceva-9-9",
+      "properties": {
+        "id": "kuca-philipa-ehrforta-boskoviceva-9-9",
+        "name": "Kuća Philipa Ehrforta",
+        "address": "Boškovićeva 9, 10000 Zagreb, Croatia",
+        "description": "Kuća ing. Philipa Ehrforta u Boškovićevoj 9 sagrađena je 1896. godine prema projektu arhitektonskog biroa Hönigsberg & Deutsch. Prema nacrtu iz 1896. godine dvokatnica je izvedena s neobaroknim pročeljem koje je kasnije u dobroj mjeri purificirano.¹ U središnjem dijelu rizalitno istaknutog dijela pročelja, ispod krovnog vijenca, aplicirana je stilizirana kartuša s inicijalima (Ph i E) vlasnika kuće. Atika s balustradom koja je bila iznad toga središnjeg dijela srušena je prilikom potresa 22.03.2020. Izvor: ¹Lelja Dobronić, 1965:127",
+        "architects": [
+          "Hönigsberg",
+          "Deutsch"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/boskoviceva-9?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Bo%C5%A1kovi%C4%87eva%209%20%201_ff0d.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/boskoviceva%209%20%201_ff0d.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288920690",
+        "osmRefs": [
+          "way/288920690"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8098028,
+        "lon": 15.9813434
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9814498,
+              45.8097609
+            ],
+            [
+              15.9814388,
+              45.8098449
+            ],
+            [
+              15.9814328,
+              45.8098864
+            ],
+            [
+              15.9812333,
+              45.8098725
+            ],
+            [
+              15.9812373,
+              45.8098446
+            ],
+            [
+              15.9812494,
+              45.8097486
+            ],
+            [
+              15.9814498,
+              45.8097609
             ]
           ]
         ]
@@ -1789,6 +2721,88 @@
     },
     {
       "type": "Feature",
+      "id": "poslovna-zgrada-tempo-boskoviceva-5-5",
+      "properties": {
+        "id": "poslovna-zgrada-tempo-boskoviceva-5-5",
+        "name": "Poslovna zgrada Tempo",
+        "address": "Boškovićeva 5 / Petrinjska 35, 10000 Zagreb, Croatia",
+        "description": "Poslovna zgrada poduzeća \"Tempo\" na uglu Boškovićeva 5 /Petrinjska 35 sagrađena je 1964./1965. prema projektu Ive Senegačnika i Ante Glunčića. Glavni volumen zgrade uvlačenjem od Boškovićeve ulice formirao je mali javni prostor do drugog volumena, koji je čeonom stranom zadržao građevinsku liniju ulice. To oblikovno i urbanističko rješenje vrijedan je primjer moderne arhitekture koja je uspješno interpolirana u donjogradski blok.",
+        "architects": [
+          "Ante Glunčić",
+          "Ivan Senegačnik"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/boskoviceva-5-petrinjska-35?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Bo%C5%A1kovi%C4%87eva_5_-Petrinjska_35_1.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/boskoviceva_5_-petrinjska_35_1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288920711",
+        "osmRefs": [
+          "way/288920711"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8097965,
+        "lon": 15.9803284
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9801505,
+              45.8099137
+            ],
+            [
+              15.9801763,
+              45.8097287
+            ],
+            [
+              15.9803696,
+              45.8097418
+            ],
+            [
+              15.9803773,
+              45.8096863
+            ],
+            [
+              15.9805041,
+              45.8096948
+            ],
+            [
+              15.9804993,
+              45.8097296
+            ],
+            [
+              15.9804751,
+              45.8099031
+            ],
+            [
+              15.980354,
+              45.8098949
+            ],
+            [
+              15.9803594,
+              45.8098565
+            ],
+            [
+              15.9802802,
+              45.8098512
+            ],
+            [
+              15.9802703,
+              45.8099218
+            ],
+            [
+              15.9801505,
+              45.8099137
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "poslovno-trgovacko-stambena-zgrada-osiguravajuceg-drustva-triglav-kneza-mislava-17-17",
       "properties": {
         "id": "poslovno-trgovacko-stambena-zgrada-osiguravajuceg-drustva-triglav-kneza-mislava-17-17",
@@ -1879,6 +2893,217 @@
             [
               15.9862504,
               45.8094512
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambena-zgrada-hrvatske-banke-za-promet-nekretnina-boskoviceva-16-16",
+      "properties": {
+        "id": "stambena-zgrada-hrvatske-banke-za-promet-nekretnina-boskoviceva-16-16",
+        "name": "Stambena zgrada Hrvatske banke za promet nekretnina",
+        "address": "Boškovićeva 16, 10000 Zagreb, Croatia",
+        "description": "Zgrada Hrvatske banke za promet nekretnina u Boškovićevoj 16 sagrađena je 1909. godine prema projektu Otta Goldscheidera, dok je radio za arhitektonski biro Hönigsberg & Deutsch. Trokatnicu s pet prozorskih osi i ulazom u sredini realiziralo je građevno poduzeće inž. Ljudevita Deutscha, uglavnom prema projektu, s neznatnim izmjenama: nema reški na dijelu pročelja prvog i drugog kata, trodjelni prozori su blagi erkeri, nedostaju dvostruki stupovi na pročelju trećega kata. (Zlatko Jurić -2, 1996:77)",
+        "architects": [
+          "Otto Goldscheider"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/boskoviceva-16?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Bo%C5%A1kovi%C4%87eva%2016%20%201_b310.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/boskoviceva%2016%20%201_b310.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288916751",
+        "osmRefs": [
+          "way/288916751"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8095053,
+        "lon": 15.9814054
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.981294,
+              45.8095424
+            ],
+            [
+              15.981312,
+              45.8094409
+            ],
+            [
+              15.9813881,
+              45.8094474
+            ],
+            [
+              15.9813979,
+              45.8093918
+            ],
+            [
+              15.9814803,
+              45.8093989
+            ],
+            [
+              15.9814687,
+              45.809464
+            ],
+            [
+              15.9815167,
+              45.8094682
+            ],
+            [
+              15.9815004,
+              45.8095602
+            ],
+            [
+              15.981294,
+              45.8095424
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambeno-poslovna-zgrada-barac-boskoviceva-23-23",
+      "properties": {
+        "id": "stambeno-poslovna-zgrada-barac-boskoviceva-23-23",
+        "name": "Stambeno-poslovna zgrada Barac",
+        "address": "Boškovićeva 23 / Draškovićeva 38, 10000 Zagreb, Croatia",
+        "description": "Stambeno-poslovna zgrada Barac na uglu Boškovićeva 23 /Draškovićeva 38 sagrađena je 1913./1914. prema projektu Ede Šena. Radove je izveo graditelj Gjuro Carnelutti. To je kasnosecesijska trokatnica s mansardnim krovom prema ulicama i ravnim krovom prema dvorištu. Pročeljima dominiraju neoklasicistički dekorativni elementi. Efektno rješenje zaobljenoga ugla s jonski stupovima, koji se protežu preko prvoga i drugog kata, zgradi daju monumentalnost i podsjećaju na Šenovo rješenje ugla palače Osiguravajućeg društva Croatia na uglu Masarykova/Preradovićeva iz 1910. godine.",
+        "architects": [
+          "Edo Šen"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/boskoviceva-23-draskoviceva-38?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Bo%C5%A1kovi%C4%87eva_23_-Dra%C5%A1kovi%C4%87eva_38__1.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/boskoviceva_23_-draskoviceva_38__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/289506197",
+        "osmRefs": [
+          "way/289506197"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.809945,
+        "lon": 15.983425
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9834001,
+              45.8101162
+            ],
+            [
+              15.9834056,
+              45.8100663
+            ],
+            [
+              15.9834508,
+              45.8100688
+            ],
+            [
+              15.9834573,
+              45.8100121
+            ],
+            [
+              15.9833229,
+              45.8100047
+            ],
+            [
+              15.9833201,
+              45.8100293
+            ],
+            [
+              15.9833061,
+              45.8100097
+            ],
+            [
+              15.9833102,
+              45.8099242
+            ],
+            [
+              15.983536,
+              45.8099364
+            ],
+            [
+              15.983557,
+              45.809961
+            ],
+            [
+              15.9835466,
+              45.8101356
+            ],
+            [
+              15.9834001,
+              45.8101162
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambeno-poslovna-zgrada-boskoviceva-6-6",
+      "properties": {
+        "id": "stambeno-poslovna-zgrada-boskoviceva-6-6",
+        "name": "Stambeno-poslovna zgrada",
+        "address": "Boškovićeva 6 / Petrinjska 43, 10000 Zagreb, Croatia",
+        "description": "Stambeno-poslovna zgrada na uglu Boškovićeva 6 /Petrinjska 43 sagrađena je 1932. godine prema projektu Zlatka Neumanna. Modernistička uglovnica s potpuno identičnim pročeljima na uglovnom dijelu je peterokatnica s ravnim krovom dok su četverokatna krila zgrade s kombinacijom ravnog i jednostrešnog kosog krova. Plašt zgrade dinamiziran je isturivanjem dijelova pročelja. Prozori su četverokrilni, horizontalno položeni. U potpuno ostakljenom prizemlju su lokali.",
+        "architects": [
+          "Zlatko Neumann"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/boskoviceva-6-petrinjska-43?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Bo%C5%A1kovi%C4%87eva%206%20%201_35b3.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/boskoviceva%206%20%201_35b3.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288916746",
+        "osmRefs": [
+          "way/288916746"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8094264,
+        "lon": 15.9803315
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9802011,
+              45.8093461
+            ],
+            [
+              15.980435,
+              45.8093656
+            ],
+            [
+              15.9804288,
+              45.809401
+            ],
+            [
+              15.9804714,
+              45.8094047
+            ],
+            [
+              15.9804597,
+              45.8094708
+            ],
+            [
+              15.9801939,
+              45.809448
+            ],
+            [
+              15.9802011,
+              45.8093461
             ]
           ]
         ]
@@ -1988,6 +3213,75 @@
             [
               15.986288,
               45.8106486
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambeno-poslovna-zgrada-danas-hotel-le-premier-kralja-drzislava-5-5",
+      "properties": {
+        "id": "stambeno-poslovna-zgrada-danas-hotel-le-premier-kralja-drzislava-5-5",
+        "name": "Stambeno-poslovna zgrada, danas hotel Le Premier",
+        "address": "Kralja Držislava 5 / Trg žrtava fašizma, 10000 Zagreb, Croatia",
+        "description": "Stambeno-poslovna zgrada na uglu Ulica kralja Držislava 5 /Trg žrtava fašizma sagrađena je 1922./1923. prema projektu Lava Kalde. Masivna uglovnica s mansardnim krovištem prema ulici i ravnim krovom prema dvorištu nastala je između dva svjetska rata, u razdoblju između secesijske moderne i racionalnog funkcionalizma.¹ Danas je to luksuzni boutique hotel Le Premier u vlasništvu Sveučilišta Libertas. Izvor: ¹ Darja Radović Mahečić -1",
+        "architects": [
+          "Lav Kalda"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/kralja-drzislava-5?ulica=kralja-drzislava",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Kralja%20Dr%C5%BEislava%205%20%201_3c9c.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/kralja%20drzislava%205%20%201_3c9c.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/289540864",
+        "osmRefs": [
+          "way/289540864"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8102053,
+        "lon": 15.9861147
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9862029,
+              45.8103802
+            ],
+            [
+              15.986,
+              45.8102628
+            ],
+            [
+              15.98601,
+              45.8101478
+            ],
+            [
+              15.9858045,
+              45.8101433
+            ],
+            [
+              15.9858075,
+              45.8100311
+            ],
+            [
+              15.9861018,
+              45.8100455
+            ],
+            [
+              15.9862238,
+              45.8100526
+            ],
+            [
+              15.986225,
+              45.8103481
+            ],
+            [
+              15.9862029,
+              45.8103802
             ]
           ]
         ]
@@ -2402,6 +3696,76 @@
     },
     {
       "type": "Feature",
+      "id": "stambeno-trgovacka-zgrada-kovac-boskoviceva",
+      "properties": {
+        "id": "stambeno-trgovacka-zgrada-kovac-boskoviceva",
+        "name": "Stambeno-trgovačka zgrada Kovač",
+        "address": "Boškovićeva / Palmotićeva 29, 10000 Zagreb, Croatia",
+        "description": "Stambeno-trgovačka zgrada Kovač na uglu Palmotićeva 29 /Boškovićeva sagrađena je 1928./1929. prema projektu i u realizaciji GP Pollak & Bornstein. Na samom uglu trokatnice su balkoni s punom ogradom, fasadni plašt definiran kontinuiranom paralelnom horizontalnom profilacijom, korniš na uglu i istočnom kraju stepenast po visini. (MUO, AthenaPlus)",
+        "architects": [
+          "Pollak",
+          "Bornstein"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/boskoviceva?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Palmoti%C4%87eva%2029%20-Bo%C5%A1kovi%C4%87eva%20%201_f13e.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/palmoticeva%2029%20-boskoviceva%20%201_f13e.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/289508939",
+        "osmRefs": [
+          "way/289508939"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8095448,
+        "lon": 15.9820985
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9821998,
+              45.8096427
+            ],
+            [
+              15.9819911,
+              45.8096257
+            ],
+            [
+              15.9819589,
+              45.8096039
+            ],
+            [
+              15.9819692,
+              45.8094473
+            ],
+            [
+              15.9821294,
+              45.8094518
+            ],
+            [
+              15.9821232,
+              45.8095189
+            ],
+            [
+              15.9822207,
+              45.8095265
+            ],
+            [
+              15.9822158,
+              45.809554
+            ],
+            [
+              15.9821998,
+              45.8096427
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "stambeno-trgovacka-zgrada-kraus-muacevic-kralja-zvonimira-2-2",
       "properties": {
         "id": "stambeno-trgovacka-zgrada-kraus-muacevic-kralja-zvonimira-2-2",
@@ -2460,6 +3824,245 @@
             [
               15.9882152,
               45.8098449
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "trgovacko-stambena-zgrada-moskovic-boskoviceva",
+      "properties": {
+        "id": "trgovacko-stambena-zgrada-moskovic-boskoviceva",
+        "name": "Trgovačko-stambena zgrada Mosković",
+        "address": "Boškovićeva / Petrinjska 26, 10000 Zagreb, Croatia",
+        "description": "Trgovačko-stambena zgrada Mosković na uglu Petrinjska 26 /Boškovićeva sagrađena je 1905./1906. prema projektu Janka Holjca. Na pročeljima uglovnice ističu se dvokatni erkeri i ranosecesijski dekorativni elementi. Nadogradnja (J. Jovanović 1922.) je izvedena u razdoblju između dva svjetska rata, kada se arhitektonski izraz kreće u okvirima funkcionalističkoga stilskog opredjeljenja. (Tamara Marić, Nataša Jakšić)",
+        "architects": [
+          "Janko Holjac"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/boskoviceva_1?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Petrinjska%2026%20-%20Bo%C5%A1kovi%C4%87eva%20%201_870a.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/petrinjska%2026%20-%20boskoviceva%20%201_870a.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/287887079",
+        "osmRefs": [
+          "way/287887079"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8093613,
+        "lon": 15.979953
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9797405,
+              45.8094112
+            ],
+            [
+              15.9797472,
+              45.8092552
+            ],
+            [
+              15.9798916,
+              45.8092609
+            ],
+            [
+              15.9798956,
+              45.8092113
+            ],
+            [
+              15.9799647,
+              45.8092113
+            ],
+            [
+              15.9799628,
+              45.8091827
+            ],
+            [
+              15.9800028,
+              45.8091839
+            ],
+            [
+              15.9799899,
+              45.8094372
+            ],
+            [
+              15.9797405,
+              45.8094112
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "trgovacko-stambena-zgrada-schlenger-boskoviceva-7b-7b",
+      "properties": {
+        "id": "trgovacko-stambena-zgrada-schlenger-boskoviceva-7b-7b",
+        "name": "Trgovačko-stambena zgrada Schlenger",
+        "address": "Boškovićeva 7B, 10000 Zagreb, Croatia",
+        "description": "Trgovačko-stambena zgrada Schlenger u Boškovićevoj 7B sagrađena je 1936./1937. prema projektu Slavka Löwyja. To je modernistička peterokatnica “T” tlocrta s uvučenom zadnjom etažom. Na simetričnom pročelju, rastvorenom velikim horizontalno položenim prozorima, ističe se istureni središnji dio iznad ulaza.",
+        "architects": [
+          "Slavko Löwy"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/boskoviceva-7b?ulica=boskoviceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Bo%C5%A1kovi%C4%87eva_7b.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/boskoviceva_7b.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288920691",
+        "osmRefs": [
+          "way/288920691"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8098346,
+        "lon": 15.9811797
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9812494,
+              45.8097486
+            ],
+            [
+              15.9812373,
+              45.8098446
+            ],
+            [
+              15.9811851,
+              45.8098411
+            ],
+            [
+              15.9811739,
+              45.8099347
+            ],
+            [
+              15.9811092,
+              45.8099303
+            ],
+            [
+              15.9811216,
+              45.8098281
+            ],
+            [
+              15.9810642,
+              45.8098242
+            ],
+            [
+              15.9810762,
+              45.8097385
+            ],
+            [
+              15.9812494,
+              45.8097486
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "trgovacko-stambena-zgrada-ullmann-kralja-drzislava",
+      "properties": {
+        "id": "trgovacko-stambena-zgrada-ullmann-kralja-drzislava",
+        "name": "Trgovačko­-stambena zgrada Ullmann",
+        "address": "Kralja Držislava / Trg žrtava fašizma 15, 10000 Zagreb, Croatia",
+        "description": "Trgovačko­-stambena zgrada Ullmann na uglu Trg žrtava faš­izma 15 /Ulica kralja Držislava sagrađena je 1924./1925. prema projektu Lava Kalde. Kao i druge Kaldine palače nastale u međuratnom razdoblju i ova se gradnja odlikuje racionalnoš­ću, jednostavnom monumentalnoš­ću, elegantnim mjerilom, vješ­tom prostornom dispozicijom i visokom razinom izvedbe. (Darja Radović Mahečić -1)",
+        "architects": [
+          "Lav Kalda"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/kralja-drzislava?ulica=kralja-drzislava",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20%C5%BErtava%20fa%C5%A1izma%2015%20-Kralja%20Dr%C5%BEislava%20%201_8fa0.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20zrtava%20fasizma%2015%20-kralja%20drzislava%20%201_8fa0.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/289540871",
+        "osmRefs": [
+          "way/289540871"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8097687,
+        "lon": 15.9861921
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.986111,
+              45.8097562
+            ],
+            [
+              15.9861122,
+              45.8097206
+            ],
+            [
+              15.9860643,
+              45.8097195
+            ],
+            [
+              15.9860649,
+              45.8096891
+            ],
+            [
+              15.9859766,
+              45.8096818
+            ],
+            [
+              15.9859784,
+              45.8096392
+            ],
+            [
+              15.9860819,
+              45.8096438
+            ],
+            [
+              15.9860961,
+              45.8096623
+            ],
+            [
+              15.9861323,
+              45.8096662
+            ],
+            [
+              15.9861347,
+              45.8096436
+            ],
+            [
+              15.9862662,
+              45.809648
+            ],
+            [
+              15.9862644,
+              45.809667
+            ],
+            [
+              15.9862622,
+              45.809704
+            ],
+            [
+              15.9862602,
+              45.8097811
+            ],
+            [
+              15.9862576,
+              45.8098577
+            ],
+            [
+              15.9862299,
+              45.8098735
+            ],
+            [
+              15.986111,
+              45.8097562
             ]
           ]
         ]
@@ -2922,6 +4525,123 @@
             [
               15.9763022,
               45.8126916
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zgrada-wiener-bankvereina-draskoviceva-21-21",
+      "properties": {
+        "id": "zgrada-wiener-bankvereina-draskoviceva-21-21",
+        "name": "Zgrada Wiener Bankvereina",
+        "address": "Draškovićeva 21 / Kralja Držislava 2, 10000 Zagreb, Croatia",
+        "description": "Zgrada Wiener Bankvereina na uglu Draškovićeva 21 /Kralja Držislava 2 sagrađena je 1922./1923. prema projektu Janka Holjca. Monumentalna uglovnica s mansardnim krovom sagrađena je u stilu međuratnog neoklasicizma, što je bilo uobičajeno za zgrade novčarskih institucija i zagrebačku arhitekturu toga vremena.",
+        "architects": [
+          "Janko Holjac"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/draskoviceva-21-kralja-drzislava-2?ulica=kralja-drzislava",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Dra%C5%A1kovi%C4%87eva%2021%20-%20Kralja%20Dr%C5%BEislava%20%201_1ad9.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/draskoviceva%2021%20-%20kralja%20drzislava%20%201_1ad9.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/289547535",
+        "osmRefs": [
+          "way/289547535"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.80961,
+        "lon": 15.9839163
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.984316,
+              45.8097969
+            ],
+            [
+              15.984128,
+              45.8097837
+            ],
+            [
+              15.9839345,
+              45.809775
+            ],
+            [
+              15.9839109,
+              45.809739
+            ],
+            [
+              15.9839163,
+              45.80961
+            ],
+            [
+              15.9839167,
+              45.8095179
+            ],
+            [
+              15.9840815,
+              45.8095219
+            ],
+            [
+              15.9840639,
+              45.8096674
+            ],
+            [
+              15.9840761,
+              45.8096776
+            ],
+            [
+              15.984119,
+              45.80968
+            ],
+            [
+              15.9841213,
+              45.8096471
+            ],
+            [
+              15.9841398,
+              45.8096381
+            ],
+            [
+              15.9841956,
+              45.8096422
+            ],
+            [
+              15.9842133,
+              45.8096561
+            ],
+            [
+              15.9842131,
+              45.8096856
+            ],
+            [
+              15.9842281,
+              45.8096879
+            ],
+            [
+              15.9842453,
+              45.8096748
+            ],
+            [
+              15.9842419,
+              45.8096056
+            ],
+            [
+              15.984326,
+              45.8096061
+            ],
+            [
+              15.9843227,
+              45.8096857
+            ],
+            [
+              15.984316,
+              45.8097969
             ]
           ]
         ]

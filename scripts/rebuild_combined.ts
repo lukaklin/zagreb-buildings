@@ -1,15 +1,32 @@
 import { execSync } from "node:child_process";
+import { readdirSync } from "node:fs";
+import path from "node:path";
 
-// Accept area slugs as command line arguments
-const areaSlugs = process.argv.slice(2);
+// Auto-discover areas from raw input files
+function discoverAreas(): string[] {
+  const rawDir = path.join("input", "raw");
+  const files = readdirSync(rawDir);
+
+  return files
+    .filter((f) => f.startsWith("arhitektura-zagreba.") && f.endsWith(".jsonl"))
+    .map((f) => f.replace("arhitektura-zagreba.", "").replace(".jsonl", ""))
+    .sort();
+}
+
+// Use provided args, or auto-discover if none given
+const providedAreas = process.argv.slice(2);
+const areaSlugs = providedAreas.length > 0 ? providedAreas : discoverAreas();
 
 if (areaSlugs.length === 0) {
-  console.log("Usage: npm run rebuild:combined -- <area1> <area2> ...");
-  console.log("Example: npm run rebuild:combined -- trg-bana-jelacica trg-zrtava-fasizma");
+  console.log("No areas found. Either:");
+  console.log("  - Add raw files to input/raw/ (arhitektura-zagreba.<area>.jsonl)");
+  console.log("  - Or specify areas manually: npm run rebuild:combined -- <area1> <area2>");
   process.exit(1);
 }
 
-console.log(`🔨 Rebuilding combined dataset from areas: ${areaSlugs.join(", ")}`);
+const source = providedAreas.length > 0 ? "specified" : "auto-discovered";
+console.log(`🔨 Rebuilding combined dataset from ${areaSlugs.length} ${source} areas:`);
+console.log(`   ${areaSlugs.join(", ")}`);
 
 try {
   // Step 1: Combine areas
