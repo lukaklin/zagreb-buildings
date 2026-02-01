@@ -6,6 +6,7 @@ import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
 import booleanContains from "@turf/boolean-contains";
 import { point as turfPoint, polygon as turfPolygon } from "@turf/helpers";
 import turfArea from "@turf/area";
+import stringSimilarity from "string-similarity";
 import { validateGeometry, withErrorHandling, writeValidationReport } from "./validation";
 
 
@@ -287,6 +288,34 @@ function addrMatchesMulti(featureProps: any, canonicalAddresses: string[]): numb
   return best;
 }
 
+function nameMatches(featureProps: any, canonicalName: string): number {
+  const osmName = featureProps?.name ? String(featureProps.name).toLowerCase().trim() : null;
+  if (!osmName || !canonicalName) return 0;
+
+  const canonical = canonicalName.toLowerCase().trim();
+
+  // Exact match - highest bonus
+  if (osmName === canonical) return 150;
+
+  // OSM name is contained in canonical name
+  // e.g., "Hotel Dubrovnik" matches "Hotel Milinov, danas Hotel Dubrovnik"
+  if (canonical.includes(osmName)) return 100;
+
+  // Canonical name is contained in OSM name
+  if (osmName.includes(canonical)) return 80;
+
+  // Fuzzy match using Dice coefficient
+  // Handles cases like:
+  //   "Pravoslavna Saborna crkva Preobraženja Gospodnjeg" vs
+  //   "Saborna crkva Preobraženja Gospodnjeg"
+  const similarity = stringSimilarity.compareTwoStrings(osmName, canonical);
+  if (similarity >= 0.8) return 120;  // Very high similarity
+  if (similarity >= 0.6) return 70;   // Good similarity
+  if (similarity >= 0.4) return 30;   // Moderate similarity
+
+  return 0;
+}
+
 function tagClassFromProps(props: any): "building" | "building_part" | "typed_building_relation" | "unknown" {
   if (props?.["building:part"]) return "building_part";
   if (props?.building) return "building";
@@ -301,6 +330,7 @@ type ScoredCandidate = {
   dist_m: number;
   area_m2: number;
   addr_bonus: number;
+  name_bonus: number;
   tag_class: string;
   feature: GeoJSON.Feature;
 };
@@ -309,7 +339,8 @@ function pickBest(
   features: GeoJSON.Feature[],
   targetLat: number,
   targetLon: number,
-  canonicalAddresses: string[]
+  canonicalAddresses: string[],
+  canonicalName: string
 ): { best: ScoredCandidate | null; strategy: string; confidence: "high" | "medium" | "low"; topCandidates: ScoredCandidate[] } {
   if (features.length === 0) {
     return { best: null, strategy: "no_candidates", confidence: "low", topCandidates: [] };
@@ -350,15 +381,17 @@ function pickBest(
       const dist = c ? haversineMeters(targetLat, targetLon, c.lat, c.lon) : Number.POSITIVE_INFINITY;
 
       const addrBonus = addrMatchesMulti(props, canonicalAddresses);
+      const nameBonus = nameMatches(props, canonicalName);
       const tagClass = tagClassFromProps(props);
 
-      // Prefer containment heavily, then addrBonus, then distance, then smaller area.
+      // Prefer containment heavily, then addrBonus/nameBonus, then distance, then smaller area.
       // Add a small preference for full building footprints over building parts.
       const tagBonus = tagClass === "building" ? 80 : tagClass === "building_part" ? -20 : 0;
 
       const score =
         (contains ? 10_000 : 0) +
         addrBonus +
+        nameBonus +
         tagBonus +
         Math.max(0, 500 - dist) + // closer is better; cap helps stability
         Math.max(0, 2000 - area / 10); // prefer smaller polygons; area scaled down
@@ -370,6 +403,7 @@ function pickBest(
         dist_m: dist,
         area_m2: area,
         addr_bonus: addrBonus,
+        name_bonus: nameBonus,
         tag_class: tagClass,
         feature: f,
       };
@@ -399,22 +433,26 @@ function pickBest(
   let strategy = "fallback_matching";
 
   if (best) {
-    if (best.contains && best.addr_bonus >= 60) {
+    if (best.contains && (best.addr_bonus >= 60 || best.name_bonus >= 80)) {
       confidence = "high";
-      strategy = "point_containment_with_address";
+      strategy = best.name_bonus >= 80 ? "point_containment_with_name" : "point_containment_with_address";
     } else if (best.contains) {
       confidence = "medium";
       strategy = "point_containment_only";
     } else if (best.addr_bonus >= 60) {
       confidence = "medium";
       strategy = "address_match_only";
+    } else if (best.name_bonus >= 80) {
+      confidence = "medium";
+      strategy = "name_match_only";
     }
 
-    // If top 2 are very close and we don't have containment or a strong address bonus, mark low confidence.
+    // If top 2 are very close and we don't have containment or a strong address/name bonus, mark low confidence.
     if (
       second &&
       !best.contains &&
       best.addr_bonus < 60 &&
+      best.name_bonus < 80 &&
       Math.abs(best.score - second.score) < 80
     ) {
       confidence = "low";
@@ -569,7 +607,7 @@ async function findGeometryWithFallback(
     try {
       const overpassJson = await fetchOverpass(overpassDirectQuery(osmType, osmId), cachePath);
       const features = toFeatures(overpassJson);
-      const picked = pickBest(features, lat, lon, canonicalAddresses);
+      const picked = pickBest(features, lat, lon, canonicalAddresses, row.name);
       if (picked.best) {
         return {
           geometry: picked.best.feature.geometry as GeoJSON.Geometry,
@@ -592,7 +630,7 @@ async function findGeometryWithFallback(
     try {
       const overpassJson = await fetchOverpass(overpassDirectQuery(trusted.osm_type, trusted.osm_id), cachePath);
       const features = toFeatures(overpassJson);
-      const picked = pickBest(features, lat, lon, canonicalAddresses);
+      const picked = pickBest(features, lat, lon, canonicalAddresses, row.name);
       if (picked.best) {
         return {
           geometry: picked.best.feature.geometry as GeoJSON.Geometry,
@@ -637,7 +675,7 @@ async function findGeometryWithFallback(
     }
 
     const features = toFeatures(overpassJson);
-    const picked = pickBest(features, lat, lon, canonicalAddresses);
+    const picked = pickBest(features, lat, lon, canonicalAddresses, row.name);
 
     if (picked.best) {
       // Only stop early if the match CONTAINS the geocoded point
@@ -743,6 +781,7 @@ async function main() {
           dist_m: number;
           area_m2: number;
           addr_bonus: number;
+          name_bonus: number;
           tag_class: string;
         }>;
       };
@@ -817,6 +856,7 @@ async function main() {
               dist_m: c.dist_m,
               area_m2: c.area_m2,
               addr_bonus: c.addr_bonus,
+              name_bonus: c.name_bonus,
               tag_class: c.tag_class,
             })),
           },
@@ -862,6 +902,7 @@ async function main() {
             dist_m: c.dist_m,
             area_m2: c.area_m2,
             addr_bonus: c.addr_bonus,
+            name_bonus: c.name_bonus,
             tag_class: c.tag_class,
           })),
         },

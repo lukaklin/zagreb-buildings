@@ -21,7 +21,7 @@
           "way/390946778"
         ],
         "footprintStatus": "matched",
-        "footprintStrategy": "radius_80m_point_containment_with_address",
+        "footprintStrategy": "radius_80m_point_containment_with_name",
         "footprintConfidence": "high",
         "lat": 45.8116743,
         "lon": 15.9847673
@@ -192,7 +192,7 @@
           "way/587748701"
         ],
         "footprintStatus": "matched",
-        "footprintStrategy": "radius_80m_point_containment_with_address",
+        "footprintStrategy": "radius_80m_point_containment_with_name",
         "footprintConfidence": "high",
         "lat": 45.8099552,
         "lon": 15.9872367
@@ -312,13 +312,12 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Gajeva_1_-Trg_bana_Jela%C4%8Di%C4%87a__1.jpg",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/gajeva_1_-trg_bana_jelacica__1.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/584464569",
+        "osmRef": "way/584569598",
         "osmRefs": [
-          "way/584464569",
-          "way/1109233192"
+          "way/584569598"
         ],
-        "footprintStatus": "matched_parts_merged",
-        "footprintStrategy": "radius_80m_parts_merged_point_containment_with_address",
+        "footprintStatus": "matched",
+        "footprintStrategy": "override_direct_point_containment_with_name",
         "footprintConfidence": "high",
         "lat": 45.8126272,
         "lon": 15.97669
@@ -327,6 +326,30 @@
         "type": "Polygon",
         "coordinates": [
           [
+            [
+              15.9764938,
+              45.812494
+            ],
+            [
+              15.9764475,
+              45.812078
+            ],
+            [
+              15.9767342,
+              45.8120587
+            ],
+            [
+              15.9767466,
+              45.8121243
+            ],
+            [
+              15.9767745,
+              45.812245
+            ],
+            [
+              15.9768041,
+              45.8123697
+            ],
             [
               15.9768281,
               45.8124704
@@ -342,32 +365,6 @@
             [
               15.9764938,
               45.812494
-            ],
-            [
-              15.9768281,
-              45.8124704
-            ]
-          ],
-          [
-            [
-              15.9765907,
-              45.8125845
-            ],
-            [
-              15.9767286,
-              45.8125711
-            ],
-            [
-              15.9767574,
-              45.812716
-            ],
-            [
-              15.9766196,
-              45.8127293
-            ],
-            [
-              15.9765907,
-              45.8125845
             ]
           ]
         ]
@@ -445,6 +442,177 @@
             [
               15.9837466,
               45.8113189
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-albina-bedenka-or-iceva-19-21-19",
+      "properties": {
+        "id": "kuca-albina-bedenka-or-iceva-19-21-19",
+        "name": "Kuća Albina Bedenka",
+        "address": "Đorđićeva 19 - 21, 10000 Zagreb, Croatia",
+        "description": "Kuća Albina Bedenka u Đorđićevoj 19-21 sagrađena je 1909. prema projektu Aladára Baranyija (arhitektonski biro Benedikt & Baranyai). Kasnosecesijska trokatnica s dva ulaza i dva plitka zaobljena erkera koji se protežu od prvog kata do krovnog vijenca. Erkeri i kombinacija glatke i zrnate žbuke na pročeljima zgrada karakteristični su Baranyaijevi oblikovni elementi.",
+        "architects": [
+          "Aladár Baranyai"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/oriceva-19-21?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/%C4%90or%C4%91i%C4%87eva_19__1.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/dordiceva_19__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288904704",
+        "osmRefs": [
+          "way/288904704"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8108481,
+        "lon": 15.9825078
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9825444,
+              45.810882
+            ],
+            [
+              15.9824912,
+              45.8108798
+            ],
+            [
+              15.9824849,
+              45.8109513
+            ],
+            [
+              15.982484,
+              45.8109701
+            ],
+            [
+              15.9824103,
+              45.8109668
+            ],
+            [
+              15.9824137,
+              45.8109282
+            ],
+            [
+              15.98233,
+              45.8109246
+            ],
+            [
+              15.9823321,
+              45.8109004
+            ],
+            [
+              15.982297,
+              45.8108994
+            ],
+            [
+              15.9823063,
+              45.8107965
+            ],
+            [
+              15.982551,
+              45.81081
+            ],
+            [
+              15.9825444,
+              45.810882
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-bauer-or-iceva-5-5",
+      "properties": {
+        "id": "kuca-bauer-or-iceva-5-5",
+        "name": "Kuća Bauer",
+        "address": "Đorđićeva 5, 10000 Zagreb, Croatia",
+        "description": "Kuću Bauer, u Đorđićevoj 5, projektiralo je i sagradilo građevno poduzeće Pollak i Bornstein 1911./1912. Ugrađena trokatnica na krajnjim osima ima erkere, a pročelje je izrazito nakićeno neostilskim i stiliziranim secesijskim dekorativnim elementima. Izvor: MUO, AthenaPlus",
+        "architects": [
+          "Pollak",
+          "Bornstein"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/oriceva-5?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/%C4%90or%C4%91i%C4%87eva_5__1.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/dordiceva_5__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/286614558",
+        "osmRefs": [
+          "way/286614558"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8107626,
+        "lon": 15.9804585
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9805736,
+              45.810838
+            ],
+            [
+              15.9805387,
+              45.8108382
+            ],
+            [
+              15.9805376,
+              45.8108727
+            ],
+            [
+              15.9804773,
+              45.8108708
+            ],
+            [
+              15.9804793,
+              45.8108376
+            ],
+            [
+              15.9804243,
+              45.8108358
+            ],
+            [
+              15.9804229,
+              45.8108694
+            ],
+            [
+              15.9803579,
+              45.8108671
+            ],
+            [
+              15.9803613,
+              45.8108138
+            ],
+            [
+              15.9803331,
+              45.8108129
+            ],
+            [
+              15.9803343,
+              45.8108017
+            ],
+            [
+              15.9803442,
+              45.8107097
+            ],
+            [
+              15.9805809,
+              45.8107234
+            ],
+            [
+              15.9805736,
+              45.810838
             ]
           ]
         ]
@@ -1057,7 +1225,7 @@
           "way/97235393"
         ],
         "footprintStatus": "matched",
-        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_name",
         "footprintConfidence": "high",
         "lat": 45.8125369,
         "lon": 15.9771393
@@ -1151,8 +1319,8 @@
           "relation/3853100"
         ],
         "footprintStatus": "matched",
-        "footprintStrategy": "radius_80m_point_containment_only",
-        "footprintConfidence": "medium",
+        "footprintStrategy": "radius_80m_point_containment_with_name",
+        "footprintConfidence": "high",
         "lat": 45.8126992,
         "lon": 15.9786398
       },
@@ -1419,6 +1587,67 @@
     },
     {
       "type": "Feature",
+      "id": "kuca-gustava-wellera-or-iceva-10-10",
+      "properties": {
+        "id": "kuca-gustava-wellera-or-iceva-10-10",
+        "name": "Kuća Gustava Wellera",
+        "address": "Đorđićeva 10, 10000 Zagreb, Croatia",
+        "description": "Kuća Gustava Wellera u Đorđićevoj 10 sagrađena je 1885. godine prema projektu Kune Waidmanna. Na pročelju neorenesansne dvokatnice naglašeno je horizontalno raščlanjivanje profiliranim vijencima. Između vijenaca koji razdvajaju prizemlje i prvi kat je sgraffito friz, a okviri prozora prizemlja i prvog kata obogaćeni su pravokutnim istacima s tzv. uškama. Zona zida prvog i drugog kata obložena je narančastim i žutim opekama kariranog ornamenta. Prizemlje je obrađeno u plitkoj rustici, a krovni vijenac je ukrašen gustim nizom zubaca.",
+        "architects": [
+          "Kuno Waidmann"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/oriceva-10?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/%C4%90or%C4%91i%C4%87eva_10__1.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/dordiceva_10__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288920686",
+        "osmRefs": [
+          "way/288920686"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8105766,
+        "lon": 15.9812996
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9814282,
+              45.8105463
+            ],
+            [
+              15.9814213,
+              45.8106184
+            ],
+            [
+              15.981171,
+              45.8106068
+            ],
+            [
+              15.9811814,
+              45.8104988
+            ],
+            [
+              15.9812842,
+              45.8105031
+            ],
+            [
+              15.9814317,
+              45.8105104
+            ],
+            [
+              15.9814282,
+              45.8105463
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "kuca-hinka-grunwalda-boskoviceva-2-2",
       "properties": {
         "id": "kuca-hinka-grunwalda-boskoviceva-2-2",
@@ -1526,7 +1755,7 @@
           "way/288841235"
         ],
         "footprintStatus": "matched",
-        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_name",
         "footprintConfidence": "high",
         "lat": 45.8099132,
         "lon": 15.9820795
@@ -2171,8 +2400,8 @@
           "way/288838575"
         ],
         "footprintStatus": "matched",
-        "footprintStrategy": "radius_80m_point_containment_only",
-        "footprintConfidence": "medium",
+        "footprintStrategy": "radius_80m_point_containment_with_name",
+        "footprintConfidence": "high",
         "lat": 45.8134872,
         "lon": 15.9769406
       },
@@ -2270,6 +2499,72 @@
     },
     {
       "type": "Feature",
+      "id": "kuca-pravoslavne-opcine-trg-petra-preradovica-5-5",
+      "properties": {
+        "id": "kuca-pravoslavne-opcine-trg-petra-preradovica-5-5",
+        "name": "Kuća pravoslavne općine",
+        "address": "Trg Petra Preradovića 5, 10000 Zagreb, Croatia",
+        "description": "Kuća pravoslavne općine na Preradovićevom trgu 5 sagrađena je 1939./1940. prema projektu Stanka Kliske i Antuna Ulricha. Monumentalni modernistički stambeni blok, u parternoj zoni prilagođen pristupu recentno uklonjenom kinu i kazalištu Metropol/Kapitol/Dubrovnik/Zagreb. Paradigma zamjenske gradnje visokog urbaniteta za istrošenu građevnu supstancu izgubljenoga povijesnog konteksta u najužem gradskom središtu. (Vera Grimmer) Izvor: Aleksander Laslo, 2011:138",
+        "architects": [
+          "Antun Ulrich",
+          "Stanko Kliska"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-petra-preradovica-5?ulica=trg-petra-preradovica",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Preradovi%C4%87ev%20trg%205%20%201_29cf.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/preradovicev%20trg%205%20%201_29cf.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/338689074",
+        "osmRefs": [
+          "way/338689074"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8122433,
+        "lon": 15.9736707
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9737671,
+              45.812115
+            ],
+            [
+              15.9737454,
+              45.8123638
+            ],
+            [
+              15.9735779,
+              45.8123659
+            ],
+            [
+              15.9735932,
+              45.8121217
+            ],
+            [
+              15.9736335,
+              45.8121227
+            ],
+            [
+              15.9736376,
+              45.8121122
+            ],
+            [
+              15.9736538,
+              45.8121123
+            ],
+            [
+              15.9737671,
+              45.812115
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "kuca-rado-trg-bana-jelacica-5-5",
       "properties": {
         "id": "kuca-rado-trg-bana-jelacica-5-5",
@@ -2288,8 +2583,8 @@
           "way/105485745"
         ],
         "footprintStatus": "matched",
-        "footprintStrategy": "radius_80m_point_containment_only",
-        "footprintConfidence": "medium",
+        "footprintStrategy": "radius_80m_point_containment_with_name",
+        "footprintConfidence": "high",
         "lat": 45.8134726,
         "lon": 15.9771426
       },
@@ -2497,6 +2792,336 @@
     },
     {
       "type": "Feature",
+      "id": "kuca-schwartz-trg-petra-preradovica",
+      "properties": {
+        "id": "kuca-schwartz-trg-petra-preradovica",
+        "name": "Kuća Schwartz",
+        "address": "Trg Petra Preradovića / Varšavska 1, 10000 Zagreb, Croatia",
+        "description": "Kuća Schwartz, Varšavska 1 /Preradovićev trg, sagrađena je 1897. prema projektu Martina Pilara (Pilar & Mally & Bauda). Dvokatnica s pet prozorskih osi spada među umjetnički visoko vrijedna ostvarenja visokog historicizma iz Pilarovog opusa. U arhitektonskoj kompoziciji dominira tradicionalna figuracij s uočljivom jasnom tripartitnom podjelom pročelja. Prizemlje je obrađeno rustikalnim potezima i profilacijom odvojeno od osnovne plohe pročelja. Vijenac veoma jasno dijeli pročelje od krova koji nije oblikovni već utilitarni element u arhitektonskoj kompoziciji. Erker je jednokatni i umjerene proporcije. (Zlatko Jurić)",
+        "architects": [
+          "Martin Pilar"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-petra-preradovica_1?ulica=trg-petra-preradovica",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Var%C5%A1avska_1_11.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/varsavska_1_11.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/512839701",
+        "osmRefs": [
+          "way/512839701"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.811791,
+        "lon": 15.9736944
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9735627,
+              45.8118342
+            ],
+            [
+              15.973601,
+              45.8117387
+            ],
+            [
+              15.973603,
+              45.8117019
+            ],
+            [
+              15.9737564,
+              45.8117047
+            ],
+            [
+              15.9737563,
+              45.8117476
+            ],
+            [
+              15.9738082,
+              45.8117477
+            ],
+            [
+              15.9738097,
+              45.8118794
+            ],
+            [
+              15.9735655,
+              45.8118687
+            ],
+            [
+              15.9735627,
+              45.8118342
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-schwarz-or-iceva-7-7",
+      "properties": {
+        "id": "kuca-schwarz-or-iceva-7-7",
+        "name": "Kuća Schwarz",
+        "address": "Đorđićeva 7, 10000 Zagreb, Croatia",
+        "description": "Kuću Schwarz u Đorđićevoj 7 projektiralo je i sagradilo Građevinsko poduzeće Pollak, Albert i Bornstein 1911./1912. Ugrađena trokatnica na krajnjim osima ima trokatne erkere spojene na 3. katu balkonom, a pročelje je izrazito nakićeno neostilskim i stiliziranim secesijskim dekorativnim elementima. Izvor: MUO, AthenaPlus",
+        "architects": [
+          "Pollak",
+          "Albert",
+          "Bornstein"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/oriceva-7?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/%C4%90or%C4%91i%C4%87eva_7__1.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/dordiceva_7__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/286614557",
+        "osmRefs": [
+          "way/286614557"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8108149,
+        "lon": 15.980622
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9805726,
+              45.8108535
+            ],
+            [
+              15.9805736,
+              45.810838
+            ],
+            [
+              15.9805809,
+              45.8107234
+            ],
+            [
+              15.9807876,
+              45.8107298
+            ],
+            [
+              15.9807813,
+              45.8108296
+            ],
+            [
+              15.9807766,
+              45.8109037
+            ],
+            [
+              15.9807424,
+              45.8109027
+            ],
+            [
+              15.9807455,
+              45.8108529
+            ],
+            [
+              15.9807286,
+              45.8108524
+            ],
+            [
+              15.9807294,
+              45.8108402
+            ],
+            [
+              15.9807091,
+              45.8108396
+            ],
+            [
+              15.9807115,
+              45.8108003
+            ],
+            [
+              15.9806699,
+              45.810799
+            ],
+            [
+              15.9806649,
+              45.8108788
+            ],
+            [
+              15.9806144,
+              45.8108772
+            ],
+            [
+              15.9806158,
+              45.8108548
+            ],
+            [
+              15.9805726,
+              45.8108535
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-siebenschein-preradoviceva",
+      "properties": {
+        "id": "kuca-siebenschein-preradoviceva",
+        "name": "Kuća Siebenschein",
+        "address": "Preradovićeva / Trg Petra Preradovića 3, 10000 Zagreb, Croatia",
+        "description": "Kuća Siebenschein na uglu Preradovićev trg 3 /Preradovićeva 2 sagrađena je 1873./1874. prema projektu Franje Kleina. Kući je Klein dao klasicistički kubus u stilizaciji romantičnog historizma. Plasticitet je istaknuo ponajviše erkerima koji jednostavno vise na pročelju poput kakvih ormarića. U cijelosti ta uglovnica napominje münchensku arhitekturu šezdesetih godina, koja pak nije bez doticaja sa Schinkelovom berlinskom školom. Ta se münchenska natuknica osobito očituje u skrivanju krova iza snažnoga krovnog vijenca i barokizirane balustrade ukrašene vazama i lanternama. Zgrada kakva je danas pred nama modernizacija je Ivana Velikonje iz 1931/32., no s kojom smo izgubili jednu zanimljivu varijantu historizma, a nismo dobili modernu arhitekturu. Ova bi stambena kuća svakako zaslužila da joj se vrate originalna pročelja. (Olga Maruševski, 1993:113)",
+        "architects": [
+          "Franjo Klein"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/preradoviceva_1?ulica=trg-petra-preradovica",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Preradovi%C4%87ev%20trg%203%20%201_682e.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/preradovicev%20trg%203%20%201_682e.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/512839703",
+        "osmRefs": [
+          "way/512839703"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8118424,
+        "lon": 15.974019
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9738097,
+              45.8118794
+            ],
+            [
+              15.9738082,
+              45.8117477
+            ],
+            [
+              15.9737972,
+              45.8116624
+            ],
+            [
+              15.9738859,
+              45.81166
+            ],
+            [
+              15.9738917,
+              45.8117267
+            ],
+            [
+              15.9739699,
+              45.8117275
+            ],
+            [
+              15.973977,
+              45.8115965
+            ],
+            [
+              15.9741906,
+              45.8115998
+            ],
+            [
+              15.9741709,
+              45.8118939
+            ],
+            [
+              15.9738097,
+              45.8118794
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-singer-or-iceva-11-11",
+      "properties": {
+        "id": "kuca-singer-or-iceva-11-11",
+        "name": "Kuća Singer",
+        "address": "Đorđićeva 11, 10000 Zagreb, Croatia",
+        "description": "Kuća Samojla i Hermine Singer u Đorđićevoj 11 sagrađena je 1909./1911. prema projektu Aladára Baranyija (arhitektonski biro Benedikt & Baranyai). Pročelje kasnosecesijske trokatnice obloženo je kombinacijom glatke i zrnate teksture žbuke, a središnjim dijelom kuće iznad ulaza dominira dvokatni erker koji je zaključen zaobljenim balkonom.",
+        "architects": [
+          "Aladár Baranyai"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/oriceva-11?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/%C4%90or%C4%91i%C4%87eva_11__2.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/dordiceva_11__2.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/860324914",
+        "osmRefs": [
+          "way/860324914"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.810826,
+        "lon": 15.9810978
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9809958,
+              45.8108184
+            ],
+            [
+              15.9810052,
+              45.8107383
+            ],
+            [
+              15.9811712,
+              45.8107454
+            ],
+            [
+              15.9811635,
+              45.8108786
+            ],
+            [
+              15.9810972,
+              45.8108759
+            ],
+            [
+              15.9810972,
+              45.8108904
+            ],
+            [
+              15.9810664,
+              45.8108893
+            ],
+            [
+              15.9810657,
+              45.8109081
+            ],
+            [
+              15.9810087,
+              45.8109065
+            ],
+            [
+              15.9810087,
+              45.8108335
+            ],
+            [
+              15.9810294,
+              45.8108345
+            ],
+            [
+              15.9810286,
+              45.8108185
+            ],
+            [
+              15.9809958,
+              45.8108184
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "kuca-stankovic-ilica-2-2",
       "properties": {
         "id": "kuca-stankovic-ilica-2-2",
@@ -2515,8 +3140,8 @@
           "way/365493822"
         ],
         "footprintStatus": "matched",
-        "footprintStrategy": "radius_80m_point_containment_only",
-        "footprintConfidence": "medium",
+        "footprintStrategy": "radius_80m_point_containment_with_name",
+        "footprintConfidence": "high",
         "lat": 45.8133072,
         "lon": 15.976192
       },
@@ -2554,6 +3179,254 @@
     },
     {
       "type": "Feature",
+      "id": "kuca-weller-or-iceva-6-6",
+      "properties": {
+        "id": "kuca-weller-or-iceva-6-6",
+        "name": "Kuća Weller",
+        "address": "Đorđićeva 6, 10000 Zagreb, Croatia",
+        "description": "Stambeno-poslovna najamna kuća Weller u Đorđićevoj 6 podignuta je 1930/1931. godine prema projektu Srećka Florschütza. Četverokatnica s ravnim krovom nastala je u razdoblju kada se Florschütz, nakon projektiranje u duhu postsecesijskog klasicizma, vraća modernizmu i u oblikovanju sve više upotrebljava ravne linije. Svojim ostvarenjima, pogotovu u prvoj fazi, pokazao je suvereno poznavanje modernih arhitektonskih kretanja. Tako kuće Jakoby i Kiseljak u Gajevoj 53 i 55 pripadaju vrlo kvalitetnim djelima zagrebačke arhitekture prvog desetljeća XX. stoljeća. (Jasenka Kranjčević -1)",
+        "architects": [
+          "Srećko Florschütz"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/oriceva-6?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/%C4%90or%C4%91i%C4%87eva_6__1.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/dordiceva_6__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288920701",
+        "osmRefs": [
+          "way/288920701"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8104801,
+        "lon": 15.9804144
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.980498,
+              45.8105756
+            ],
+            [
+              15.9803117,
+              45.8105682
+            ],
+            [
+              15.9803214,
+              45.8104876
+            ],
+            [
+              15.9803222,
+              45.8104685
+            ],
+            [
+              15.980359,
+              45.8104702
+            ],
+            [
+              15.9803661,
+              45.8103956
+            ],
+            [
+              15.98041,
+              45.8103976
+            ],
+            [
+              15.9804034,
+              45.8104668
+            ],
+            [
+              15.980441,
+              45.8104685
+            ],
+            [
+              15.9804475,
+              45.8104007
+            ],
+            [
+              15.9804766,
+              45.810402
+            ],
+            [
+              15.9804701,
+              45.8104707
+            ],
+            [
+              15.9805078,
+              45.8104725
+            ],
+            [
+              15.980498,
+              45.8105756
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-weller-palmoticeva-28-28",
+      "properties": {
+        "id": "kuca-weller-palmoticeva-28-28",
+        "name": "Kuća Weller",
+        "address": "Palmotićeva 28 / Đorđićeva 12, 10000 Zagreb, Croatia",
+        "description": "Kuća Weller na uglu Đorđićeva 12 /Palmotićeva 28 podignuta je 1885./1887. prema projektu Kune Waidmanna za soboslikara i trgovca Gustava Wellera, oca arhitekta Gustava Welera ml. To je dvokatna neorenesansna uglovnica sa šest prozorskih osi na pročelju u Đorđićevoj, četiri na pročelju u Palmotićevoj, te jednom na tupom uglu. Prema izvornim nacrtima na uglu s trostranim rizalitom iznad krovnog vijenca zamišljen je tornjić, a prozori prvoga kata trebali su imati natprozornike u obliku segmentnog zabata, međutim gradska komisija to nije odobrila. Pročelja su izvedena sa skromnom arhitektonskom dekoracijom. Između konzola koje “nose” završni vijenac na svakoj osi probijeni su tavanski otvori. Lavlje glave iznad prizemnih prozora u funkciji su zaglavnog kamena.",
+        "architects": [
+          "Kuno Waidmann"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/oriceva-12-palmoticeva-28?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/%C4%90or%C4%91i%C4%87eva_12_-Palmoti%C4%87eva_28__1.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/dordiceva_12_-palmoticeva_28__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288920685",
+        "osmRefs": [
+          "way/288920685"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8105329,
+        "lon": 15.9816055
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9816717,
+              45.8106301
+            ],
+            [
+              15.9814213,
+              45.8106184
+            ],
+            [
+              15.9814282,
+              45.8105463
+            ],
+            [
+              15.9814586,
+              45.8105477
+            ],
+            [
+              15.9814623,
+              45.8105088
+            ],
+            [
+              15.9814899,
+              45.8105101
+            ],
+            [
+              15.9815175,
+              45.8105113
+            ],
+            [
+              15.9815206,
+              45.8104764
+            ],
+            [
+              15.9817014,
+              45.8104842
+            ],
+            [
+              15.981697,
+              45.8106187
+            ],
+            [
+              15.9816717,
+              45.8106301
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kuca-zadobosek-palmoticeva",
+      "properties": {
+        "id": "kuca-zadobosek-palmoticeva",
+        "name": "Kuća Zadobošek",
+        "address": "Palmotićeva / Đorđićeva 15, 10000 Zagreb, Croatia",
+        "description": "Kuća Josipa Zadobošeka na uglu Đorđićeva 15 /Palmotićeva sagrađena je 1904. prema projektu arhitektonskog biroa Hönigsberg & Deutsch. Ugaona dvokatnica s duljim pročeljem u Đorđićevoj ulici (sedam prozorskih osi), a kraćim u Palmotićevoj ulici (tri prozorske osi). Na tupom uglu balkoni u prvom i drugom katu. Pročelje je ukrašeno neostilskim i stiliziranim secesijskim dekorativnim elementima. (Lelja Dobronić, 1965:127)",
+        "architects": [
+          "Hönigsberg",
+          "Deutsch"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/dordiceva-15?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/%C4%90or%C4%91i%C4%87eva%2015%20-Palmoti%C4%87eva%20%201_cfab.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/dordiceva%2015%20-palmoticeva%20%201_cfab.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288904705",
+        "osmRefs": [
+          "way/288904705"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.810842,
+        "lon": 15.9820765
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.982297,
+              45.8108994
+            ],
+            [
+              15.9820968,
+              45.8108906
+            ],
+            [
+              15.9820907,
+              45.8109149
+            ],
+            [
+              15.9820288,
+              45.810911
+            ],
+            [
+              15.9820307,
+              45.8108986
+            ],
+            [
+              15.9818479,
+              45.8108874
+            ],
+            [
+              15.9818541,
+              45.8107928
+            ],
+            [
+              15.9818685,
+              45.810783
+            ],
+            [
+              15.9818896,
+              45.8107769
+            ],
+            [
+              15.9821957,
+              45.8107929
+            ],
+            [
+              15.9823063,
+              45.8107965
+            ],
+            [
+              15.982297,
+              45.8108994
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "kuca-zivkovic-trg-bana-jelacica-12-12",
       "properties": {
         "id": "kuca-zivkovic-trg-bana-jelacica-12-12",
@@ -2572,7 +3445,7 @@
           "way/105489668"
         ],
         "footprintStatus": "matched",
-        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_name",
         "footprintConfidence": "high",
         "lat": 45.8123925,
         "lon": 15.9781751
@@ -2900,6 +3773,280 @@
     },
     {
       "type": "Feature",
+      "id": "pravoslavna-saborna-crkva-preobrazenja-gospodnjeg-trg-petra-preradovica-10000",
+      "properties": {
+        "id": "pravoslavna-saborna-crkva-preobrazenja-gospodnjeg-trg-petra-preradovica-10000",
+        "name": "Pravoslavna Saborna crkva Preobraženja Gospodnjeg",
+        "address": "Trg Petra Preradovića, 10000 Zagreb, Croatia",
+        "description": "Pravoslavna Saborna crkva Preobraženja Gospodnjeg na Preradovićevom trgu sagrađena je 1865./1866. prema projektu Franje Kleina. Crkva je podignuta na mjestu srušene srednjovjekovne katoličke crkve Svete Margarete, koju je biskup Maksimilijan Vrhovac 1794. prodao pravoslavnim vjernicima. Radove je izvelo građevno poduzeće tada poznatog graditelja Janka Jambrišaka. Prema projektima Hermana Bolléa crkva je od 1883. do 1884. obnavljana nakon potresa, 1899. postavljena joj je nova kapa zvonika, a 1913./1914. preoblikovano joj je pročelje. Nakon toga adaptacije su izvedene 1931./1932. (Stanko Kliska) i 2003./2007. Crkva je znatno oštećena prilikom potresa 2020. i potrebna joj je i konstrukcijska obnova.",
+        "architects": [
+          "Franjo Klein"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-petra-preradovica_3?ulica=trg-petra-preradovica",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Preradovi%C4%87ev%20trg%20%201_7d2f.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/preradovicev%20trg%20%201_7d2f.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/97165324",
+        "osmRefs": [
+          "way/97165324"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_name_match_only_fallback",
+        "footprintConfidence": "medium",
+        "lat": 45.8121812,
+        "lon": 15.9741244
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9739287,
+              45.8125464
+            ],
+            [
+              15.9742143,
+              45.8125505
+            ],
+            [
+              15.9742245,
+              45.8125792
+            ],
+            [
+              15.9742378,
+              45.8125799
+            ],
+            [
+              15.9742504,
+              45.8125829
+            ],
+            [
+              15.9742626,
+              45.8125885
+            ],
+            [
+              15.9742723,
+              45.8125963
+            ],
+            [
+              15.9742786,
+              45.8126055
+            ],
+            [
+              15.9742811,
+              45.8126156
+            ],
+            [
+              15.9742787,
+              45.8126282
+            ],
+            [
+              15.9742705,
+              45.8126395
+            ],
+            [
+              15.9742574,
+              45.8126483
+            ],
+            [
+              15.9742419,
+              45.8126533
+            ],
+            [
+              15.974225,
+              45.8126548
+            ],
+            [
+              15.9742168,
+              45.8126854
+            ],
+            [
+              15.9739224,
+              45.8126797
+            ],
+            [
+              15.9739287,
+              45.8125464
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "prva-hrvatska-stedionica-bogoviceva",
+      "properties": {
+        "id": "prva-hrvatska-stedionica-bogoviceva",
+        "name": "Prva hrvatska štedionica",
+        "address": "Bogovićeva / Ilica 5 / Margaretska 1 - 3 / Trg Petra Preradovića 1, 10000 Zagreb, Croatia",
+        "description": "Palača Prve hrvatske štedionice u bloku Ilica 5 /Margaretska 1-3 /Trg Petra Preradovića 1 /Bogovićeva 6 sagrađena je 1898./1899. prema projektu arhitekta Josipa pl. Vancaša. Autori idejne osnove prostornog rješenja s pasažom bili su Fellner & Helmer, projektanti susjedne zgrade nekadašnje Eskomptne banke (Ilica 3 /Petrićeva ulica). Prizemlje zgrade namijenjeno je za lokale, I. kat za urede, a II. i III. za najamne stanove. Pročelja dekorirana u stilu kasnog historicizma i rane secesije modernizirana su 1925. godine (Lav Kalda), kad im je uklonjen dobar dio izvorne ornamentike.",
+        "architects": [
+          "Josip Vancaš"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/ilica-5-trg-petra-preradovica-1?ulica=trg-petra-preradovica",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/TPP_1_1.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/tpp_1_1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/97165323",
+        "osmRefs": [
+          "way/97165323"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "override_direct_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8129236,
+        "lon": 15.9749569
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9744114,
+              45.8123107
+            ],
+            [
+              15.9744206,
+              45.8122869
+            ],
+            [
+              15.9744669,
+              45.8122691
+            ],
+            [
+              15.9746694,
+              45.8122663
+            ],
+            [
+              15.9747864,
+              45.8122649
+            ],
+            [
+              15.9751014,
+              45.8122562
+            ],
+            [
+              15.9750996,
+              45.812328
+            ],
+            [
+              15.9751001,
+              45.8123534
+            ],
+            [
+              15.9751006,
+              45.812364
+            ],
+            [
+              15.9750541,
+              45.8123645
+            ],
+            [
+              15.9750521,
+              45.8124489
+            ],
+            [
+              15.9750152,
+              45.8124518
+            ],
+            [
+              15.97503,
+              45.8124573
+            ],
+            [
+              15.9750292,
+              45.8124816
+            ],
+            [
+              15.9750054,
+              45.8125013
+            ],
+            [
+              15.9750502,
+              45.8125261
+            ],
+            [
+              15.9750918,
+              45.8126446
+            ],
+            [
+              15.9750466,
+              45.8126433
+            ],
+            [
+              15.9750566,
+              45.8127193
+            ],
+            [
+              15.9750877,
+              45.8127181
+            ],
+            [
+              15.9750924,
+              45.8127439
+            ],
+            [
+              15.9750845,
+              45.8127534
+            ],
+            [
+              15.9750623,
+              45.8127553
+            ],
+            [
+              15.9750724,
+              45.8128591
+            ],
+            [
+              15.9751021,
+              45.8128592
+            ],
+            [
+              15.9750974,
+              45.8129853
+            ],
+            [
+              15.9749918,
+              45.8129857
+            ],
+            [
+              15.9748357,
+              45.8129907
+            ],
+            [
+              15.974611,
+              45.81299
+            ],
+            [
+              15.9745494,
+              45.8129554
+            ],
+            [
+              15.9744981,
+              45.8127491
+            ],
+            [
+              15.9744587,
+              45.8125322
+            ],
+            [
+              15.9744552,
+              45.8125127
+            ],
+            [
+              15.9744516,
+              45.8124971
+            ],
+            [
+              15.9744114,
+              45.8123107
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "stambena-zgrada-hrvatske-banke-za-promet-nekretnina-boskoviceva-16-16",
       "properties": {
         "id": "stambena-zgrada-hrvatske-banke-za-promet-nekretnina-boskoviceva-16-16",
@@ -2962,6 +4109,326 @@
             [
               15.981294,
               45.8095424
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambena-zgrada-or-iceva-8-8",
+      "properties": {
+        "id": "stambena-zgrada-or-iceva-8-8",
+        "name": "Stambena zgrada",
+        "address": "Đorđićeva 8, 10000 Zagreb, Croatia",
+        "description": "Stambena zgrada u Đorđićevoj 8 podignuta je 1912./1914. prema projektu Gustava Wellera ml. Simetrično pročelje kasnosecsijske trokatnice bogato je vegetabilnom ukrasnom dekoracijom. Fasada je izvedena u kombinaciji glatke i zrnate žbuke. U središnjem dijelu pročelja iznad ulaza ističe se trokatni erker. Dvorišna krila imaju ravni krov.",
+        "architects": [
+          "Gustav Weller ml."
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/oriceva-8?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/%C4%90or%C4%91i%C4%87eva_8__1.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/dordiceva_8__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288920698",
+        "osmRefs": [
+          "way/288920698"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8105275,
+        "lon": 15.9806684
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9808282,
+              45.8105909
+            ],
+            [
+              15.980498,
+              45.8105756
+            ],
+            [
+              15.9805078,
+              45.8104725
+            ],
+            [
+              15.9805671,
+              45.8104752
+            ],
+            [
+              15.9805755,
+              45.8103883
+            ],
+            [
+              15.9806402,
+              45.8103913
+            ],
+            [
+              15.9806326,
+              45.8104707
+            ],
+            [
+              15.9807426,
+              45.8104758
+            ],
+            [
+              15.9807496,
+              45.8104023
+            ],
+            [
+              15.9807978,
+              45.8104045
+            ],
+            [
+              15.9807909,
+              45.8104771
+            ],
+            [
+              15.9808388,
+              45.8104793
+            ],
+            [
+              15.9808282,
+              45.8105909
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambena-zgrada-or-iceva-8a-8a",
+      "properties": {
+        "id": "stambena-zgrada-or-iceva-8a-8a",
+        "name": "Stambena zgrada",
+        "address": "Đorđićeva 8A, 10000 Zagreb, Croatia",
+        "description": "Stambena zgrada u Đorđićevoj 8A podignuta je 1912./1914. prema projektu Gustava Wellera ml. Kao i susjedna zgrada na kbr. 8 istoga projektanta i ova zgrada projektirana je u duhu kasne secesije. Krajnje prozorske osi na simetričnom pročelju blago su konveksno isturene i flankirane kaneliranim lezenama, a u krovnoj zoni zaključene zaobljenim zabatom - ornamentiranom atikom. Trokatni erkeri povezani su dugim balkonima s ogradom od kovanog željeza.",
+        "architects": [
+          "Gustav Weller ml."
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/oriceva-8a?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/%C4%90or%C4%91i%C4%87eva_8a__1.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/dordiceva_8a__1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/288920696",
+        "osmRefs": [
+          "way/288920696"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8105449,
+        "lon": 15.9810048
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.981171,
+              45.8106068
+            ],
+            [
+              15.9808282,
+              45.8105909
+            ],
+            [
+              15.9808388,
+              45.8104793
+            ],
+            [
+              15.9808911,
+              45.8104818
+            ],
+            [
+              15.9808988,
+              45.8104016
+            ],
+            [
+              15.9810144,
+              45.8104058
+            ],
+            [
+              15.981152,
+              45.8104134
+            ],
+            [
+              15.981144,
+              45.810497
+            ],
+            [
+              15.9811814,
+              45.8104988
+            ],
+            [
+              15.981171,
+              45.8106068
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambena-zgrada-or-iceva-9-9",
+      "properties": {
+        "id": "stambena-zgrada-or-iceva-9-9",
+        "name": "Stambena zgrada",
+        "address": "Đorđićeva 9, 10000 Zagreb, Croatia",
+        "description": "Kasnosecesijska stambena zgrada u Đorđićevoj 9 podignuta je 1912./1914. prema projektu Gustava Wellera ml. Pročelje zgrade oblikovano je slično pročelju nešto šire zgrade istoga projektanta na kbr. 8. Simetričnost pročelja narušava tek lateralni ulaz u prizemlju.",
+        "architects": [
+          "Gustav Weller ml."
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/oriceva-9?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/%C4%90or%C4%91i%C4%87eva_9__2.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/dordiceva_9__2.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/860324913",
+        "osmRefs": [
+          "way/860324913"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8107784,
+        "lon": 15.9808925
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9807813,
+              45.8108296
+            ],
+            [
+              15.9807876,
+              45.8107298
+            ],
+            [
+              15.9810052,
+              45.8107383
+            ],
+            [
+              15.9809958,
+              45.8108184
+            ],
+            [
+              15.9809921,
+              45.8108495
+            ],
+            [
+              15.9808227,
+              45.8108447
+            ],
+            [
+              15.9808233,
+              45.8108312
+            ],
+            [
+              15.9807813,
+              45.8108296
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambene-zgrade-ehrlich-trg-petra-preradovica",
+      "properties": {
+        "id": "stambene-zgrade-ehrlich-trg-petra-preradovica",
+        "name": "Stambene zgrade Ehrlich",
+        "address": "Trg Petra Preradovića / Varšavska 2 - 2A, 10000 Zagreb, Croatia",
+        "description": "Stambene zgrade Ehrlich na uglu Varšavska 2-2A /Preradovićev trg podigao je Hugo Ehrlich 1923./1924. za svog brata Ernesta. Na četverokatnicama s mansardnim krovom vidljiv je onaj karakteristični Ehrlichov stil koji je, ne bez stanovite doze profesionalne zavisti, nazvan »hugovštinom«, a očituje se u svjesnom suprotstavljanju suzdržanih i mirnih osnovnih linija građevine i plastično naglašenih detalja kao što su masivni balkoni, erkeri, jake konzole ili snažno profilirani krovni vijenci. Ova ekspresivizacija pročelja plastičnim elementima, koji ponekad djeluju kao da su naknadno aplicirani, štoviše i sa stanovitim smislom za ekstravagantnu, maniriranu pozu, može se uzeti kao tipičan uzorak Ehrlichove arhitekture u ranom razdoblju poslije Prvog svjetskog rata. (Žarko Domljan -1, 1976:51)",
+        "architects": [
+          "Hugo Ehrlich"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-petra-preradovica_2?ulica=trg-petra-preradovica",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Var%C5%A1avska_2-2A__11.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/varsavska_2-2a__11.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/338689073",
+        "osmRefs": [
+          "way/338689073"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.812035,
+        "lon": 15.9736106
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9734449,
+              45.8121131
+            ],
+            [
+              15.9734465,
+              45.8120828
+            ],
+            [
+              15.9735283,
+              45.8120819
+            ],
+            [
+              15.9735309,
+              45.8120625
+            ],
+            [
+              15.9734456,
+              45.8120591
+            ],
+            [
+              15.9734467,
+              45.8119745
+            ],
+            [
+              15.973736,
+              45.8119817
+            ],
+            [
+              15.9737824,
+              45.811983
+            ],
+            [
+              15.9737778,
+              45.8120108
+            ],
+            [
+              15.9737671,
+              45.812115
+            ],
+            [
+              15.9736538,
+              45.8121123
+            ],
+            [
+              15.9736582,
+              45.8120631
+            ],
+            [
+              15.9736078,
+              45.8120611
+            ],
+            [
+              15.9736034,
+              45.812111
+            ],
+            [
+              15.9735941,
+              45.8121176
+            ],
+            [
+              15.9734449,
+              45.8121131
             ]
           ]
         ]
@@ -3465,7 +4932,7 @@
           "way/105487407"
         ],
         "footprintStatus": "matched",
-        "footprintStrategy": "radius_120m_point_containment_only",
+        "footprintStrategy": "override_direct_point_containment_only",
         "footprintConfidence": "medium",
         "lat": 45.8129215,
         "lon": 15.9785864
@@ -3501,6 +4968,71 @@
             [
               15.9786622,
               45.8131945
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambeno-poslovna-zgrada-palmoticeva-26-26",
+      "properties": {
+        "id": "stambeno-poslovna-zgrada-palmoticeva-26-26",
+        "name": "Stambeno-poslovna zgrada",
+        "address": "Palmotićeva 26 / Đorđićeva 13, 10000 Zagreb, Croatia",
+        "description": "Stambeno-poslovna trokatnica na uglu Đorđićeva 13 /Palmotićeva 26 podignuta je 1905. godine prema projektu Vjekoslava Heinzela. Izvorno je to bila dvokatnica čiji je odsječeni ugao naglašen erkerom. Treći kat je nadograđen kasnije. Vijenac s motivom kampanskog kimatija, koji je sada smješten između drugoga i trećeg kata, prije je bio krovni vijenac.",
+        "architects": [
+          "Vjekoslav Heinzel"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/oriceva-13-palmoticeva-26?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/%C4%90or%C4%91i%C4%87eva_13_-Palmoti%C4%87eva_26__3.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/dordiceva_13_-palmoticeva_26__3.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/860324916",
+        "osmRefs": [
+          "way/860324916"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8108687,
+        "lon": 15.9815621
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9814148,
+              45.8108299
+            ],
+            [
+              15.981424,
+              45.8107549
+            ],
+            [
+              15.9816469,
+              45.8107647
+            ],
+            [
+              15.9816777,
+              45.8107889
+            ],
+            [
+              15.9816708,
+              45.8109109
+            ],
+            [
+              15.9814516,
+              45.8109073
+            ],
+            [
+              15.9814504,
+              45.81083
+            ],
+            [
+              15.9814148,
+              45.8108299
             ]
           ]
         ]
@@ -3606,6 +5138,288 @@
     },
     {
       "type": "Feature",
+      "id": "stambeno-poslovni-centar-cvjetni-trg-petra-preradovica-6-6",
+      "properties": {
+        "id": "stambeno-poslovni-centar-cvjetni-trg-petra-preradovica-6-6",
+        "name": "Stambeno-poslovni centar Cvjetni",
+        "address": "Trg Petra Preradovića 6, 10000 Zagreb, Croatia",
+        "description": "Stambeno-poslovni centar Cvjetni na Preradovićevom trgu 6 sagrađen je između 2009. i 2011. prema idejnom projektu Borisa Podrecce. Glavni projekt suvremene interpolacije izradio je arhitekt Boris Frgić iz tvrtke Conar d.o.o. iz Zagreba. Kompleks u unutrašnjosti bloka između Cvjetnog, Preobraženske, Ilice, Gundulićeve i Varšavske ulice zamišljen je s pješačkim prolazom kroz blok koji bi spojio Gundulićevu, Ilicu i Varšavsku ulicu s Cvjetnim trgom (realiziran je samo spoj s Varšavskom ulicom). Osim kuće u Preobraženskoj 6 i kuće Granitz na Preradovićevom trgu 6, koju je projektirao Hermana Bollé (1886.), za realizaciju projekta srušene su i zgrade bivšeg kina, stare tiskare i skladišnih prostora, te zgrada u Varšavskoj 6 (gdje je sačuvano pročelje). Gradnja armirano-betonske konstrukcije izvedena je zbog tehničkih razloga top-down metodom (prvi put u Hrvatskoj), zapravo građenjem od površine zemlje prema dolje, što je omogućilo istovremenu gradnju i nadzemnih etaža. Centar Cvjetni ima šest podzemnih i osam nadzemnih etaža. Na vrhu zgrade je pet dvokatnih penthausa, koje je Podrecca nazvao “Zagrebački kristali”.",
+        "architects": [
+          "Boris Podrecca"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/trg-petra-preradovica-6?ulica=trg-petra-preradovica",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Preradovi%C4%87ev%20trg%206%20%201_ead2.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/preradovicev%20trg%206%20%201_ead2.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/338688378",
+        "osmRefs": [
+          "way/338688378"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8124121,
+        "lon": 15.9732644
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9737392,
+              45.8127196
+            ],
+            [
+              15.9735706,
+              45.8127211
+            ],
+            [
+              15.9735718,
+              45.8126914
+            ],
+            [
+              15.9735648,
+              45.8126888
+            ],
+            [
+              15.9735639,
+              45.8126404
+            ],
+            [
+              15.9734906,
+              45.8126371
+            ],
+            [
+              15.9734046,
+              45.8126332
+            ],
+            [
+              15.9734023,
+              45.8126038
+            ],
+            [
+              15.9733113,
+              45.812603
+            ],
+            [
+              15.9733108,
+              45.8126332
+            ],
+            [
+              15.9731405,
+              45.8126312
+            ],
+            [
+              15.9731413,
+              45.8126239
+            ],
+            [
+              15.9729132,
+              45.8126236
+            ],
+            [
+              15.9727765,
+              45.8126234
+            ],
+            [
+              15.9727829,
+              45.8124901
+            ],
+            [
+              15.9727904,
+              45.8123073
+            ],
+            [
+              15.9727941,
+              45.8120885
+            ],
+            [
+              15.972795,
+              45.8120663
+            ],
+            [
+              15.9728544,
+              45.8120663
+            ],
+            [
+              15.972888,
+              45.8120662
+            ],
+            [
+              15.9728852,
+              45.8121788
+            ],
+            [
+              15.9728848,
+              45.812196
+            ],
+            [
+              15.9732005,
+              45.8122008
+            ],
+            [
+              15.9732096,
+              45.8121815
+            ],
+            [
+              15.9732416,
+              45.8121136
+            ],
+            [
+              15.9732993,
+              45.8121143
+            ],
+            [
+              15.9733495,
+              45.812115
+            ],
+            [
+              15.9733453,
+              45.8123144
+            ],
+            [
+              15.973437,
+              45.812315
+            ],
+            [
+              15.9734449,
+              45.8121131
+            ],
+            [
+              15.9735941,
+              45.8121176
+            ],
+            [
+              15.9735932,
+              45.8121217
+            ],
+            [
+              15.9735779,
+              45.8123659
+            ],
+            [
+              15.9737454,
+              45.8123638
+            ],
+            [
+              15.9737402,
+              45.8124583
+            ],
+            [
+              15.973738,
+              45.8124979
+            ],
+            [
+              15.9737392,
+              45.8127196
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambeno-trgovacka-uglovnica-osiguravajuce-zadruge-croatia-petrinjska-13-13",
+      "properties": {
+        "id": "stambeno-trgovacka-uglovnica-osiguravajuce-zadruge-croatia-petrinjska-13-13",
+        "name": "Stambeno-trgovačka uglovnica Osiguravajuće zadruge Croatia",
+        "address": "Petrinjska 13 / Đorđićeva 3B, 10000 Zagreb, Croatia",
+        "description": "Trgovačko-stambena zgrada Osiguravajuće zadruge Croatia na uglu Petrinjska 13 /Đorđićeva 3B sagrađena je 1934./1935. prema projektu Ferda Kellera. To je modernistička zgrada s jednostrešnim kosim krovom prema ulicama i ravnim krovom prema dvorištu. Pročelja su rastvorena kvadratnim prozorima, a ugaoni dio malo je povišen i dodatno akcentiran balkonima koji su na samom uglu polukružno zaobljeni.",
+        "architects": [
+          "Ferdo Keller"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/dordiceva-3b?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Petrinjska%2013-%C4%90or%C4%91i%C4%87eva%203b%20%201_ab7e.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/petrinjska%2013-dordiceva%203b%20%201_ab7e.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/860324912",
+        "osmRefs": [
+          "way/860324912"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8108948,
+        "lon": 15.9800907
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9799881,
+              45.8109698
+            ],
+            [
+              15.9800342,
+              45.8108297
+            ],
+            [
+              15.9800523,
+              45.8106991
+            ],
+            [
+              15.9803442,
+              45.8107097
+            ],
+            [
+              15.9803343,
+              45.8108017
+            ],
+            [
+              15.9803127,
+              45.8108013
+            ],
+            [
+              15.9803127,
+              45.810868
+            ],
+            [
+              15.980228,
+              45.8108672
+            ],
+            [
+              15.9802303,
+              45.810829
+            ],
+            [
+              15.980158,
+              45.8108261
+            ],
+            [
+              15.9801476,
+              45.8108645
+            ],
+            [
+              15.9801387,
+              45.8108977
+            ],
+            [
+              15.9802239,
+              45.8109055
+            ],
+            [
+              15.9802093,
+              45.8109917
+            ],
+            [
+              15.9801054,
+              45.8109795
+            ],
+            [
+              15.9801013,
+              45.8109905
+            ],
+            [
+              15.9799881,
+              45.8109698
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "stambeno-trgovacka-zgrada-baum-jurisiceva-30-30",
       "properties": {
         "id": "stambeno-trgovacka-zgrada-baum-jurisiceva-30-30",
@@ -3689,6 +5503,80 @@
             [
               15.9832308,
               45.811975
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambeno-trgovacka-zgrada-cuturilo-milojevic-palmoticeva-21-21",
+      "properties": {
+        "id": "stambeno-trgovacka-zgrada-cuturilo-milojevic-palmoticeva-21-21",
+        "name": "Stambeno-trgovačka zgrada Čuturilo-Milojević",
+        "address": "Palmotićeva 21 / Đorđićeva 14, 10000 Zagreb, Croatia",
+        "description": "Stambeno-trgovačka zgrada Čuturilo-Milojević na uglu Palmotićeva 21 /Đorđićeva 14 sagrađena je 1897./1898. prema projektu arhitektonskog atelijera Fischer & Hrubý, a u realizaciji njihovoga poduzeća “Gradjevno tehnički bureau - Gradjevno poduzetničtvo Fischer & Hrubý”.［...］\"Veći dio dvokatnice pripadao je Lazaru Čuturilu, trgovcu “prekomorskom i kolonialnom robom”, a manji Milanu Milojeviću, pekaru. Poznati model dviju fizički odvojenih zgrada sa zajedničkim pročeljem bio je logično rješenje i za dvojicu investitora. Obitelj Čuturilo posjedovala je cijelo krilo u Đorđićevoj ulici i dio u Palmotićevoj, dok je Milojevićev dio kuće u širini četiriju prozorskih osi u Palmotićevoj ulici (južni dio kuće). Arhitekti Fischer i Hrubý ponavljaju uobičajena rješenja svojih uglovnica s rizalitima, oblikovanjem ugla i smještajem atike, ali za ovu kuću planiraju kombinaciju triju vrsta žbuke i širi dekorativni vokabular nadahnut kasnom renesansom i barokom: trokutaste i zaobljene zabate, čak četiri vrste rješenja parapeta te maštovite ukrase nad prozorima.\"¹ Izvor: ¹Marina Bagarić, 2011:48-51",
+        "architects": [
+          "Antonín Hrubý",
+          "Ignjat Fischer"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/dordiceva-14?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Palmoti%C4%87eva%2021%20-%C4%90or%C4%91i%C4%87eva%2014%20%201_8a7c.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/palmoticeva%2021%20-dordiceva%2014%20%201_8a7c.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/289507163",
+        "osmRefs": [
+          "way/289507163"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8104689,
+        "lon": 15.981885
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.98219,
+              45.8106521
+            ],
+            [
+              15.9820751,
+              45.8106468
+            ],
+            [
+              15.9819083,
+              45.8106395
+            ],
+            [
+              15.9818746,
+              45.810626
+            ],
+            [
+              15.981885,
+              45.8104689
+            ],
+            [
+              15.9818919,
+              45.810392
+            ],
+            [
+              15.9820864,
+              45.8103977
+            ],
+            [
+              15.9820745,
+              45.810543
+            ],
+            [
+              15.9821997,
+              45.8105488
+            ],
+            [
+              15.98219,
+              45.8106521
             ]
           ]
         ]
@@ -3831,6 +5719,165 @@
     },
     {
       "type": "Feature",
+      "id": "trgovacko-stambena-zgrada-antolkovic-petrinjska-14-14",
+      "properties": {
+        "id": "trgovacko-stambena-zgrada-antolkovic-petrinjska-14-14",
+        "name": "Trgovačko-stambena zgrada Antolković",
+        "address": "Petrinjska 14 / Đorđićeva 3A, 10000 Zagreb, Croatia",
+        "description": "Trgovačko-stambena zgrada Antolković na uglu Petrinjska 14 /Đorđićeva 3A sagrađena je 1904. prema projektu Janka Holjca. To je trokatna uglovnica s ranosecesijskim elementima u čijem je prizemlju bila najdugotrajnija kavana-gostionica Merkur. (Tamara Marić, Nataša Jakšić)",
+        "architects": [
+          "Janko Holjac"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/dordiceva-3a?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Petrinjska%2014-%C4%90or%C4%91i%C4%87eva%203a%20%201_4a66.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/petrinjska%2014-dordiceva%203a%20%201_4a66.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/390984149",
+        "osmRefs": [
+          "way/390984149"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8107873,
+        "lon": 15.9797884
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9798523,
+              45.8107008
+            ],
+            [
+              15.9798106,
+              45.8108829
+            ],
+            [
+              15.9797038,
+              45.810871
+            ],
+            [
+              15.9797078,
+              45.8108535
+            ],
+            [
+              15.9796645,
+              45.8108487
+            ],
+            [
+              15.9796626,
+              45.8108573
+            ],
+            [
+              15.9796045,
+              45.8108508
+            ],
+            [
+              15.9796148,
+              45.8108059
+            ],
+            [
+              15.9795395,
+              45.8107975
+            ],
+            [
+              15.97955,
+              45.8107519
+            ],
+            [
+              15.9795177,
+              45.8107483
+            ],
+            [
+              15.9795199,
+              45.8107389
+            ],
+            [
+              15.9795422,
+              45.8106415
+            ],
+            [
+              15.9798223,
+              45.8106727
+            ],
+            [
+              15.9798523,
+              45.8107008
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "trgovacko-stambena-zgrada-farkas-bogoviceva-9-9",
+      "properties": {
+        "id": "trgovacko-stambena-zgrada-farkas-bogoviceva-9-9",
+        "name": "Trgovačko-stambena zgrada Farkaš",
+        "address": "Bogovićeva 9 / Trg Petra Preradovića 2, 10000 Zagreb, Croatia",
+        "description": "Trgovačko-stambena zgrada Farkaš na uglu Bogovićeva 9 /Trg Petra Preradovića 2 sagrađena je 1898./1899. prema projektu arhitektonskog biroa Hönigsberg i Deutsch. To je neorenesansno-neobarokna dvokatnica s jednostrešnim kosim krovom prema trgu i Bogovićevoj ulici, a ravnim krovom prema dvorištu, što je neobično mada je već godinu ranije Martin Pilar eksperimentirao s ravnim krovom u Mihanovićevoj ulici. Na obli dvokatni uglovni erker nastavlja se cilindrični tornjić s kupolom, a pročelja s bogatom arhitektonskom dekoracijom raščlanjena su velikim redom pilastara, čime je naglašena vertikalna podjela ploha i postignuta reprezentativnost zgrade kasnog historicizma.",
+        "architects": [
+          "Hönigsberg",
+          "Deutsch"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/bogoviceva-9-trg-petra-preradovica-2?ulica=trg-petra-preradovica",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Bogovi%C4%87eva%209%20%201_e620.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/bogoviceva%209%20%201_e620.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/435117001",
+        "osmRefs": [
+          "way/435117001"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8120718,
+        "lon": 15.9745367
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9747024,
+              45.8121403
+            ],
+            [
+              15.9744843,
+              45.8121487
+            ],
+            [
+              15.9743855,
+              45.8121484
+            ],
+            [
+              15.9743487,
+              45.8119422
+            ],
+            [
+              15.9745806,
+              45.8119419
+            ],
+            [
+              15.9745887,
+              45.8120032
+            ],
+            [
+              15.9747008,
+              45.8119973
+            ],
+            [
+              15.9747024,
+              45.8121403
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "trgovacko-stambena-zgrada-moskovic-boskoviceva",
       "properties": {
         "id": "trgovacko-stambena-zgrada-moskovic-boskoviceva",
@@ -3893,6 +5940,135 @@
             [
               15.9797405,
               45.8094112
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "trgovacko-stambena-zgrada-rosinger-jungwirth-draskoviceva-30-30",
+      "properties": {
+        "id": "trgovacko-stambena-zgrada-rosinger-jungwirth-draskoviceva-30-30",
+        "name": "Trgovačko-stambena zgrada Rosinger - Jungwirth",
+        "address": "Draškovićeva 30 / Đorđićeva 23, 10000 Zagreb, Croatia",
+        "description": "Stambena, trgovačka i poslovna najamna zgrada Žige i Olge Rosinger te Zlate i Gustava Jungwirtha na uglu Draškovićeva 30 /Đorđićeva 23 sagrađena je 1930./1931. prema projektu Vladimira Šterka. Ugrađena uglovnica visine sedam etaža, s dvorišnim krilima u Ðorđićevoj ulici, s ravnim krovom. Karakterističan tlocrt sadrži četiri četverosobna stana na dva stubišta, s dizalima. Armiranobetonski kostur s armiranobetonskim stubištem. Zgrada Novoga građenja, s dva pročelja, uglovnim balkonima i karakterističnim tornjićem. Neizvedena varijanta sadrži art deco − tretman pročelja u Draškovićevoj ulici, kaneliranog romboidnim rasterom. (Kahle -1, 2008:198-199)",
+        "architects": [
+          "Vladimir Šterk"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/draskoviceva-30-oriceva-23?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Dra%C5%A1kovi%C4%87eva_30_-%C4%90or%C4%91i%C4%87eva_23_2.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/draskoviceva_30_-dordiceva_23_2.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/521010673",
+        "osmRefs": [
+          "way/521010673"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8108919,
+        "lon": 15.9835074
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9834788,
+              45.8108915
+            ],
+            [
+              15.9835074,
+              45.8108919
+            ],
+            [
+              15.9834989,
+              45.8110076
+            ],
+            [
+              15.9833885,
+              45.8110037
+            ],
+            [
+              15.9833896,
+              45.8109886
+            ],
+            [
+              15.9833096,
+              45.8109858
+            ],
+            [
+              15.9833137,
+              45.8109288
+            ],
+            [
+              15.9833366,
+              45.8109296
+            ],
+            [
+              15.9833376,
+              45.8109153
+            ],
+            [
+              15.9832821,
+              45.8109131
+            ],
+            [
+              15.9832077,
+              45.8109107
+            ],
+            [
+              15.9832015,
+              45.8109957
+            ],
+            [
+              15.9831474,
+              45.8109938
+            ],
+            [
+              15.9831542,
+              45.8109006
+            ],
+            [
+              15.9830721,
+              45.8108976
+            ],
+            [
+              15.9830649,
+              45.8109965
+            ],
+            [
+              15.9830096,
+              45.8109945
+            ],
+            [
+              15.9830162,
+              45.8109039
+            ],
+            [
+              15.9830066,
+              45.8109035
+            ],
+            [
+              15.9830071,
+              45.8108973
+            ],
+            [
+              15.9830142,
+              45.8108285
+            ],
+            [
+              15.9834026,
+              45.8108471
+            ],
+            [
+              15.9834787,
+              45.8108468
+            ],
+            [
+              15.9834788,
+              45.8108915
             ]
           ]
         ]
@@ -4525,6 +6701,121 @@
             [
               15.9763022,
               45.8126916
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zgrada-petrinjske-vojarne-petrinjska-18-18",
+      "properties": {
+        "id": "zgrada-petrinjske-vojarne-petrinjska-18-18",
+        "name": "Zgrada „Petrinjske vojarne“",
+        "address": "Petrinjska 18 / Đorđićeva 4, 10000 Zagreb, Croatia",
+        "description": "Zgrada “Petrinjske vojarne” (Casarna civium) na uglu Petrinjska 18 /Đorđićeva 4 sagrađena je 1830. godine, a investitor je bila grupa imućnijih građana očekujući od nje znatne prihode, budući da u to doba u Zagrebu nije postojala vojarna koja bi mogla primiti čak ni četu, kamoli jedinicu brojnijeg sastava. U upravnom odboru društva bio je Bartol Felbinger, tada najugledniji graditelj u Zagrebu, pa je vjerojatno da je sudjelovao u izradi projekta ili čak bio njegov autor. Prema projektu Ede Šena (Schöna) zgrada je 1903. rekonstruirana i dograđen joj je zapadni dvorišni trakt. Priprosto glavno pročelje stare vojarne raščlanjeno je središnjim rizalitom s naglašenom zonom glavnog ulaza i dvama bočnim rizalitima, od kojih južni sadrži ulaz u zatvorski trakt, a sjeverni toranj s javnim satom koji obilježava ugao. Nekad posve glatko pročelje sada je plastično obrađeno, diferencirani su i individualizirani prizemlje i katovi, dok stilski dekor sadrži barokizirajuća i secesijska obilježja. Za potrebe Ministarstva vanjskih poslova zgrada je obnovljena između 2004. i 2007. prema projektu Zvonimira Krznarića. Krznarić je stjecajem okolnosti dobio priliku za integralnu obnovu zgrade, kojoj je služba zaštite uspjela izboriti status spomenika kulture unatoč teškim devastacijama i bijednom stanju. Obnovom joj je pridao sjaj kakav nitko u njezinoj dugoj povijesti nije mogao sanjati. Izvor: Snješka Knežević -4, https://snjeska-knezevic.com/pdf/Petrinjska-vojarna.pdf",
+        "architects": [
+          "Bartol Felbinger"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/dordiceva-4?ulica=djordjiceva",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Petrinjska%2018%20-%C4%90or%C4%91i%C4%87eva%204%20%201_76c9.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/petrinjska%2018%20-dordiceva%204%20%201_76c9.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "relation/5854157",
+        "osmRefs": [
+          "relation/5854157"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "radius_80m_point_containment_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8102599,
+        "lon": 15.9798829
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9798829,
+              45.8102599
+            ],
+            [
+              15.9798464,
+              45.8105586
+            ],
+            [
+              15.9794098,
+              45.8105075
+            ],
+            [
+              15.9794378,
+              45.8103914
+            ],
+            [
+              15.9794772,
+              45.8102959
+            ],
+            [
+              15.9795266,
+              45.8101128
+            ],
+            [
+              15.9795691,
+              45.8099614
+            ],
+            [
+              15.9796373,
+              45.8099648
+            ],
+            [
+              15.9797619,
+              45.8099794
+            ],
+            [
+              15.9797609,
+              45.8099903
+            ],
+            [
+              15.9799149,
+              45.8099973
+            ],
+            [
+              15.9799094,
+              45.8100425
+            ],
+            [
+              15.9798829,
+              45.8102599
+            ]
+          ],
+          [
+            [
+              15.979718,
+              45.8103907
+            ],
+            [
+              15.9797435,
+              45.8101652
+            ],
+            [
+              15.9795992,
+              45.8101586
+            ],
+            [
+              15.9795312,
+              45.8104243
+            ],
+            [
+              15.9796202,
+              45.8104354
+            ],
+            [
+              15.9796343,
+              45.8103803
+            ],
+            [
+              15.979718,
+              45.8103907
             ]
           ]
         ]

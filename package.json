@@ -33,13 +33,15 @@
     "next": "16.1.1",
     "osmtogeojson": "^3.0.0-beta.5",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "string-similarity": "^4.0.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/string-similarity": "^4.0.2",
     "cheerio": "^1.1.2",
     "csv-parse": "^6.1.0",
     "csv-stringify": "^6.6.0",

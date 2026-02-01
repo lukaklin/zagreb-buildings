@@ -1,0 +1,5 @@
+building_id,osm_type,osm_id,note
+kallina-house,way,512839725,"Force Masarykova 6 footprint (auto-pick chose neighbor)"
+hotel-milinov-danas-hotel-dubrovnik-gajeva-1-1,way,584569598,Landmark building – multiple addresses
+stambeno-poslovna-zgrada-gradske-stedionice-trg-bana-jelacica-10a-10-10a,way,105487407,Corner building – multi-address
+prva-hrvatska-stedionica-bogoviceva,way,97165323,Correct building - auto-match picked wrong polygon
