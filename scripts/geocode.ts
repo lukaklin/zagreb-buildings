@@ -28,12 +28,90 @@ const RATE_LIMIT_MS = 1100;
 // Nominatim usage policy expects a valid UA identifying your app + contact
 const USER_AGENT = "zagreb-buildings-info-app/0.1 (contact: lukaklincic@hotmail.com)";
 
+// Zagreb city bounds (approximate urban area)
+// Used to reject/penalize geocoding results outside the city
+const ZAGREB_BOUNDS = {
+  minLat: 45.75,
+  maxLat: 45.87,
+  minLon: 15.87,
+  maxLon: 16.12,
+};
+
+function isWithinZagrebBounds(lat: number | null, lon: number | null): boolean {
+  if (lat == null || lon == null) return false;
+  return (
+    lat >= ZAGREB_BOUNDS.minLat &&
+    lat <= ZAGREB_BOUNDS.maxLat &&
+    lon >= ZAGREB_BOUNDS.minLon &&
+    lon <= ZAGREB_BOUNDS.maxLon
+  );
+}
+
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function normalizeAddress(a: string) {
   return a.trim().replace(/\s+/g, " ");
+}
+
+/**
+ * Croatian streets often have colloquial names (e.g., "Teslina") that differ from
+ * official names (e.g., "Ulica Nikole Tesle"). OSM stores official names but often
+ * has alt_name with the colloquial form + "ulica" suffix (e.g., "Teslina ulica").
+ * 
+ * This function appends "ulica" to street names that don't already have a street
+ * type suffix, which helps Nominatim match against alt_name tags.
+ * 
+ * Example: "Teslina 14, Zagreb" → "Teslina ulica 14, Zagreb"
+ */
+function appendUlicaIfNeeded(address: string): string {
+  // Common Croatian street type suffixes (case-insensitive)
+  const streetTypeSuffixes = [
+    'ulica', 'ul\\.', // ulica, ul.
+    'trg',            // square
+    'cesta',          // road
+    'avenija',        // avenue
+    'put',            // path/way
+    'prolaz',         // passage
+    'stube',          // stairs
+    'park',           // park
+    'aleja',          // alley
+    'obala',          // waterfront
+    'prilaz',         // approach
+    'odvojak',        // branch road
+  ];
+  
+  const lower = address.toLowerCase();
+  
+  // Check if any street type suffix is already present
+  const hasStreetType = streetTypeSuffixes.some(suffix => {
+    const regex = new RegExp(`\\b${suffix}\\b`, 'i');
+    return regex.test(lower);
+  });
+  
+  if (hasStreetType) {
+    return address;
+  }
+  
+  // Pattern: "StreetName Number, City" or "StreetName Number/Letter, City"
+  // Insert "ulica" between street name and house number
+  const match = address.match(/^([A-Za-zČčĆćŠšŽžĐđ\s]+?)(\s+\d+[A-Za-z]?)(,.*)?$/);
+  if (match) {
+    const streetName = match[1].trim();
+    const houseNumber = match[2];
+    const rest = match[3] || '';
+    
+    // Only append "ulica" if street name is a single word (colloquial form).
+    // Multi-word names like "Kralja Držislava" are already in official format.
+    // Single-word names like "Teslina", "Gajeva" are colloquial and need "ulica" to match alt_name.
+    const words = streetName.split(/\s+/);
+    if (words.length === 1) {
+      return `${streetName} ulica${houseNumber}${rest}`;
+    }
+  }
+  
+  return address;
 }
 
 function choosePrimaryAddress(addr: string): string {
@@ -83,7 +161,11 @@ function addressQueriesForRow(r: CanonicalRow): string[] {
   const combined = uniqueCaseInsensitive([primary, ...fromJson, ...fromSplit]);
   // Avoid sending multi-address strings with '/' to Nominatim; always geocode individual variants.
   // Filter to ensure all queries have Zagreb context (safety net)
-  return combined.filter((q) => q && !q.includes("/") && /zagreb|croatia/i.test(q));
+  const filtered = combined.filter((q) => q && !q.includes("/") && /zagreb|croatia/i.test(q));
+  
+  // Append "ulica" to street names that don't have a street type suffix.
+  // This helps Nominatim match against alt_name tags in OSM (e.g., "Teslina ulica").
+  return filtered.map(q => appendUlicaIfNeeded(q));
 }
 
 function scoreGeocodeEntry(entry: GeocodeCacheEntry, query: string): number {
@@ -92,6 +174,11 @@ function scoreGeocodeEntry(entry: GeocodeCacheEntry, query: string): number {
 
   if (entry.lat == null || entry.lon == null || !Number.isFinite(entry.lat) || !Number.isFinite(entry.lon)) {
     return -1_000_000;
+  }
+
+  // Heavily penalize results outside Zagreb city bounds
+  if (!isWithinZagrebBounds(entry.lat, entry.lon)) {
+    s -= 10_000;
   }
 
   const raw = (entry.raw ?? {}) as any;
@@ -200,6 +287,14 @@ async function geocodeNominatim(address: string): Promise<GeocodeCacheEntry> {
   
   function score(hit: any) {
     let s = 0;
+
+    const lat = hit.lat ? Number(hit.lat) : null;
+    const lon = hit.lon ? Number(hit.lon) : null;
+  
+    // Heavily penalize results outside Zagreb city bounds
+    if (!isWithinZagrebBounds(lat, lon)) {
+      s -= 10_000;
+    }
   
     const category = String(hit.category ?? "");
     const addresstype = String(hit.addresstype ?? "");

@@ -1,4 +1,5 @@
 import { promises as fs } from "node:fs";
+import area from "@turf/area";
 
 // Shared validation utilities for data processing pipeline
 
@@ -94,45 +95,22 @@ export function validateGeometry(geom: GeoJSON.Geometry): ValidationResult {
     return result;
   }
 
-  // Calculate area using basic planar approximation
-  let area = 0;
+  // Use turf for accurate geodetic area calculation (returns m²)
   try {
-    if (geom.type === "Polygon") {
-      area = calculatePolygonArea(geom.coordinates[0] as number[][]);
-    } else if (geom.type === "MultiPolygon") {
-      for (const poly of geom.coordinates) {
-        area += calculatePolygonArea(poly[0] as number[][]);
-      }
+    const areaM2 = area(geom);
+    result.metrics!.area_sq_meters = areaM2;
+
+    // Flag unrealistic building sizes
+    if (areaM2 < 10) {
+      result.warnings.push(`Very small geometry area: ${areaM2.toFixed(1)} m²`);
+    } else if (areaM2 > 100000) {
+      result.warnings.push(`Very large geometry area: ${(areaM2/1000).toFixed(1)} km² (may be incorrect)`);
     }
   } catch (e) {
     result.warnings.push("Could not calculate geometry area");
   }
 
-  if (area > 0) {
-    result.metrics!.area_sq_meters = area;
-
-    // Flag unrealistic building sizes
-    if (area < 10) {
-      result.warnings.push(`Very small geometry area: ${area.toFixed(1)} m²`);
-    } else if (area > 100000) {
-      result.warnings.push(`Very large geometry area: ${(area/1000).toFixed(1)} km² (may be incorrect)`);
-    }
-  }
-
   return result;
-}
-
-/**
- * Basic polygon area calculation (planar approximation)
- */
-function calculatePolygonArea(coords: number[][]): number {
-  let area = 0;
-  for (let i = 0; i < coords.length - 1; i++) {
-    const [x1, y1] = coords[i];
-    const [x2, y2] = coords[i + 1];
-    area += x1 * y2 - x2 * y1;
-  }
-  return Math.abs(area) / 2;
 }
 
 /**
