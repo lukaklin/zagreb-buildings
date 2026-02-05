@@ -56,14 +56,55 @@ function normalizeAddress(a: string) {
 }
 
 /**
+ * Checks if a Croatian word looks like a possessive/adjectival form in genitive case.
+ * 
+ * Croatian colloquial street names are typically possessive adjectives that agree
+ * with the feminine noun "ulica" (street). These have characteristic endings:
+ * - `-eva`, `-ova`: from masculine names (Gajeva, Strossmayerova)
+ * - `-ina`: possessive form (Teslina)
+ * - `-ska`, `-čka`, `-ška`: adjectival (Savska, Vlaška)
+ * 
+ * This excludes:
+ * - Words not ending in `-a` (e.g., "Ribnjak" - a noun, not agreeing with feminine "ulica")
+ * - Diminutive nouns ending in `-ica` (e.g., "Ilica" - a complete street name)
+ */
+function looksLikeCroatianGenitiveAdjective(word: string): boolean {
+  const lower = word.toLowerCase();
+  
+  // Must end in -a (feminine agreement with "ulica")
+  if (!lower.endsWith('a')) {
+    return false;
+  }
+  
+  // Exclude diminutive nouns ending in -ica (e.g., Ilica)
+  if (lower.endsWith('ica')) {
+    return false;
+  }
+  
+  // Check for common possessive/adjectival endings that indicate genitive
+  const genitivePatterns = [
+    /eva$/,   // Gajeva, Palmotićeva, Draškovićeva
+    /ova$/,   // Strossmayerova
+    /ina$/,   // Teslina
+    /ska$/,   // Savska
+    /čka$/,   // e.g., Vučka
+    /ška$/,   // Vlaška
+  ];
+  
+  return genitivePatterns.some(pattern => pattern.test(lower));
+}
+
+/**
  * Croatian streets often have colloquial names (e.g., "Teslina") that differ from
  * official names (e.g., "Ulica Nikole Tesle"). OSM stores official names but often
  * has alt_name with the colloquial form + "ulica" suffix (e.g., "Teslina ulica").
  * 
  * This function appends "ulica" to street names that don't already have a street
- * type suffix, which helps Nominatim match against alt_name tags.
+ * type suffix AND look like Croatian genitive adjectives, which helps Nominatim 
+ * match against alt_name tags.
  * 
  * Example: "Teslina 14, Zagreb" → "Teslina ulica 14, Zagreb"
+ * Counter-example: "Ilica 20, Zagreb" → "Ilica 20, Zagreb" (no change, -ica is a noun suffix)
  */
 function appendUlicaIfNeeded(address: string): string {
   // Common Croatian street type suffixes (case-insensitive)
@@ -102,11 +143,12 @@ function appendUlicaIfNeeded(address: string): string {
     const houseNumber = match[2];
     const rest = match[3] || '';
     
-    // Only append "ulica" if street name is a single word (colloquial form).
-    // Multi-word names like "Kralja Držislava" are already in official format.
-    // Single-word names like "Teslina", "Gajeva" are colloquial and need "ulica" to match alt_name.
+    // Only append "ulica" if street name is a single word AND looks like a Croatian
+    // genitive adjective. Multi-word names like "Kralja Držislava" are already official.
+    // Single-word genitive adjectives like "Teslina", "Gajeva" need "ulica" to match alt_name.
+    // But nouns like "Ilica" or "Ribnjak" should not get "ulica" appended.
     const words = streetName.split(/\s+/);
-    if (words.length === 1) {
+    if (words.length === 1 && looksLikeCroatianGenitiveAdjective(streetName)) {
       return `${streetName} ulica${houseNumber}${rest}`;
     }
   }

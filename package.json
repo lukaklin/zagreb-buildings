@@ -19,6 +19,7 @@
     "report:pipeline": "npm run report:pipeline:area combined",
     "scrape:area": "tsx scripts/scrape_arhitektura_zagreba.ts",
     "normalize:area": "tsx scripts/normalize_raw.ts",
+    "ingest:area": "tsx scripts/scrape_and_normalize.ts",
     "combine:areas": "tsx scripts/combine_areas.ts",
     "process:area": "echo \"Use: npm run scrape:area -- <area> && npm run normalize:area -- <area>\"",
     "rebuild:combined": "tsx scripts/rebuild_combined.ts",

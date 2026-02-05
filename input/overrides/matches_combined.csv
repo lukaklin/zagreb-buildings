@@ -1,3 +1,4 @@
 building_id,osm_type,osm_id,note
 prva-hrvatska-stedionica-bogoviceva,way,97165323,Correct building - auto-match picked wrong polygon
 kuca-betelheim-praska-10-10,way,584458872,Named building in OSM - address Teslina 2 not in OSM
+zgrada-mikulicic-ribnjak-1-1,way,296513270,Nominatim returns Purgeraj instead of Palača Mikulčić

@@ -4481,6 +4481,67 @@
     },
     {
       "type": "Feature",
+      "id": "kuca-jurja-petrica-ribnjak-30-30",
+      "properties": {
+        "id": "kuca-jurja-petrica-ribnjak-30-30",
+        "name": "Kuća Jurja Petrića",
+        "address": "Ribnjak 30, 10000 Zagreb, Croatia",
+        "description": "Zgrada Jurja Petrića na Ribnjaku 30 podignuta je 1931. godine prema projektu Mosesa Lorbera, glavnog projektanta i suvlasnika građevnog poduzeća “Lorber & Mevorah”, poduzeća koje je i sagradilo zgradu. To je protomodernistička trokatnica s jednostrešnim kosim krovom prema ulici i ravnim krovom prema dvorištu. Središnji katni dio pročelja rizalitno je istaknut. Od tradicionalnih arhitektonskih dekorativnih elemenata zadržani su tek istureni krovni vijenac, kasetiran u podgledu i friz ispod njega, koji je ornamentiran kontinuiranim nizom stiliziranih valova inspiriranih antičkim motivom “pasjeg skoka”. Ulazna drvena vrata s ukladama i nadsvjetlom dizajnirana su slično vratima na Lorberovoj kući Baričević u Martićevoj 25 iz 1928. godine.",
+        "architects": [
+          "Moses Lorber"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/ribnjak-30?ulica=ribnjak",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Ribnjak_30__44.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/ribnjak_30__44.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/296454073",
+        "osmRefs": [
+          "way/296454073"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8169982,
+        "lon": 15.9810875
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9811063,
+              45.8168559
+            ],
+            [
+              15.9812195,
+              45.8169012
+            ],
+            [
+              15.9811926,
+              45.8169337
+            ],
+            [
+              15.9812267,
+              45.8169474
+            ],
+            [
+              15.9810945,
+              45.8171076
+            ],
+            [
+              15.9809487,
+              45.817049
+            ],
+            [
+              15.9811063,
+              45.8168559
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "kuca-kallina-gunduliceva-20-20",
       "properties": {
         "id": "kuca-kallina-gunduliceva-20-20",
@@ -4974,9 +5035,9 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Gajeva_27__1.jpg",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/gajeva_27__1.jpg",
         "builtYear": "Unknown",
-        "osmRef": "way/249753111",
+        "osmRef": "way/1474446749",
         "osmRefs": [
-          "way/249753111"
+          "way/1474446749"
         ],
         "footprintStatus": "matched",
         "footprintStrategy": "radius_80m_point_containment_only",
@@ -4989,40 +5050,36 @@
         "coordinates": [
           [
             [
-              15.9767251,
-              45.8093488
+              15.9764894,
+              45.8094816
+            ],
+            [
+              15.9766164,
+              45.8094748
             ],
             [
               15.9766997,
               45.8095013
             ],
             [
-              15.9767697,
-              45.8096019
+              15.9767428,
+              45.8095944
             ],
             [
-              15.9766996,
-              45.8096165
+              15.9766727,
+              45.809609
             ],
             [
-              15.97671,
-              45.8096422
+              15.9766772,
+              45.8096267
             ],
             [
-              15.9765733,
-              45.8096589
+              15.9765509,
+              45.8096283
             ],
             [
-              15.9764305,
-              45.8093409
-            ],
-            [
-              15.9764483,
-              45.8093272
-            ],
-            [
-              15.9767251,
-              45.8093488
+              15.9764894,
+              45.8094816
             ]
           ]
         ]
@@ -10109,8 +10166,8 @@
         "footprintStatus": "matched",
         "footprintStrategy": "override_direct_point_containment_only",
         "footprintConfidence": "medium",
-        "lat": 45.8128073,
-        "lon": 15.9745613
+        "lat": 45.8129236,
+        "lon": 15.9749569
       },
       "geometry": {
         "type": "Polygon",
@@ -10379,6 +10436,63 @@
     },
     {
       "type": "Feature",
+      "id": "stambena-najamna-kuca-ribnjak-10-10",
+      "properties": {
+        "id": "stambena-najamna-kuca-ribnjak-10-10",
+        "name": "Stambena najamna kuća",
+        "address": "Ribnjak 10, 10000 Zagreb, Croatia",
+        "description": "Stambena najamna kuća u ulici Ribnjak 10 sagrađena je 1910./1913. prema projektu Srećka Florschütza. Na kući se vidi utjecaj modernizma, odnosno münchenskog školovanja, koji autor vješto prilagođava zagrebačkoj sredini. Kao i kod njegovih stambeno-najamnih kuća u Ilici 144 i Gajevoj 53 i 55 i kod ove kuće vidi se Florschützova sklonost ekspresionističko-apstraktnom oblikovanju.¹ U kući je bio kafić \"Papagaj\" koji je osamdesetih bio jedan od najpopularnijih u Zagrebu, a čiji je vlasnik bio proslavljeni hrvatski rukometaš Zlatko Žagmešter - Žaga. Izvor: ¹Jasenka Kranjčević -1",
+        "architects": [
+          "Srećko Florschütz"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/ribnjak-10?ulica=ribnjak",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Ribnjak%2010%20%201_4292.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/ribnjak%2010%20%201_4292.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/296454070",
+        "osmRefs": [
+          "way/296454070"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.815744,
+        "lon": 15.9817856
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9816868,
+              45.8156715
+            ],
+            [
+              15.9818137,
+              45.8157036
+            ],
+            [
+              15.9819259,
+              45.815732
+            ],
+            [
+              15.9818828,
+              45.8158144
+            ],
+            [
+              15.9816457,
+              45.815756
+            ],
+            [
+              15.9816868,
+              45.8156715
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "stambena-zgrada-hrvatske-banke-za-promet-nekretnina-boskoviceva-16-16",
       "properties": {
         "id": "stambena-zgrada-hrvatske-banke-za-promet-nekretnina-boskoviceva-16-16",
@@ -10441,6 +10555,124 @@
             [
               15.981294,
               45.8095424
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambena-zgrada-lebinec-ribnjak-20-20",
+      "properties": {
+        "id": "stambena-zgrada-lebinec-ribnjak-20-20",
+        "name": "Stambena zgrada Lebinec",
+        "address": "Ribnjak 20, 10000 Zagreb, Croatia",
+        "description": "Stambena četverokatnica Vilima Lebinca na Ribnjaku 20 sagrađena 1936./1938. prema projektu Slavka Löwyja.［...］”Hvaljena stambena kuća s naglašenom horizontalom pročelja nastaje kao ugrađena najamna kuća. Löwy u stvari radi dvostruki objekt na jedno stubište izuzetnog tlocrta. Strmi je teren prema Šalati omogućio dubinsku stepenastu izgradnju pa svaki kat u dvorišnom dijelu ima direktno pristupnu zelenu terasu. Bez obzira na izazov Löwy dosljedno primjenjuje funkcionalistički oblikovni koncept.”¹ Izvor: ¹Darja Radović Mahečić -5, 1995:77",
+        "architects": [
+          "Slavko Löwy"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/ribnjak-20?ulica=ribnjak",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Ribnjak%2020%20%201_c256.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/ribnjak%2020%20%201_c256.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/296454069",
+        "osmRefs": [
+          "way/296454069"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8163429,
+        "lon": 15.9814787
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.981415,
+              45.8162198
+            ],
+            [
+              15.9815707,
+              45.8162604
+            ],
+            [
+              15.981536,
+              45.8163251
+            ],
+            [
+              15.9818905,
+              45.8164177
+            ],
+            [
+              15.9818503,
+              45.8164924
+            ],
+            [
+              15.9814965,
+              45.8163996
+            ],
+            [
+              15.9813443,
+              45.8163607
+            ],
+            [
+              15.981415,
+              45.8162198
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambena-zgrada-markulin-ribnjak-16-16",
+      "properties": {
+        "id": "stambena-zgrada-markulin-ribnjak-16-16",
+        "name": "Stambena zgrada Markulin",
+        "address": "Ribnjak 16, 10000 Zagreb, Croatia",
+        "description": "Stambena zgrada Vladimira Markulina na Ribnjaku 16 sagrađena je 1936./1937. prema projektu Drage Iblera. To je četverokatnica s uvučenim prizemljem i krovnom terasom. Prostorno rješenje ove zgrade unikatna je interpretacija teme slobodnog plana s potpuno rastvorenim pročeljem, ali bez skeletne strukture. Uspjelim prostornim i strukturalnim eksperimentom i strogošću apstraktnog oblikovnog govora, ovo se djelo ubraja u antologijska ostvarenja modernizma internacionalnog stila. Osvjetljenje zatvorenog stubišta ostvareno je krovnim nadsvjetlom i ugrađenim staklenim valjkastim ulošcima u gazišta stepenica i podesta. (Galerija nepokretnih kulturnih dobara grada Zagreba)",
+        "architects": [
+          "Drago Ibler"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/ribnjak-16?ulica=ribnjak",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Ribnjak%2016%20%201_f272.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/ribnjak%2016%20%201_f272.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/296454063",
+        "osmRefs": [
+          "way/296454063"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8160379,
+        "lon": 15.9815954
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9815488,
+              45.815951
+            ],
+            [
+              15.9817109,
+              45.8159942
+            ],
+            [
+              15.9816408,
+              45.8161228
+            ],
+            [
+              15.9814809,
+              45.8160815
+            ],
+            [
+              15.9815488,
+              45.815951
             ]
           ]
         ]
@@ -10671,6 +10903,117 @@
     },
     {
       "type": "Feature",
+      "id": "stambena-zgrada-ribnjak-26-26",
+      "properties": {
+        "id": "stambena-zgrada-ribnjak-26-26",
+        "name": "Stambena zgrada",
+        "address": "Ribnjak 26, 10000 Zagreb, Croatia",
+        "description": "Suvremena interpolacija na Ribnjaku 26 izvedena je 2022. prema projektu Davora Matekovića (arhitektonski ured Proarh) iz 2018 godine. To je stambena peterokatnica s lokalima u prizemlju.［...］\"pročelje zgrade otvara se prema vizurama i štiti od buke prometa. Zato je tu izbor pročelja dvostruko stakleno pročelje radi zaštite od buke, ali s maksimalnim otvaranjima prema parku, pogledu na Kaptol i Katedralu te gornjogradske krovove. Erkeri su tu ekstrovertirani - otvoreni kao loggie, i oblikovno zasebni element u suprotnosti od ostatka pročelja\" - objasnio je arhitekt Mateković za Jutarnji list (Korana Sutlić, 05.10.2021.) Izvor: https://www.jutarnji.hr/domidizajn/interijeri/konacno-svjetski-spektakularna-nova-zgrada-arhitekta-davora-matekovica-u-centru-zagreba-15107590",
+        "architects": [
+          "Davor Mateković"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/ribnjak-26?ulica=ribnjak",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Ribnjak_26__11.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/ribnjak_26__11.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/296454065",
+        "osmRefs": [
+          "way/296454065"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.816795,
+        "lon": 15.9812575
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9811925,
+              45.8167302
+            ],
+            [
+              15.981371,
+              45.8167852
+            ],
+            [
+              15.9813204,
+              45.8168601
+            ],
+            [
+              15.9811442,
+              45.8168047
+            ],
+            [
+              15.9811925,
+              45.8167302
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambena-zgrada-sarutancek-ribnjak-6-6",
+      "properties": {
+        "id": "stambena-zgrada-sarutancek-ribnjak-6-6",
+        "name": "Stambena zgrada Šarutanček",
+        "address": "Ribnjak 6, 10000 Zagreb, Croatia",
+        "description": "Stambena zgrada Šarutanček u ulici Ribnjak 6 sagrađena je 1936. godine prema projektu arhitektonskog biroa Freudenreich & Deutsch.¹ Modernistička trokatnica s dvostrešnim kosim krovom i tri prozorske osi od kojih je srednja balkonska. Prozorski otvori su veliki, horizontalno izduženi, osim srdišnjih u prizemlju zgrade. Izvor: ¹Wikipedija",
+        "architects": [
+          "Aleksandar Freudenreich",
+          "Pavao Deutsch"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/ribnjak-6?ulica=ribnjak",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Ribnjak%206%20%201_10af.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/ribnjak%206%20%201_10af.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/296454067",
+        "osmRefs": [
+          "way/296454067"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8154524,
+        "lon": 15.9818841
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9818331,
+              45.815377
+            ],
+            [
+              15.9819915,
+              45.8154097
+            ],
+            [
+              15.9819321,
+              45.8155333
+            ],
+            [
+              15.9818955,
+              45.8155244
+            ],
+            [
+              15.9817769,
+              45.8154951
+            ],
+            [
+              15.9818331,
+              45.815377
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "stambena-zgrada-tvornice-pokucstva-i-industrije-drva-u-krapini-marulicev-trg-9-9",
       "properties": {
         "id": "stambena-zgrada-tvornice-pokucstva-i-industrije-drva-u-krapini-marulicev-trg-9-9",
@@ -10745,6 +11088,64 @@
             [
               15.9714017,
               45.8056119
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambena-zgrada-vladislovic-ribnjak-4-4",
+      "properties": {
+        "id": "stambena-zgrada-vladislovic-ribnjak-4-4",
+        "name": "Stambena zgrada Vladislović",
+        "address": "Ribnjak 4, 10000 Zagreb, Croatia",
+        "description": "Stambena zgrada Vladislović u ulici Ribnjak 4 sagrađena je 1937. godine prema projektu arhitektonskog biroa Freudenreich & Deutsch.¹ Tokatnica s pročeljem Novoga građenja koje je rastvoreno trokrilnim prozorima horizontalnog formata od prvog do rećeg kata i kvadratičnim prozorima u prizemlju. Pročelje je gotovo lišeno arhitektonske dekoracije. Izvor: ¹Wikipedija",
+        "architects": [
+          "Aleksandar Freudenreich",
+          "Pavao Deutsch"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/ribnjak-4?ulica=ribnjak",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Ribnjak%204%20%201_2aa1.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/ribnjak%204%20%201_2aa1.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/296454068",
+        "osmRefs": [
+          "way/296454068"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8153356,
+        "lon": 15.9819874
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9819057,
+              45.8152409
+            ],
+            [
+              15.9821392,
+              45.8152942
+            ],
+            [
+              15.9820758,
+              45.8154289
+            ],
+            [
+              15.9819915,
+              45.8154097
+            ],
+            [
+              15.9818331,
+              45.815377
+            ],
+            [
+              15.9819057,
+              45.8152409
             ]
           ]
         ]
@@ -10842,6 +11243,65 @@
             [
               15.9734449,
               45.8121131
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambeno-poslovna-zgrada-astre-ribnjak-12-14-12",
+      "properties": {
+        "id": "stambeno-poslovna-zgrada-astre-ribnjak-12-14-12",
+        "name": "Stambeno-poslovna zgrada Astre",
+        "address": "Ribnjak 12 - 14, 10000 Zagreb, Croatia",
+        "description": "Stambeno-poslovna zgrada Astre u ulici Ribnjak 12-14 sagrađena je 1969. prema projektu Venčeslava Lončarića, Krešimira Cimperšaka i Vjenceslava Richtera. Smještena uz kuću Markulin (Ribnjak 16), na mjestu dviju ruševnih prizemnica, zgrada se jedino visinom nadovezuje na tu čuvenu zgradu Drage Iblera iz 1937. godine. Nasuprot sjajno proporcioniranom fasadnom platnu Iblerove zgrade, nalazimo vrlo dinamičnu, razigranu fasadu od betonskih elemenata koji su u funkciji ograda stambenih lođa. Riječ je o konstruktivnom sustavu stupova i stropova s kliještima na kojima leže ogradni elementi. Konstruktivni elementi fasade oslanjaju se na sustave tesarskih detalja. Za realizaciju zgrade bili su potrebni opsežni zemljani radovi kao i izgradnja potpornog zida na dvorišnoj strani u visini od 14 metara. (Vera Grimmer) Izvor: Aleksander Laslo",
+        "architects": [
+          "Krešimir Cimperšak",
+          "Venčeslav Lončarić",
+          "Vjenceslav Richter"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/ribnjak-12?ulica=ribnjak",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Ribnjak%2012-14%20%201_c3fb.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/ribnjak%2012-14%20%201_c3fb.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/296454072",
+        "osmRefs": [
+          "way/296454072"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8158827,
+        "lon": 15.9817155
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9816457,
+              45.815756
+            ],
+            [
+              15.9818828,
+              45.8158144
+            ],
+            [
+              15.9817834,
+              45.8160104
+            ],
+            [
+              15.9817109,
+              45.8159942
+            ],
+            [
+              15.9815488,
+              45.815951
+            ],
+            [
+              15.9816457,
+              45.815756
             ]
           ]
         ]
@@ -11545,20 +12005,12 @@
               45.8095013
             ],
             [
-              15.9767697,
-              45.8096019
+              15.9766164,
+              45.8094748
             ],
             [
-              15.9766996,
-              45.8096165
-            ],
-            [
-              15.97671,
-              45.8096422
-            ],
-            [
-              15.9765733,
-              45.8096589
+              15.9764894,
+              45.8094816
             ],
             [
               15.9764305,
@@ -11763,6 +12215,59 @@
             [
               15.9814148,
               45.8108299
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stambeno-poslovna-zgrada-ribnjak-40-40",
+      "properties": {
+        "id": "stambeno-poslovna-zgrada-ribnjak-40-40",
+        "name": "Stambeno-poslovna zgrada",
+        "address": "Ribnjak 40, 10000 Zagreb, Croatia",
+        "description": "Kod stambeno-poslovne zgrade na Ribnjaku 40 riječ je o prenamjeni i dogradnji već postojeće kuće prema projektu arhitektonskog biroa Studio BF (Boris Fiolić, Zoran Boševski i Mira Tadej-Crnković). Volumen kuće zadržan je u svojem osnovnom gabaritu i čini stereotomsku bazu zgrade, pri čemu je promijenjen oblik prozora u skladne vertikalne otvore. Baza kuće udomljuje poslovne prostore u konvencionalnom rasporedu, a na nju je interpolirana slobodnije komponirana kubična dogradnja sa stanom koji se razvija kroz tri etaže. Dogradnja je izvedena čeličnom nosivom konstrukcijom i slobodnom prostornom organizacijom, koja kulminira u atraktivnoj terasi s pogledom na park Ribnjak. Stari i novi dio građevine zadržavaju svoj integritet i kontrastni odnos kako u završnoj obradi, tako i u arhitektonskoj koncepciji. Preoblikovanje postojeće zgrade je istovremeno usklađeno s kontekstom kao što je i konceptualno i graditeljski svježe, te pokazuje metodu kreativne rekonstrukcije, oživljavanja i reafirmacije starih, a arhitektonski manje značajnih građevina. Sa stražnje strane kuće izveden je i ostakljeni paviljon. (Maroje Mrduljaš) Izvor: Aleksander Laslo, 2011:187",
+        "architects": [
+          "Studio BF"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/ribnjak-40?ulica=ribnjak",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Ribnjak%2040%20%201_ebd3.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/ribnjak%2040%20%201_ebd3.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/296457059",
+        "osmRefs": [
+          "way/296457059"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8176223,
+        "lon": 15.9806145
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9805769,
+              45.8175511
+            ],
+            [
+              15.9807153,
+              45.8175936
+            ],
+            [
+              15.9806522,
+              45.8176935
+            ],
+            [
+              15.9805137,
+              45.817651
+            ],
+            [
+              15.9805769,
+              45.8175511
             ]
           ]
         ]
@@ -14687,6 +15192,79 @@
     },
     {
       "type": "Feature",
+      "id": "zgrada-mikulicic-ribnjak-1-1",
+      "properties": {
+        "id": "zgrada-mikulicic-ribnjak-1-1",
+        "name": "Zgrada Mikuličić",
+        "address": "Ribnjak 1 / Zvonarnička, 10000 Zagreb, Croatia",
+        "description": "Palača Josipa Mikuličića na uglu Ribnjak 1 /Zvonarnička sagrađena je 1922./1923. prema projektu arhitekta Jurja Denzlera. Ostvarena je u pročišćenom arhitektonskom slogu elemenata reduciranoga klasicizma te spada među istaknuta ostvarenja zagrebačke arhitekture dvadesetih godina prošloga stoljeća, kojima je uobličeno važno zagrebačko područje podno Kaptola. Racionalnom je tlocrtnom dispozicijom dugih uličnih krila te konveksnog središnjeg dijela postignut arhitektonski maksimum iskoristivosti prostora, obogaćenog skladnim uličnim ozelenjenim predvrtom. (Galerija nepokretnih kulturnih dobara grada Zagreba)",
+        "architects": [
+          "Juraj Denzler"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/ribnjak-1?ulica=ribnjak",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Ribnjak%201%20-Zvonarni%C4%8Dka%20%201_6432.jpg",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/ribnjak%201%20-zvonarnicka%20%201_6432.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/296513270",
+        "osmRefs": [
+          "way/296513270"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "override_direct_address_match_only",
+        "footprintConfidence": "medium",
+        "lat": 45.8158884,
+        "lon": 15.9800367
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9796336,
+              45.8181639
+            ],
+            [
+              15.9797985,
+              45.8180823
+            ],
+            [
+              15.9798582,
+              45.81812
+            ],
+            [
+              15.9799343,
+              45.8181525
+            ],
+            [
+              15.9798567,
+              45.8182851
+            ],
+            [
+              15.9797593,
+              45.8182564
+            ],
+            [
+              15.9797969,
+              45.8181916
+            ],
+            [
+              15.9797815,
+              45.8181769
+            ],
+            [
+              15.9796906,
+              45.8182234
+            ],
+            [
+              15.9796336,
+              45.8181639
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "zgrada-mirovinske-zaklade-gradske-stedionice-gajeva-2-2",
       "properties": {
         "id": "zgrada-mirovinske-zaklade-gradske-stedionice-gajeva-2-2",
@@ -14965,6 +15543,59 @@
             [
               15.979718,
               45.8103907
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zgrada-turkovic-ribnjak-38-38",
+      "properties": {
+        "id": "zgrada-turkovic-ribnjak-38-38",
+        "name": "Zgrada Turković",
+        "address": "Ribnjak 38, 10000 Zagreb, Croatia",
+        "description": "Ugrađena najamna zgrada na Ribnjaku 38 sagrađena je 1937./1938. za Zdenka i Vladimira Turkovića prema projektu arhitekta Zdenka Strižića. To je trokatnica s uvučenim prizemljem i krovnom terasom. Prostorno rješenje ove zgrade jedinstveni je primjer funkcionalističke samačke stanogradnje izrazite preglednosti tlocrtnog rješenja, naglašenih oblikovnih kvaliteta i karakterističnog autorskog rukopisa, te se ovo djelo ubraja u antologijska ostvarenja modernizma internacionalnog stila. (Galerija nepokretnih kulturnih dobara grada Zagreba)",
+        "architects": [
+          "Zdenko Strižić"
+        ],
+        "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/ribnjak-38?ulica=ribnjak",
+        "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Ribnjak%2038%20%201_fc85.JPG",
+        "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/ribnjak%2038%20%201_fc85.jpg",
+        "builtYear": "Unknown",
+        "osmRef": "way/296457060",
+        "osmRefs": [
+          "way/296457060"
+        ],
+        "footprintStatus": "matched",
+        "footprintStrategy": "direct_geocode_ref_point_containment_with_address",
+        "footprintConfidence": "high",
+        "lat": 45.8175091,
+        "lon": 15.9806881
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15.9806627,
+              45.8174234
+            ],
+            [
+              15.9807988,
+              45.8174671
+            ],
+            [
+              15.9807153,
+              45.8175936
+            ],
+            [
+              15.9805769,
+              45.8175511
+            ],
+            [
+              15.9806627,
+              45.8174234
             ]
           ]
         ]
