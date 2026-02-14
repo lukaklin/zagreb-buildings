@@ -13,6 +13,8 @@ import type { Building } from "@/lib/types";
 export type MapHandle = {
   /** Fly to a building by its feature id and visually select it. */
   flyToBuilding: (featureId: string) => void;
+  /** Apply a MapLibre filter to building layers (null = show all). */
+  applyFilter: (filter: maplibregl.FilterSpecification | null) => void;
 };
 
 type Props = {
@@ -100,6 +102,9 @@ export const MapView = forwardRef<MapHandle, Props>(function MapView(
   const geojsonRef = useRef(geojson);
   geojsonRef.current = geojson;
 
+  // Store current user filter so it can be applied when layers are added
+  const filterRef = useRef<maplibregl.FilterSpecification | null>(null);
+
   function setHover(map: maplibregl.Map, id: string | number | null) {
     if (hoveredIdRef.current !== null) {
       map.setFeatureState(
@@ -124,6 +129,35 @@ export const MapView = forwardRef<MapHandle, Props>(function MapView(
       selectedIdRef.current = id;
       if (id !== null) {
         map.setFeatureState({ source: "buildings", id }, { selected: true });
+      }
+    },
+    [],
+  );
+
+  // Apply user filter to building layers (merge with geometry-type base filter)
+  const applyFilterToMap = useCallback(
+    (map: maplibregl.Map, userFilter: maplibregl.FilterSpecification | null) => {
+      const polyBase: maplibregl.FilterSpecification = [
+        "!=",
+        ["geometry-type"],
+        "Point",
+      ];
+      const pointBase: maplibregl.FilterSpecification = [
+        "==",
+        ["geometry-type"],
+        "Point",
+      ];
+      const polyFilter: maplibregl.FilterSpecification = userFilter
+        ? (["all", polyBase, userFilter] as maplibregl.FilterSpecification)
+        : polyBase;
+      const pointFilter: maplibregl.FilterSpecification = userFilter
+        ? (["all", pointBase, userFilter] as maplibregl.FilterSpecification)
+        : pointBase;
+
+      if (map.getLayer("buildings-fill")) {
+        map.setFilter("buildings-fill", polyFilter);
+        map.setFilter("buildings-outline", polyFilter);
+        map.setFilter("buildings-points", pointFilter);
       }
     },
     [],
@@ -179,8 +213,13 @@ export const MapView = forwardRef<MapHandle, Props>(function MapView(
         // Also fire the selection callback
         onSelectRef.current(buildingFromProps(feature.properties ?? {}));
       },
+      applyFilter(userFilter: maplibregl.FilterSpecification | null) {
+        filterRef.current = userFilter;
+        const map = mapRef.current;
+        if (map) applyFilterToMap(map, userFilter);
+      },
     }),
-    [setSelected],
+    [setSelected, applyFilterToMap],
   );
 
   // ---- Initialise the map (once) ----
@@ -377,6 +416,11 @@ export const MapView = forwardRef<MapHandle, Props>(function MapView(
       });
 
       sourceAddedRef.current = true;
+
+      // Apply any filter that was set before layers were ready
+      if (filterRef.current !== null) {
+        applyFilterToMap(map, filterRef.current);
+      }
     }
 
     // Map may or may not have finished loading yet

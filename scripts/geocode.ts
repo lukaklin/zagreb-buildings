@@ -200,7 +200,7 @@ function addressQueriesForRow(r: CanonicalRow): string[] {
   // Prefer explicit `primary_address` if present, then the rest.
   const primary = r.primary_address ? normalizeAddress(r.primary_address) : normalizeAddress(choosePrimaryAddress(r.address));
 
-  const combined = uniqueCaseInsensitive([primary, ...fromJson, ...fromSplit]);
+  const combined = uniqueCaseInsensitive([primary, ...fromJson, ...fromSplit].filter((x): x is string => x != null));
   // Avoid sending multi-address strings with '/' to Nominatim; always geocode individual variants.
   // Filter to ensure all queries have Zagreb context (safety net)
   const filtered = combined.filter((q) => q && !q.includes("/") && /zagreb|croatia/i.test(q));

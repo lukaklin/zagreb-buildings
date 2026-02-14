@@ -175,7 +175,7 @@ export function validateRawBuildingRecord(record: any): ValidationResult {
 /**
  * Check for ID collisions in a dataset
  */
-export function detectIdCollisions<T extends { id: string }>(records: T[]): ValidationResult {
+export function detectIdCollisions<T extends { id: string; name?: string; address?: string }>(records: T[]): ValidationResult {
   const result: ValidationResult = {
     isValid: true,
     errors: [],

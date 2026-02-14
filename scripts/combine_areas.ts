@@ -2,7 +2,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { parse } from "csv-parse/sync";
 import { stringify } from "csv-stringify/sync";
-import { detectIdCollisions, withErrorHandling } from "./validation.ts";
+import { detectIdCollisions, withErrorHandling } from "./validation";
 import type { CanonicalRow } from "./types";
 
 // Accept area slugs as command line arguments

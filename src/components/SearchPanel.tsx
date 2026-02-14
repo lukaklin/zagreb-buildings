@@ -7,9 +7,10 @@ import { searchBuildings } from "@/lib/search";
 type Props = {
   buildings: BuildingFeature[];
   onSelect: (feature: BuildingFeature) => void;
+  filterSlot?: React.ReactNode;
 };
 
-export function SearchPanel({ buildings, onSelect }: Props) {
+export function SearchPanel({ buildings, onSelect, filterSlot }: Props) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<BuildingFeature[]>([]);
   const [activeIdx, setActiveIdx] = useState(-1);
@@ -96,8 +97,8 @@ export function SearchPanel({ buildings, onSelect }: Props) {
   }, []);
 
   return (
-    <div className="absolute top-3 left-3 z-10 w-72 sm:w-80">
-      <div className="relative">
+    <div className="absolute top-3 left-3 z-10 flex gap-2">
+      <div className="relative w-72 sm:w-80">
         <input
           ref={inputRef}
           type="text"
@@ -130,17 +131,16 @@ export function SearchPanel({ buildings, onSelect }: Props) {
             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
           />
         </svg>
-      </div>
 
-      {open && results.length > 0 && (
-        <ul
-          ref={listRef}
-          className="
-            mt-1 max-h-72 overflow-auto rounded-xl border bg-white/95
-            backdrop-blur shadow-lg
-          "
-          role="listbox"
-        >
+        {open && results.length > 0 && (
+          <ul
+            ref={listRef}
+            className="
+              mt-1 max-h-72 overflow-auto rounded-xl border bg-white/95
+              backdrop-blur shadow-lg
+            "
+            role="listbox"
+          >
           {results.map((f, i) => {
             const p = f.properties;
             return (
@@ -172,7 +172,9 @@ export function SearchPanel({ buildings, onSelect }: Props) {
             );
           })}
         </ul>
-      )}
+        )}
+      </div>
+      {filterSlot}
     </div>
   );
 }
