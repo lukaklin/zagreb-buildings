@@ -1,10 +1,22 @@
 "use client";
 
 import maplibregl, { Map, MapLayerMouseEvent } from "maplibre-gl";
-import { useEffect, useRef } from "react";
+import {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useCallback,
+} from "react";
 import type { Building } from "@/lib/types";
 
+export type MapHandle = {
+  /** Fly to a building by its feature id and visually select it. */
+  flyToBuilding: (featureId: string) => void;
+};
+
 type Props = {
+  geojson: GeoJSON.FeatureCollection | null;
   onSelectBuilding: (b: Building | null) => void;
 };
 
@@ -37,29 +49,62 @@ function parseArchitects(raw: any): string[] | null {
     return s.split(/[;,]/g).map((x) => x.trim());
   };
 
-  const items: string[] = Array.isArray(raw) ? raw.flatMap(expandOne) : expandOne(raw);
+  const items: string[] = Array.isArray(raw)
+    ? raw.flatMap(expandOne)
+    : expandOne(raw);
 
   const cleaned = items
     .map(cleanToken)
     .filter(Boolean)
     // dedupe case-insensitive
-    .filter((v, i, arr) => arr.findIndex((x) => x.toLowerCase() === v.toLowerCase()) === i);
+    .filter(
+      (v, i, arr) =>
+        arr.findIndex((x) => x.toLowerCase() === v.toLowerCase()) === i,
+    );
 
   return cleaned.length ? cleaned : null;
 }
 
-export function MapView({ onSelectBuilding }: Props) {
+function buildingFromProps(p: Record<string, any>): Building {
+  return {
+    id: String(p.id ?? ""),
+    name: p.name ? String(p.name) : null,
+    address: p.address ? String(p.address) : null,
+    description: p.description ? String(p.description) : null,
+    architects: parseArchitects(p.architects),
+    sourceUrl: p.sourceUrl ? String(p.sourceUrl) : null,
+    imageThumbUrl: p.imageThumbUrl ? String(p.imageThumbUrl) : null,
+    imageFullUrl: p.imageFullUrl ? String(p.imageFullUrl) : null,
+    builtYear: p.builtYear ? String(p.builtYear) : "Unknown",
+  };
+}
+
+export const MapView = forwardRef<MapHandle, Props>(function MapView(
+  { geojson, onSelectBuilding },
+  ref,
+) {
   const mapRef = useRef<Map | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const hoveredIdRef = useRef<string | number | null>(null);
   const selectedIdRef = useRef<string | number | null>(null);
 
+  // Track whether the source + layers have been added already
+  const sourceAddedRef = useRef(false);
+
+  // Keep latest onSelectBuilding in a ref so the map callbacks don't go stale
+  const onSelectRef = useRef(onSelectBuilding);
+  onSelectRef.current = onSelectBuilding;
+
+  // Keep latest geojson in a ref for flyToBuilding lookups
+  const geojsonRef = useRef(geojson);
+  geojsonRef.current = geojson;
+
   function setHover(map: maplibregl.Map, id: string | number | null) {
     if (hoveredIdRef.current !== null) {
       map.setFeatureState(
         { source: "buildings", id: hoveredIdRef.current },
-        { hover: false }
+        { hover: false },
       );
     }
     hoveredIdRef.current = id;
@@ -68,19 +113,77 @@ export function MapView({ onSelectBuilding }: Props) {
     }
   }
 
-  function setSelected(map: maplibregl.Map, id: string | number | null) {
-    if (selectedIdRef.current !== null) {
-      map.setFeatureState(
-        { source: "buildings", id: selectedIdRef.current },
-        { selected: false }
-      );
-    }
-    selectedIdRef.current = id;
-    if (id !== null) {
-      map.setFeatureState({ source: "buildings", id }, { selected: true });
-    }
-  }
+  const setSelected = useCallback(
+    (map: maplibregl.Map, id: string | number | null) => {
+      if (selectedIdRef.current !== null) {
+        map.setFeatureState(
+          { source: "buildings", id: selectedIdRef.current },
+          { selected: false },
+        );
+      }
+      selectedIdRef.current = id;
+      if (id !== null) {
+        map.setFeatureState({ source: "buildings", id }, { selected: true });
+      }
+    },
+    [],
+  );
 
+  // Expose imperative handle
+  useImperativeHandle(
+    ref,
+    () => ({
+      flyToBuilding(featureId: string) {
+        const map = mapRef.current;
+        if (!map) return;
+
+        setSelected(map, featureId);
+
+        // Find the feature from the geojson data
+        const feature = geojsonRef.current?.features.find(
+          (f) => f.properties?.id === featureId,
+        );
+        if (!feature) return;
+
+        const geom = feature.geometry;
+
+        if (geom.type === "Point") {
+          const [lng, lat] = geom.coordinates as [number, number];
+          map.flyTo({ center: [lng, lat], zoom: 17, duration: 1200 });
+        } else {
+          // Compute bounding box from coordinates
+          const coords = getAllCoordinates(geom);
+          if (coords.length === 0) return;
+
+          const bounds = coords.reduce(
+            (b, [lng, lat]) => {
+              b[0][0] = Math.min(b[0][0], lng);
+              b[0][1] = Math.min(b[0][1], lat);
+              b[1][0] = Math.max(b[1][0], lng);
+              b[1][1] = Math.max(b[1][1], lat);
+              return b;
+            },
+            [
+              [Infinity, Infinity],
+              [-Infinity, -Infinity],
+            ] as [[number, number], [number, number]],
+          );
+
+          map.fitBounds(bounds, {
+            padding: 120,
+            maxZoom: 18,
+            duration: 1200,
+          });
+        }
+
+        // Also fire the selection callback
+        onSelectRef.current(buildingFromProps(feature.properties ?? {}));
+      },
+    }),
+    [setSelected],
+  );
+
+  // ---- Initialise the map (once) ----
   useEffect(() => {
     if (!containerRef.current) return;
     if (mapRef.current) return;
@@ -109,13 +212,26 @@ export function MapView({ onSelectBuilding }: Props) {
 
     map.addControl(new maplibregl.NavigationControl(), "top-left");
 
-    map.on("load", async () => {
-      const res = await fetch("/data/buildings_combined.geojson");
-      const geojson = await res.json();
+    mapRef.current = map;
+
+    return () => {
+      map.remove();
+      mapRef.current = null;
+      sourceAddedRef.current = false;
+    };
+  }, []);
+
+  // ---- Add / update the GeoJSON source when data arrives ----
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !geojson) return;
+
+    function addSourceAndLayers() {
+      if (!map || sourceAddedRef.current) return;
 
       map.addSource("buildings", {
         type: "geojson",
-        data: geojson,
+        data: geojson!,
         promoteId: "id",
       });
 
@@ -210,7 +326,6 @@ export function MapView({ onSelectBuilding }: Props) {
         const f = e.features?.[0];
         const id = (f?.properties as any)?.id ?? null;
         if (id == null) return;
-
         map.getCanvas().style.cursor = "pointer";
         setHover(map, id);
       });
@@ -219,7 +334,6 @@ export function MapView({ onSelectBuilding }: Props) {
         const f = e.features?.[0];
         const id = (f?.properties as any)?.id ?? null;
         if (id == null) return;
-
         map.getCanvas().style.cursor = "pointer";
         setHover(map, id);
       });
@@ -234,51 +348,21 @@ export function MapView({ onSelectBuilding }: Props) {
         setHover(map, null);
       });
 
-      // Click selection (polygon only)
+      // Click selection
       map.on("click", "buildings-fill", (e: MapLayerMouseEvent) => {
         const f = e.features?.[0];
         const p = (f?.properties ?? {}) as any;
-
         const id = p.id ?? null;
         setSelected(map, id);
-
-        const b: Building = {
-          id: String(p.id ?? ""),
-          name: p.name ? String(p.name) : null,
-          address: p.address ? String(p.address) : null,
-          description: p.description ? String(p.description) : null,
-          architects: parseArchitects(p.architects),
-          sourceUrl: p.sourceUrl ? String(p.sourceUrl) : null,
-
-          imageThumbUrl: p.imageThumbUrl ? String(p.imageThumbUrl) : null,
-          imageFullUrl: p.imageFullUrl ? String(p.imageFullUrl) : null,
-          builtYear: p.builtYear ? String(p.builtYear) : "Unknown",
-        };
-
-        onSelectBuilding(b);
+        onSelectRef.current(buildingFromProps(p));
       });
 
       map.on("click", "buildings-points", (e: MapLayerMouseEvent) => {
         const f = e.features?.[0];
         const p = (f?.properties ?? {}) as any;
-
         const id = p.id ?? null;
         setSelected(map, id);
-
-        const b: Building = {
-          id: String(p.id ?? ""),
-          name: p.name ? String(p.name) : null,
-          address: p.address ? String(p.address) : null,
-          description: p.description ? String(p.description) : null,
-          architects: parseArchitects(p.architects),
-          sourceUrl: p.sourceUrl ? String(p.sourceUrl) : null,
-
-          imageThumbUrl: p.imageThumbUrl ? String(p.imageThumbUrl) : null,
-          imageFullUrl: p.imageFullUrl ? String(p.imageFullUrl) : null,
-          builtYear: p.builtYear ? String(p.builtYear) : "Unknown",
-        };
-
-        onSelectBuilding(b);
+        onSelectRef.current(buildingFromProps(p));
       });
 
       // Click empty space clears selection
@@ -288,18 +372,40 @@ export function MapView({ onSelectBuilding }: Props) {
         });
         if (features.length === 0) {
           setSelected(map, null);
-          onSelectBuilding(null);
+          onSelectRef.current(null);
         }
       });
-    });
 
-    mapRef.current = map;
+      sourceAddedRef.current = true;
+    }
 
-    return () => {
-      map.remove();
-      mapRef.current = null;
-    };
-  }, [onSelectBuilding]);
+    // Map may or may not have finished loading yet
+    if (map.isStyleLoaded()) {
+      addSourceAndLayers();
+    } else {
+      map.on("load", addSourceAndLayers);
+    }
+  }, [geojson, setSelected]);
 
   return <div ref={containerRef} className="h-full w-full" />;
+});
+
+/** Recursively extract all [lng, lat] coordinate pairs from a geometry. */
+function getAllCoordinates(geom: GeoJSON.Geometry): number[][] {
+  switch (geom.type) {
+    case "Point":
+      return [geom.coordinates];
+    case "MultiPoint":
+    case "LineString":
+      return geom.coordinates;
+    case "MultiLineString":
+    case "Polygon":
+      return geom.coordinates.flat();
+    case "MultiPolygon":
+      return geom.coordinates.flat(2);
+    case "GeometryCollection":
+      return geom.geometries.flatMap(getAllCoordinates);
+    default:
+      return [];
+  }
 }

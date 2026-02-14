@@ -1,21 +1,27 @@
 "use client";
 
-import { useState } from "react";
-import { MapView } from "@/components/MapView";
+import { useRef, useState } from "react";
+import { MapView, type MapHandle } from "@/components/MapView";
 import { DetailsPanel } from "@/components/DetailsPanel";
-import type { Building } from "@/lib/types";
+import { SearchPanel } from "@/components/SearchPanel";
+import { useBuildingsData } from "@/hooks/useBuildingsData";
+import type { Building, BuildingFeature } from "@/lib/types";
 
 export default function Home() {
+  const { geojson, buildings } = useBuildingsData();
   const [selected, setSelected] = useState<Building | null>(null);
+  const mapRef = useRef<MapHandle>(null);
+
+  function handleSearchSelect(feature: BuildingFeature) {
+    const p = feature.properties;
+    mapRef.current?.flyToBuilding(p.id);
+  }
 
   return (
     <main className="h-dvh w-dvw relative">
-      <MapView onSelectBuilding={setSelected} />
+      <MapView ref={mapRef} geojson={geojson} onSelectBuilding={setSelected} />
 
-      <div className="absolute top-3 left-3 z-10 bg-white/90 backdrop-blur border rounded-2xl px-3 py-2 shadow-sm">
-        <div className="text-sm font-semibold">Zagreb Buildings</div>
-        <div className="text-xs text-gray-600">Click a polygon → open details</div>
-      </div>
+      <SearchPanel buildings={buildings} onSelect={handleSearchSelect} />
 
       <DetailsPanel building={selected} onClose={() => setSelected(null)} />
     </main>
