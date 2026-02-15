@@ -72,6 +72,7 @@ function buildingFromProps(p: Record<string, any>): Building {
     id: String(p.id ?? ""),
     name: p.name ? String(p.name) : null,
     address: p.address ? String(p.address) : null,
+    addressRaw: p.addressRaw ? String(p.addressRaw) : null,
     description: p.description ? String(p.description) : null,
     architects: parseArchitects(p.architects),
     sourceUrl: p.sourceUrl ? String(p.sourceUrl) : null,

@@ -136,6 +136,7 @@ async function main() {
           id: r.id,
           name: r.name,
           address: r.address,
+          addressRaw: r.address_raw || undefined,
           description: r.description,
           architects: splitArchitects(r.architects),
           sourceUrl: r.source_url,

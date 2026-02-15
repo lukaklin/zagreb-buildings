@@ -142,7 +142,7 @@ export function DetailsPanel({ building, onClose }: Props) {
                       <div>
                         <p className="text-xs text-gray-600">Address</p>
                         <p className="font-medium text-gray-900 text-sm">
-                          {building.address}
+                          {building.addressRaw || building.address}
                         </p>
                       </div>
                     </div>
