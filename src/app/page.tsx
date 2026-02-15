@@ -3,10 +3,15 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MapView, type MapHandle } from "@/components/MapView";
 import { DetailsPanel } from "@/components/DetailsPanel";
-import { SearchPanel } from "@/components/SearchPanel";
-import { FilterPanel } from "@/components/FilterPanel";
+import { SearchFilterBar, type YearRange } from "@/components/SearchFilterBar";
 import { useBuildingsData } from "@/hooks/useBuildingsData";
 import type { Building, BuildingFeature } from "@/lib/types";
+
+function parseYear(value: string | null | undefined): number | null {
+  if (value == null || value === "Unknown") return null;
+  const n = parseInt(value, 10);
+  return Number.isNaN(n) ? null : n;
+}
 
 export default function Home() {
   const { geojson, buildings } = useBuildingsData();
@@ -14,31 +19,37 @@ export default function Home() {
   const [architectFilter, setArchitectFilter] = useState<Set<string>>(
     () => new Set(),
   );
+  const [yearRange, setYearRange] = useState<YearRange>([1800, 2026]);
   const mapRef = useRef<MapHandle>(null);
 
   const visibleBuildings = useMemo(() => {
-    if (architectFilter.size === 0) return buildings;
-    return buildings.filter((f) =>
-      f.properties.architects?.some((a) => architectFilter.has(a)),
-    );
-  }, [buildings, architectFilter]);
+    return buildings.filter((f) => {
+      const matchesArchitect =
+        architectFilter.size === 0 ||
+        f.properties.architects?.some((a) => architectFilter.has(a));
+
+      const year = parseYear(f.properties.builtYear);
+      const matchesYear =
+        year === null ||
+        (year >= yearRange[0] && year <= yearRange[1]);
+
+      return matchesArchitect && matchesYear;
+    });
+  }, [buildings, architectFilter, yearRange]);
 
   useEffect(() => {
-    if (architectFilter.size === 0) {
+    const matchingIds = visibleBuildings.map((f) => f.properties.id);
+
+    if (matchingIds.length === 0 || matchingIds.length === buildings.length) {
       mapRef.current?.applyFilter(null);
     } else {
-      const matchingIds = buildings
-        .filter((f) =>
-          f.properties.architects?.some((a) => architectFilter.has(a)),
-        )
-        .map((f) => f.properties.id);
       mapRef.current?.applyFilter([
         "in",
         ["get", "id"],
         ["literal", matchingIds],
       ]);
     }
-  }, [architectFilter, buildings]);
+  }, [visibleBuildings, buildings]);
 
   function handleSearchSelect(feature: BuildingFeature) {
     const p = feature.properties;
@@ -46,19 +57,17 @@ export default function Home() {
   }
 
   return (
-    <main className="h-dvh w-dvw relative">
+    <main className="relative h-dvh w-dvw">
       <MapView ref={mapRef} geojson={geojson} onSelectBuilding={setSelected} />
 
-      <SearchPanel
-        buildings={visibleBuildings}
+      <SearchFilterBar
+        buildings={buildings}
+        visibleBuildings={visibleBuildings}
         onSelect={handleSearchSelect}
-        filterSlot={
-          <FilterPanel
-            buildings={buildings}
-            selected={architectFilter}
-            onChangeSelected={setArchitectFilter}
-          />
-        }
+        selectedArchitects={architectFilter}
+        onArchitectFilterChange={setArchitectFilter}
+        yearRange={yearRange}
+        onYearRangeChange={setYearRange}
       />
 
       <DetailsPanel building={selected} onClose={() => setSelected(null)} />
