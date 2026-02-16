@@ -587,6 +587,7 @@ type MatchAttemptResult = {
   confidence: string;
   topCandidates: ScoredCandidate[];
   radii_tried: number[];
+  start_date?: string;
 };
 
 async function findGeometryWithFallback(
@@ -616,6 +617,7 @@ async function findGeometryWithFallback(
           confidence: picked.confidence,
           topCandidates: picked.topCandidates,
           radii_tried,
+          start_date: picked.best.feature.properties?.start_date ?? undefined,
         };
       }
     } catch (e) {
@@ -639,6 +641,7 @@ async function findGeometryWithFallback(
           confidence: picked.confidence,
           topCandidates: picked.topCandidates,
           radii_tried,
+          start_date: picked.best.feature.properties?.start_date ?? undefined,
         };
       }
     } catch (e) {
@@ -692,6 +695,7 @@ async function findGeometryWithFallback(
             confidence: picked.confidence,
             topCandidates: picked.topCandidates,
             radii_tried,
+            start_date: picked.best.feature.properties?.start_date ?? undefined,
           };
         }
 
@@ -702,6 +706,7 @@ async function findGeometryWithFallback(
           confidence: picked.confidence,
           topCandidates: picked.topCandidates,
           radii_tried,
+          start_date: picked.best.feature.properties?.start_date ?? undefined,
         };
       }
 
@@ -726,6 +731,7 @@ async function findGeometryWithFallback(
         confidence: picked.confidence,
         topCandidates: picked.topCandidates,
         radii_tried,
+        start_date: picked.best!.feature.properties?.start_date ?? undefined,
       };
     }
 
@@ -736,6 +742,7 @@ async function findGeometryWithFallback(
       confidence: picked.confidence,
       topCandidates: picked.topCandidates,
       radii_tried,
+      start_date: picked.best!.feature.properties?.start_date ?? undefined,
     };
   }
 
@@ -771,6 +778,7 @@ async function main() {
       confidence: string;
       osm_refs: string[];
       geometry: GeoJSON.Geometry | null;
+      start_date?: string;
       debug: {
         addresses: string[];
         radii_tried: number[];
@@ -846,6 +854,7 @@ async function main() {
           confidence: matchResult.confidence,
           osm_refs: matchResult.osm_refs,
           geometry: null,
+          start_date: matchResult.start_date,
           debug: {
             addresses,
             radii_tried: matchResult.radii_tried,
@@ -892,6 +901,7 @@ async function main() {
         confidence: matchResult.confidence,
         osm_refs: matchResult.osm_refs,
         geometry: geometryValidation.isValid ? matchResult.geometry : null,
+        start_date: matchResult.start_date,
         debug: {
           addresses,
           radii_tried: matchResult.radii_tried,

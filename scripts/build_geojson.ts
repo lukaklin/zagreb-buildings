@@ -21,6 +21,7 @@ type FootprintResultFile = {
     confidence: string;
     osm_refs: string[];
     geometry: GeoJSON.Geometry | null;
+    start_date?: string;
   }>;
   counts?: Record<string, number>;
 };
@@ -143,7 +144,7 @@ async function main() {
 
           imageFullUrl: r.image_full_url || undefined,
           imageThumbUrl: r.image_thumb_url || undefined,
-          builtYear: r.built_year || "Unknown",
+          builtYear: fp?.start_date || r.built_year || "Unknown",
 
           osmRef: footprintOsmRefs?.[0] || pick?.osm_ref || undefined, // debugging helper
           osmRefs: footprintOsmRefs?.length ? footprintOsmRefs : undefined,
