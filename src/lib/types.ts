@@ -10,6 +10,7 @@ export type Building = {
   imageThumbUrl?: string | null;
   imageFullUrl?: string | null;
   builtYear?: string | null; // "Unknown" for now
+  ageYears?: number | null; // Calculated when builtYear is parseable
 
   lat?: number | null;
   lon?: number | null;

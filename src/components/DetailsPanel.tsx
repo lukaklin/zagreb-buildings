@@ -123,6 +123,9 @@ export function DetailsPanel({ building, onClose }: Props) {
                       <p className="font-medium text-gray-900">
                         {building.builtYear || "Unknown"}
                       </p>
+                      {building.ageYears != null && (
+                        <p className="text-xs text-gray-500">{building.ageYears} years old</p>
+                      )}
                     </div>
                   </div>
 

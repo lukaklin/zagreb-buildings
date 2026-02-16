@@ -37,6 +37,7 @@ const AREA_SLUG = process.argv[2] || "combined";
 const CANONICAL_CSV = path.join("input", "canonical", `buildings_${AREA_SLUG}_geocoded.csv`);
 const GEOMS_PATH = path.join("output", `geometries_${AREA_SLUG}.json`);
 const FOOTPRINT_RESULTS_PATH = path.join("output", `footprint_results_${AREA_SLUG}.json`);
+const BUILT_YEARS_OVERRIDES = path.join("input", "overrides", `built_years_${AREA_SLUG}.csv`);
 const OUT_GEOJSON = path.join("public", "data", `buildings_${AREA_SLUG}.geojson`);
 const QA_REPORT = path.join("output", `qa_report_${AREA_SLUG}.json`);
 
@@ -48,12 +49,43 @@ function splitArchitects(s: string | undefined): string[] {
     .filter(Boolean);
 }
 
+function parseYearFromBuiltYear(s: string | null | undefined): number | null {
+  if (!s || s === "Unknown") return null;
+  // Single year: "1927", "1925"
+  const single = /^\s*(\d{4})\s*$/.exec(s);
+  if (single) return parseInt(single[1], 10);
+  // Range: "1922..1924" -> use latest (end) year
+  const range = /^\s*(\d{4})\s*\.\.\s*(\d{4})\s*$/.exec(s);
+  if (range) return Math.max(parseInt(range[1], 10), parseInt(range[2], 10));
+  // Date: "December 21, 1990" -> extract year
+  const dateMatch = /\b(19|20)\d{2}\b/.exec(s);
+  if (dateMatch) return parseInt(dateMatch[0], 10);
+  // Approximate: "~1826"
+  const approx = /~?\s*(\d{4})/.exec(s);
+  if (approx) return parseInt(approx[1], 10);
+  return null;
+}
+
 async function readJsonIfExists<T>(p: string): Promise<T | null> {
   try {
     const txt = await fs.readFile(p, "utf8");
     return JSON.parse(txt) as T;
   } catch {
     return null;
+  }
+}
+
+async function readBuiltYearOverrides(p: string): Promise<Record<string, string>> {
+  try {
+    const txt = await fs.readFile(p, "utf8");
+    const rows = parse(txt, { columns: true, skip_empty_lines: true, trim: true }) as Array<{ building_id: string; built_year: string }>;
+    const map: Record<string, string> = {};
+    for (const r of rows) {
+      if (r.building_id && r.built_year) map[r.building_id] = r.built_year.trim();
+    }
+    return map;
+  } catch {
+    return {};
   }
 }
 
@@ -78,6 +110,12 @@ async function main() {
       for (const r of footprintResults.results) {
         footprintById[r.building_id] = r;
       }
+    }
+
+    const builtYearOverrides = await readBuiltYearOverrides(BUILT_YEARS_OVERRIDES);
+    const overrideCount = Object.keys(builtYearOverrides).length;
+    if (overrideCount > 0) {
+      console.log(`   Using ${overrideCount} built year override(s)`);
     }
 
     console.log(
@@ -130,6 +168,10 @@ async function main() {
         }
       }
 
+      const builtYear = builtYearOverrides[r.id] || fp?.start_date || r.built_year || "Unknown";
+      const parsedYear = parseYearFromBuiltYear(builtYear);
+      const ageYears = parsedYear ? new Date().getFullYear() - parsedYear : undefined;
+
       features.push({
         type: "Feature",
         id: r.id,
@@ -144,7 +186,9 @@ async function main() {
 
           imageFullUrl: r.image_full_url || undefined,
           imageThumbUrl: r.image_thumb_url || undefined,
-          builtYear: fp?.start_date || r.built_year || "Unknown",
+          builtYear,
+
+          ageYears,
 
           osmRef: footprintOsmRefs?.[0] || pick?.osm_ref || undefined, // debugging helper
           osmRefs: footprintOsmRefs?.length ? footprintOsmRefs : undefined,

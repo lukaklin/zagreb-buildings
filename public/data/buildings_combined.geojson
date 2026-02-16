@@ -16,7 +16,8 @@
         "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/marticeva-2?ulica=trg-hrvatskih-velikana",
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Marti%C4%87eva%202%20%201.1_5166.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/marticeva%202%20%201.1_5166.jpg",
-        "builtYear": "December 21, 1990",
+        "builtYear": "1927",
+        "ageYears": 99,
         "osmRef": "way/390946778",
         "osmRefs": [
           "way/390946778"
@@ -598,7 +599,8 @@
         "sourceUrl": "https://www.arhitektura-zagreba.com/zgrade/mihanoviceva-1?ulica=mihanoviceva",
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Mihanovi%C4%87eva%201%20%201_9985.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/mihanoviceva%201%20%201_9985.jpg",
-        "builtYear": "1922..1924",
+        "builtYear": "1925",
+        "ageYears": 101,
         "osmRef": "way/29274070",
         "osmRefs": [
           "way/29274070"
@@ -3026,6 +3028,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20bana%20Jela%C4%8Di%C4%87a%2015%20%201_6079.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20bana%20jelacica%2015%20%201_6079.jpg",
         "builtYear": "1829",
+        "ageYears": 197,
         "osmRef": "way/97235393",
         "osmRefs": [
           "way/97235393"
@@ -3121,6 +3124,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Juri%C5%A1i%C4%87eva%201-1A%20%201_2f79.jpg",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/jurisiceva%201-1a%20%201_2f79.jpg",
         "builtYear": "1904..1905",
+        "ageYears": 121,
         "osmRef": "relation/3853100",
         "osmRefs": [
           "relation/3853100"
@@ -3831,6 +3835,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Palmoti%C4%87eva_27_1.jpg",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/palmoticeva_27_1.jpg",
         "builtYear": "1910",
+        "ageYears": 116,
         "osmRef": "way/288841235",
         "osmRefs": [
           "way/288841235"
@@ -4609,6 +4614,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Masarykova%2019%20%201.1_2cea.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/masarykova%2019%20%201.1_2cea.jpg",
         "builtYear": "1903..1904",
+        "ageYears": 122,
         "osmRef": "way/249388616",
         "osmRefs": [
           "way/249388616"
@@ -6844,6 +6850,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20bana%20Jela%C4%8Di%C4%87a%204%20%201_fa4b.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20bana%20jelacica%204%20%201_fa4b.jpg",
         "builtYear": "1906..1907",
+        "ageYears": 119,
         "osmRef": "way/288838575",
         "osmRefs": [
           "way/288838575"
@@ -7115,6 +7122,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg_bana_Jela%C4%8Di%C4%87a_5__11.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg_bana_jelacica_5__11.jpg",
         "builtYear": "1583",
+        "ageYears": 443,
         "osmRef": "way/105485745",
         "osmRefs": [
           "way/105485745"
@@ -9027,6 +9035,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20bana%20Jela%C4%8Di%C4%87a%2012%20%201.1_624c.jpg",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20bana%20jelacica%2012%20%201.1_624c.jpg",
         "builtYear": "1876",
+        "ageYears": 150,
         "osmRef": "way/105489668",
         "osmRefs": [
           "way/105489668"
@@ -9406,6 +9415,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Hebrangova_9_i_11_1.jpg",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/hebrangova_9_i_11_1.jpg",
         "builtYear": "1872..1874",
+        "ageYears": 152,
         "osmRef": "relation/1847510",
         "osmRefs": [
           "relation/1847510"
@@ -10178,6 +10188,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Preradovi%C4%87ev%20trg%20%201_7d2f.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/preradovicev%20trg%20%201_7d2f.jpg",
         "builtYear": "1866",
+        "ageYears": 160,
         "osmRef": "way/97165324",
         "osmRefs": [
           "way/97165324"
@@ -10280,6 +10291,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/TPP_1_1.jpg",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/tpp_1_1.jpg",
         "builtYear": "1898..1899",
+        "ageYears": 127,
         "osmRef": "way/97165323",
         "osmRefs": [
           "way/97165323"
@@ -11458,6 +11470,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Gajeva_2A__11.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/gajeva_2a__11.jpg",
         "builtYear": "1935..1936",
+        "ageYears": 90,
         "osmRef": "way/375375279",
         "osmRefs": [
           "way/375375279"
@@ -11896,6 +11909,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Kralja%20Dr%C5%BEislava%205%20%201_3c9c.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/kralja%20drzislava%205%20%201_3c9c.jpg",
         "builtYear": "1923",
+        "ageYears": 103,
         "osmRef": "way/289540864",
         "osmRefs": [
           "way/289540864"
@@ -11966,6 +11980,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Kralja%20Dr%C5%BEislava%205%20%201_3c9c.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/kralja%20drzislava%205%20%201_3c9c.jpg",
         "builtYear": "1923",
+        "ageYears": 103,
         "osmRef": "way/289540864",
         "osmRefs": [
           "way/289540864"
@@ -12188,6 +12203,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20bana%20Jela%C4%8Di%C4%87a%209%20i%2010%20%201_cf24.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20bana%20jelacica%209%20i%2010%20%201_cf24.jpg",
         "builtYear": "1931",
+        "ageYears": 95,
         "osmRef": "way/105487407",
         "osmRefs": [
           "way/105487407"
@@ -13429,6 +13445,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Trg%20Ante%20Star%C4%8Devi%C4%87a%206%20%201_67b2.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/trg%20ante%20starcevica%206%20%201_67b2.jpg",
         "builtYear": "1894..1895",
+        "ageYears": 131,
         "osmRef": "way/173429505",
         "osmRefs": [
           "way/173429505"
@@ -13503,6 +13520,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Masarykova%2022%20%201_3a3a.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/masarykova%2022%20%201_3a3a.jpg",
         "builtYear": "1933",
+        "ageYears": 93,
         "osmRef": "way/512839711",
         "osmRefs": [
           "way/512839711"
@@ -15748,6 +15766,7 @@
         "imageFullUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photos/Ribnjak%2038%20%201_fc85.JPG",
         "imageThumbUrl": "https://storage.googleapis.com/arhitektura-zagr-1514718358225.appspot.com/photo_thumbs/ribnjak%2038%20%201_fc85.jpg",
         "builtYear": "1938",
+        "ageYears": 88,
         "osmRef": "way/296457060",
         "osmRefs": [
           "way/296457060"

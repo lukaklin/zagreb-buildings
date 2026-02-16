@@ -79,6 +79,7 @@ function buildingFromProps(p: Record<string, any>): Building {
     imageThumbUrl: p.imageThumbUrl ? String(p.imageThumbUrl) : null,
     imageFullUrl: p.imageFullUrl ? String(p.imageFullUrl) : null,
     builtYear: p.builtYear ? String(p.builtYear) : "Unknown",
+    ageYears: p.ageYears != null ? Number(p.ageYears) : null,
   };
 }
 
